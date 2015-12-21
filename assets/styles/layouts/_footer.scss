@@ -1,0 +1,47 @@
+$cover-blue       : rgb(85,162,215);
+$cover-green      : rgb(146,157,80);
+$cover-violet     : rgb(212,174,211);
+$cover-white      : rgb(255,255,255);
+$cover-aquamarine : rgb(215,237,236);
+$cover-red        : rgb(197,54,50);
+$cover-brown      : rgb(54,27,10);
+$cover-grey       : rgb(172,176,180);
+$cover-yellow     : rgb(250,217,68);
+$cover-emerald    : rgb(83,177,122);
+$cover-mauve      : rgb(153,100,95);
+
+.footer-primary-blue { background-color: $cover-blue; }
+.footer-primary-green { background-color: $cover-green; }
+.footer-primary-violet { background-color: $cover-violet; }
+.footer-primary-white { background-color: $cover-white; }
+.footer-primary-aquamarine { background-color: $cover-aquamarine; }
+.footer-primary-red { background-color: $cover-red; }
+.footer-primary-brown { background-color: $cover-brown; }
+.footer-primary-grey { background-color: $cover-grey; }
+.footer-primary-yellow { background-color: $cover-yellow; }
+.footer-primary-emerald { background-color: $cover-emerald; }
+.footer-primary-mauve { background-color: $cover-mauve; }
+
+.footer-secondary-black {
+  color: black;
+
+  img {
+    border: 5px solid black;
+  }
+}
+
+.footer-secondary-white {
+  color: white;
+
+  img {
+    border: 5px solid white;
+  }
+}
+
+.past-issues {
+  width: 235px;
+
+  img {
+    width: 225px;
+  }
+}
