@@ -18,7 +18,7 @@
 <footer class="content-info footer-primary-<?php echo $issues[$issueNo][0] ?> footer-secondary-<?php echo $issues[$issueNo][4] ?>">
   <div class="container">
     <section class="past-issues">
-      <img src="<?= get_template_directory_uri(); ?>/dist/images/covers/FTR_cover_<?php echo $issues[$issueNo][0] ?>.jpg" />
+      <img src="<?= get_template_directory_uri(); ?>/dist/images/covers/FTR_cover_<?php echo $issues[$issueNo][0] ?>.png" />
       <p>The <?php echo $issues[$issueNo][1] ?> Issue, our <?php echo $issues[$issueNo][3] ?>, published in <?php echo $issues[$issueNo][2] ?>.</p>
 
     <?php dynamic_sidebar('sidebar-footer'); ?>
