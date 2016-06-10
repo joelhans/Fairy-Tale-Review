@@ -1,1 +1,7 @@
-
+html, body {
+  @include fontmake(
+    $size: 1,
+    $family: "Alegreya"
+  );
+  text-align: justify;
+}

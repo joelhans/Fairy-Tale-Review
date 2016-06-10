@@ -1,13 +1,33 @@
 // Grid system
 
-.primary {
-  @include container;
-}
+$susy : (
+  columns: 12,
+  gutters: .25,
+  gutter-position: split,
+);
 
-.main {
-  @include span(9 of 12);
+// Full grid //
+.banner>section { @include container(70em); }
+.primary { @include container(70em); }
+// header
+.banner { @include span(12 of 12); }
+.brand { @include span(3 of 12); }
+.nav-primary { @include span(9 of 12 last); }
+// body/main
+.main { @include span(full inside no-gutters); }
+.main>article:nth-of-type(1) {
+  @include span(12 of 12);
+  img { @include span(8 of 12 no-guters); }
+  header {
+    @include span(4 of 12 last break no-gutters);
+  }
+  div.entry-summary {
+    @include span(4 of 12 last break no-gutters);
+  }
 }
-
-.sidebar {
-  @include span(3 of 12);
-}
+.main>article.index-submissions { @include span(12 of 12 last); }
+.main>article:nth-of-type(n+3):nth-of-type(-n+8) { @include span(4 of 12); }
+.main>article.index-news { @include span(4 of 12 last); }
+// .main>article:nth-of-type(n+7):nth-of-type(-n+11)  { @include span(break 8 of 12); }
+.posts-navigation { @include span(12 of 12); }
+// footer

@@ -1,0 +1,87 @@
+/***************************************************
+*   MIXIN / FONTSIZE
+***************************************************/
+
+@mixin fontmake($size: 1, $line: $size * 1.5, $margin: $size * 1.5, $weight: 400, $family: "Arial", $serif: "sans-serif") {
+  font-family   : "#{$family}" , #{$serif};
+  font-size     : $size + rem;
+  font-weight   : $weight;
+  line-height   : $line + rem;
+  margin-bottom : $margin + rem;
+}
+
+@mixin font-size($size: 1, $line: $size * 1.5){
+  font-size     : ($size * 16) + px;
+  line-height   : ($line * 16) + px;
+  font-size     : $size + rem;
+  line-height   : $line + rem;
+}
+
+/***************************************************
+*   MIXIN / TEXT BACKGROUNDS
+***************************************************/
+
+@mixin textback($pull: 20px, $sides: 5px, $color: #86bbfd) {
+  background: linear-gradient(to bottom, transparent $pull, $color 0);
+  z-index: 1;
+  position: relative;
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: -$sides;
+    width: calc(100% + #{$sides} + #{$sides});
+    height: calc(100% - #{$pull});
+    background: $color;
+    z-index: -1;
+  }
+}
+
+/***************************************************
+*   MIXIN / REM-TO-PIXEL CONVERSION
+*
+*   https://gist.github.com/4153104/a5f13471af86e9835f18beda817ed772fcd9973a
+***************************************************/
+
+$unit-default-px: 16px;
+@function fix8_unit_to_px($val) {
+  @if $val == auto {
+    @return $val;
+  }
+  @else {
+    @if unitless($val) {
+      @if $val == 0 { @return $val }
+      @else { @return $val * $unit-default-px};
+    } @else { @return $val};
+  }
+}
+
+@function fix8_unit_to_rem($val) {
+  @if $val == auto {
+    @return $val;
+  }
+  @else {
+    @if unitless($val) {
+      @if $val == 0 { @return $val }
+      @else { @return $val+rem};
+    } @else { @return $val};
+  }
+}
+
+@mixin px-rem($prop, $val...) {
+  $n: length($val);
+  $i: 1;
+
+  $px-list: ();
+  $rem-list: ();
+
+  @while $i <= $n {
+    $px-list: append($px-list, fix8_unit_to_px(nth($val, $i)));
+    $rem-list: append($rem-list, fix8_unit_to_rem(nth($val, $i)));
+    $i: $i + 1;
+  }
+
+  #{$prop}: $px-list;
+  #{$prop}: $rem-list;
+}

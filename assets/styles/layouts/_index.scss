@@ -1,0 +1,115 @@
+.main {
+  margin-top: 3rem;
+}
+
+// for index only!
+body.home {
+
+.main>article.post {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 3rem;
+}
+
+.main>article.post:nth-of-type(1) {
+  img {
+    position: absolute;
+    // width: 100%;
+    height: auto;
+    z-index: -1;
+  }
+  header {
+    h2 {
+      @include textback($color: $issue-slate);
+      a {
+        color: white;
+        &:hover { color: white; }
+      }
+    }
+  }
+}
+
+.main>article.index-submissions {
+  margin-top: 3rem;
+  padding: 1rem;
+  background: $issue-slate;
+  color: white;
+  text-align: center;
+  // color: $issue-slate;
+  @include fontmake(
+    $size: 2.4,
+    $margin: 0,
+    $family: "Alegreya"
+  );
+  .index-submissions-open {
+    // display: block;
+    color: $cover-yellow;
+    @include fontmake(
+      $size: 2.4,
+      $margin: 0.2,
+      $family: "Raleway"
+    );
+    font-weight: 700;
+  }
+  .index-submissions-issue {
+    position: relative;
+    font-style: italic;
+    @include textback();
+  }
+}
+
+.main>article:nth-of-type(n+3):nth-of-type(-n+5) {
+  // height: 300px;
+}
+
+.main>article:nth-of-type(n+7) {
+  // height: 200px;
+}
+
+.main>article.index-news {
+  // header {
+  //   text-align: center;
+  //   margin-bottom: 1.4rem;
+  // }
+  // header h1 {
+  //   display: inline;
+  //   position: relative;
+  //   @include fontmake (
+  //     $size: 2,
+  //     $family: "Raleway"
+  //   )
+  //   font-weight: 700;
+  //   @include textback($pull: 13px);
+  // }
+  // article {
+  //   height: 101px;
+  //   overflow: hidden;
+  //   position: relative;
+  //   margin-top: 0;
+  //   margin-bottom: 1rem;
+  // }
+  // time {
+  //   width: 55px;
+  //   color: $cover-mauve;
+  //   border: 1px dotted $cover-mauve;
+  //   float: right;
+  //   @include fontmake (
+  //     $family: "Raleway",
+  //     $margin: 0,
+  //     $line: 2.063
+  //   )
+  //   text-transform: uppercase;
+  //   word-spacing: 99999px;
+  //   text-align: center
+  // }
+  // p {
+  //   width: calc(100% - 55px);
+  //   float: right;
+  //   margin: 0;
+  //   padding: 2px 1rem 0 0;
+  // }
+}
+
+// end index only
+}
