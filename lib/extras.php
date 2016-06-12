@@ -31,3 +31,20 @@ function excerpt_more() {
   return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
 }
 add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
+
+/**
+ * Remove "Category: " from category listing
+ */
+ function filter_category_title($title) {
+   return str_replace('Category: ', '', $title);
+ }
+ add_filter('get_the_archive_title', __NAMESPACE__ . '\\filter_category_title');
+
+ if ( function_exists( 'add_theme_support' ) ) {
+    add_theme_support( 'post-thumbnails' );
+    set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
+
+    // additional image sizes
+    // delete the next line if you do not need additional image sizes
+    add_image_size( 'front-page-thumb', 300, 300, true ); //300 pixels wide (and unlimited height)
+}

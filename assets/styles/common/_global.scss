@@ -1,7 +1,17 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 html, body {
   @include fontmake(
     $size: 1,
-    $family: "Alegreya"
+    $family: "Merriweather",
+    $weight: 300
   );
   text-align: justify;
+  overflow-x: hidden;
 }

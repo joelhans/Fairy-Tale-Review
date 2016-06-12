@@ -1,0 +1,36 @@
+.single article.type-post
+  position: relative
+  .entry-image
+    position: absolute
+    z-index: -1
+    right: 0
+    width: 400px
+    height: 400px
+    margin: 0 auto
+    overflow: hidden
+    clip-path: circle(199px at center)
+    img
+      display: block
+      width: 400px
+      height: auto
+  header
+    position: relative
+    height: 300px
+    margin-bottom: 2rem
+    h1
+      color: $purple
+      @include fontmake($size: 2.8, $line: 3, $family: "Aleo", $weight: 700)
+      @include textback($pull: 19px, $color: $grey)
+      text-align: left
+    time
+      color: $red
+      position: absolute
+      bottom: 18px
+      @include fontmake($size: 1.2, $family: "Aleo", $weight: 700, $margin: 0)
+    .author
+      color: $purple
+      position: absolute
+      bottom: 0px
+      @include fontmake($size: 0.9, $family: "Aleo", $weight: 400, $margin: 0)
+      a
+        color: $purple

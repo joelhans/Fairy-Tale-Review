@@ -22,20 +22,10 @@
 ***************************************************/
 
 @mixin textback($pull: 20px, $sides: 5px, $color: #86bbfd) {
-  background: linear-gradient(to bottom, transparent $pull, $color 0);
-  z-index: 1;
-  position: relative;
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0px;
-    left: -$sides;
-    width: calc(100% + #{$sides} + #{$sides});
-    height: calc(100% - #{$pull});
-    background: $color;
-    z-index: -1;
-  }
+  background: linear-gradient(to bottom, transparent 0px, transparent $pull, $color 0px, $color 9999px);
+  padding: 0 5px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
 }
 
 /***************************************************

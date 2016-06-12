@@ -20,22 +20,15 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
 
-    <?php include Wrapper\template_path(); ?>
-
-<!--
-    <section class="primary" role="document">
-
-      <main class="main">
-        <?php include Wrapper\template_path(); ?>
-      </main>
-
-      <?php if (Setup\display_sidebar()) : ?>
-        <aside class="sidebar">
-          <?php include Wrapper\sidebar_path(); ?>
-        </aside>
-      <?php endif; ?>
-
-    </section> -->
+    <main role="document">
+      <?php include Wrapper\template_path(); ?>
+    </main>
+    
+    <?php if (Setup\display_sidebar()) : ?>
+      <aside class="sidebar">
+        <?php include Wrapper\sidebar_path(); ?>
+      </aside>
+    <?php endif; ?>
 
     <?php
       do_action('get_footer');

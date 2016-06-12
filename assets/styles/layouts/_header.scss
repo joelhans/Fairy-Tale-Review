@@ -1,5 +1,5 @@
 .banner {
-  @include gutters;
+  background-color: $red;
   position: relative;
   >section { position: relative; }
 }
@@ -37,9 +37,6 @@
 .social-search,
 .nav {
   float: right;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
   >li {
     float: left;
     position: inherit;
@@ -48,13 +45,14 @@
     &:hover .sub-menu {
       visibility: visible;
       opacity: 1;
-      padding-top: 20px;
       transition: opacity 0.5s ease;
       transition: padding-top 0.5s ease;
     }
     a {
+      color: $grey;
       padding: 0;
       &:hover {
+        color: $yellow;
         background-color: transparent;
         text-decoration: none;
       }
@@ -64,11 +62,11 @@
 
 // social search
 .social-search>li {
-  margin: 3px 0 0 12px;
+  margin: 8px 0 0 12px;
   i {
     @include fontmake(
       $family: "Fontawesome",
-      $size: 1.4
+      $size: 1
     )
     font-style: normal;
   }
@@ -77,7 +75,7 @@
 
 // navigation
 .nav>li {
-  margin: 10px 0 0 30px;
+  margin: 12px 0 0 30px;
 }
 
 // sub menus
@@ -86,29 +84,30 @@
   opacity: 0;
   width: 100%;
   list-style-type: none;
-  padding: 0px 0 20px 0;
+  padding: 40px 0 20px 0;
   position: absolute;
-  top: 4.8rem;
+  top: 3.3rem;
   left: 0;
-  background: white;
+  background-color: $red;
   z-index: 10;
   &:hover { visibility: visible; opacity: 1; }
   li, div {
     height: 100px;
     text-align: center;
-    padding: 2rem;
+    padding-top: 2rem;
     text-transform: none;
-    background: $issue-slate;
+    background: $base;
     background-size: cover;
     background-repeat: no-repeat;
     a {
       color: white;
       @include fontmake(
-        $family: "Alegreya",
+        $family: "Aleo",
         $size: 1.5,
-        $margin: 0
+        $margin: 0,
+        $weight: 300
       )
-      @include textback($pull: 12px, $color: $grey);
+      @include textback($pull: 9px, $color: $purple);
       &:hover { text-decoration: underline; }
     }
   }
@@ -116,12 +115,24 @@
     display: inline;
     color: white;
     @include fontmake(
-      $family: "Alegreya",
+      $family: "Aleo",
       $size: 1.5,
-      $margin: 0
+      $margin: 0,
+      $weight: 300
     )
-    @include textback($pull: 12px, $color: $grey);
+    @include textback($pull: 9px, $color: $grey);
   }
+  &:before, &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: $red;
+  }
+  &:before { left: -100%; }
+  &:after { right: -100%; }
 }
 
 .social-search .sub-menu div,
@@ -181,7 +192,7 @@
   // contributors
   &:nth-of-type(3) {
     background-image: url('../../assets/images/nav/contributors.jpg');
-    background-position: 2px -233px;
+    background-position: 0px -228px;
   }
   // support
   &:nth-of-type(4) {
@@ -208,10 +219,12 @@
 .social-search .sub-menu form {
   label {
     width: 75%;
+    .screen-reader-text { display: none; }
     input {
-      width: 100%;
+      width: 75%;
       height: 100px;
       color: white;
+      padding: 20px;
       @include fontmake(
         $size: 1.4,
         $margin: 0,
@@ -219,7 +232,7 @@
       );
       border: 0;
       border-radius: 0;
-      background: $issue-slate;
+      background: $base;
     }
   }
   >input {
@@ -233,7 +246,12 @@
       $weight: 700
     );
     text-transform: uppercase;
-    border: 10px solid $issue-slate;
+    border: 10px solid $grey;
     border-radius: 0;
   }
+}
+
+.social-search .sub-menu p {
+  color: $grey;
+  @include textback($pull: 11px, $color: $red);
 }
