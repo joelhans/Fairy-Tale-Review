@@ -1,0 +1,380 @@
+.banner
+  position: fixed
+  width: 100%
+  z-index: 100
+
+.nav-primary
+  position: absolute
+  top: 43px
+  left: 1.7857142857%
+  .fa-tree
+    position: relative
+    top: 2px
+    font-size: 22px
+    color: #C8D9BF
+    margin-right: 1rem
+
+  .nav-bunch
+    display: inline-block
+    padding: 13px 20px 11px 16px
+    background-color: #fbfaf6
+    border-radius: 25px
+    text-align: left
+    a
+      @include fontmake($size: 1, $margin: 0, $family: "Raleway", $weight: 400)
+      margin-right: 1rem
+      &:last-of-type
+        margin-right: 0
+      &:hover
+        text-decoration: none
+        @include textback($pull: 6px, $sides: 0px, $color: #ECDBBC)
+
+.about-pulldown
+  background-color: $beige
+  padding: 2rem 0
+  display: none
+  .about-pulldown-hero h1
+    color: $purple
+    @include fontmake($size: 1.5, $margin: 2, $family: "Montserrat", $weight: 700)
+  &::before
+    content: ''
+    display: block
+    position: absolute
+    width: 100%
+    height: 400px
+    top: 0px
+    background-color: $beige
+    z-index: -1
+  .about-pulldown-third
+    height: 200px
+    text-align: center
+    padding-top: 4rem
+    a
+      @include fontmake($family: "Aleo", $size: 2, $margin: 0, $weight: 300)
+      color: #ECDBBC
+      @include textback($pull: 13px, $color: $purple)
+      &:hover
+        color: $red
+  .about-pulldown-mission
+    background-image: url('../../assets/images/nav/mission.png')
+  .about-pulldown-masthead
+    background-image: url('../../assets/images/nav/masthead.png')
+  .about-pulldown-contact
+    background-image: url('../../assets/images/nav/contact.png')
+
+.about-pulldown-active
+  display: block
+
+.nav-brand
+  height: 175px
+  .ftr-title
+    background-image: url('../../assets/images/ftr_title_black.png')
+    background-size: 300px auto
+    background-repeat: no-repeat
+    width: 300px
+    height: 29px
+    margin: 0 auto
+    text-indent: 200%
+    white-space: nowrap
+    overflow: hidden
+    transition: 0.3s opacity ease, 0.5s margin ease
+  .ftr-logo
+    background-image: url('../../assets/images/ftr_logo.png')
+    background-size: 100px 100px
+    background-repeat: no-repeat
+    width: 100px
+    height: 100px
+    margin: 1rem auto
+    border-radius: 50%
+    position: relative
+    transition: 0.3s all ease-in-out
+    opacity: 1
+    -webkit-transform: translateZ(0)
+    transform: translateZ(0)
+    box-shadow: 0 0 0 2px $green, 0 0 0 10px $beige
+    &:hover
+      box-shadow: 0 0 0 12px $green
+
+.nav-brand.nav-scrolled
+  -webkit-transform: translateZ(0)
+  transform: translateZ(0)
+  .ftr-title
+    opacity: 0
+    margin: -180px auto 0 auto
+  .ftr-logo
+    transform: scale(0.7)
+
+.nav-social
+  margin-top: 56px
+  text-align: right
+
+  a
+    display: inline-block
+    width: 28px
+    height: 28px
+    background-color: #ECDBBC
+    border-radius: 50%
+    text-align: center
+
+    &:hover
+      text-decoration: none
+
+    i
+      font-size: 18px
+      position: relative
+      top: 5px
+
+
+
+//
+// .brand {
+//   margin-top: 1.7rem;
+//   a {
+//     display: block;
+//     width: 270px;
+//     height: 27px;
+//     background-image: url('../../assets/images/FTR_title.png');
+//     background-size: 270px auto;
+//     background-repeat: no-repeat;
+//     text-indent: 200%;
+//     white-space: nowrap;
+//     overflow: hidden;
+//   }
+// }
+//
+// // primary menu
+// .nav-primary {
+//   float: right;
+//   padding-top: 1.4rem;
+//   @include fontmake(
+//     $size: 0.8,
+//     $margin: 0,
+//     $family: "Raleway",
+//     $weight: 700
+//   );
+//   text-transform: uppercase;
+//   div { float: right; }
+// }
+//
+// // both navs
+// .social-search,
+// .nav {
+//   float: right;
+//   >li {
+//     float: left;
+//     position: inherit;
+//     padding-bottom: 1.6rem;
+//     text-align: right;
+//     &:hover .sub-menu {
+//       visibility: visible;
+//       opacity: 1;
+//       transition: opacity 0.5s ease;
+//       transition: padding-top 0.5s ease;
+//     }
+//     a {
+//       color: $grey;
+//       padding: 0;
+//       &:hover {
+//         color: $yellow;
+//         background-color: transparent;
+//         text-decoration: none;
+//       }
+//     }
+//   }
+// }
+//
+// // social search
+// .social-search>li {
+//   margin: 8px 0 0 12px;
+//   i {
+//     @include fontmake(
+//       $family: "Fontawesome",
+//       $size: 1
+//     )
+//     font-style: normal;
+//   }
+//   &:first-of-type { margin-left: 30px; }
+// }
+//
+// // navigation
+// .nav>li {
+//   margin: 12px 0 0 30px;
+// }
+//
+// // sub menus
+// .sub-menu {
+//   visibility: hidden;
+//   opacity: 0;
+//   width: 100%;
+//   list-style-type: none;
+//   padding: 40px 0 20px 0;
+//   position: absolute;
+//   top: 3.3rem;
+//   left: 0;
+//   background-color: $red;
+//   z-index: 10;
+//   &:hover { visibility: visible; opacity: 1; }
+//   li, div {
+//     height: 100px;
+//     text-align: center;
+//     padding-top: 2rem;
+//     text-transform: none;
+//     background: $base;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     a {
+//       color: white;
+//       @include fontmake(
+//         $family: "Aleo",
+//         $size: 1.5,
+//         $margin: 0,
+//         $weight: 300
+//       )
+//       @include textback($pull: 9px, $color: $purple);
+//       &:hover { text-decoration: underline; }
+//     }
+//   }
+//   div>p {
+//     display: inline;
+//     color: white;
+//     @include fontmake(
+//       $family: "Aleo",
+//       $size: 1.5,
+//       $margin: 0,
+//       $weight: 300
+//     )
+//     @include textback($pull: 9px, $color: $grey);
+//   }
+//   &:before, &:after {
+//     content: '';
+//     display: block;
+//     width: 100%;
+//     height: 100%;
+//     position: absolute;
+//     top: 0px;
+//     background-color: $red;
+//   }
+//   &:before { left: -100%; }
+//   &:after { right: -100%; }
+// }
+//
+// .social-search .sub-menu div,
+// .social-search .sub-menu form {
+//   @include span(6 of 12);
+// }
+//
+// // Fairyland
+// .nav li:first-of-type .sub-menu li {
+//   @include span(6 of 12);
+//   // fairy-tale files
+//   &:nth-of-type(1) {
+//     background-image: url('../../assets/images/nav/fairy-tale-files.jpg');
+//     background-position: 0 -300px;
+//   }
+//   // pins-needles
+//   &:nth-of-type(2) {
+//     background-image: url('../../assets/images/nav/pins-needles.jpg');
+//     background-position: 0 -79px;
+//   }
+// }
+// // Annual Journal
+// .nav li:nth-of-type(3) .sub-menu li {
+//   @include span(6 of 12);
+//   // current issue
+//   &:nth-of-type(1) {
+//     background-image: url('../../assets/images/covers/FTR_cover_mauve.png');
+//     background-size: 200%;
+//     background-position: 50% 67%;
+//   }
+//   // back issues
+//   &:nth-of-type(2) {
+//     background-image: url('../../assets/images/nav/back-issues.jpg');
+//     background-size: 140%;
+//     background-position: -121px -435px;
+//   }
+// }
+// // About
+// .nav li:nth-of-type(7) .sub-menu li {
+//   @include span(4 of 12);
+//   margin-bottom: 20px;
+//   &:nth-of-type(n+4):nth-of-type(-n+6) {
+//     margin-bottom: 0px;
+//   }
+//   // masthead
+//   &:nth-of-type(1) {
+//     background-image: url('../../assets/images/nav/masthead.jpg');
+//     background-size: 200%;
+//     background-position: -137px -80px;
+//   }
+//   // faqs
+//   &:nth-of-type(2) {
+//     background-image: url('../../assets/images/nav/faqs.jpg');
+//     background-size: 140%;
+//     background-position: -31px -201px;
+//   }
+//   // contributors
+//   &:nth-of-type(3) {
+//     background-image: url('../../assets/images/nav/contributors.jpg');
+//     background-position: 0px -228px;
+//   }
+//   // support
+//   &:nth-of-type(4) {
+//     background-image: url('../../assets/images/nav/support.jpg');
+//     background-size: 200%;
+//     background-position: -233px -451px;
+//   }
+//   // support
+//   &:nth-of-type(5) {
+//     background-image: url('../../assets/images/nav/press.jpg');
+//     background-size: 200%;
+//     background-position: -242px -345px;
+//   }
+//   // tiny-donkey
+//   &:nth-of-type(6) {
+//     background-image: url('../../assets/images/nav/tiny-donkey.png');
+//     background-color: black;
+//     background-size: 90%;
+//     background-position: 40px -50px;
+//   }
+// }
+//
+// // Search
+// .social-search .sub-menu form {
+//   label {
+//     width: 75%;
+//     .screen-reader-text { display: none; }
+//     input {
+//       width: 75%;
+//       height: 100px;
+//       color: white;
+//       padding: 20px;
+//       @include fontmake(
+//         $size: 1.4,
+//         $margin: 0,
+//         $family: "Raleway"
+//       );
+//       border: 0;
+//       border-radius: 0;
+//       background: $base;
+//     }
+//   }
+//   >input {
+//     width: 25%;
+//     height: 100px;
+//     float: right;
+//     @include fontmake(
+//       $size: 0.8,
+//       $margin: 0,
+//       $family: "Raleway",
+//       $weight: 700
+//     );
+//     text-transform: uppercase;
+//     border: 10px solid $grey;
+//     border-radius: 0;
+//   }
+// }
+//
+// .social-search .sub-menu p {
+//   color: $grey;
+//   @include textback($pull: 11px, $color: $red);
+// }

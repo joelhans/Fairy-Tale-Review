@@ -35,16 +35,27 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 /**
  * Remove "Category: " from category listing
  */
- function filter_category_title($title) {
+function filter_category_title($title) {
    return str_replace('Category: ', '', $title);
- }
- add_filter('get_the_archive_title', __NAMESPACE__ . '\\filter_category_title');
-
- if ( function_exists( 'add_theme_support' ) ) {
-    add_theme_support( 'post-thumbnails' );
-    set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
-
-    // additional image sizes
-    // delete the next line if you do not need additional image sizes
-    add_image_size( 'front-page-thumb', 300, 300, true ); //300 pixels wide (and unlimited height)
 }
+add_filter('get_the_archive_title', __NAMESPACE__ . '\\filter_category_title');
+
+/**
+ * Create new thumbnail size for the front page.
+ */
+if ( function_exists( 'add_theme_support' ) ) {
+  add_theme_support( 'post-thumbnails' );
+  set_post_thumbnail_size( 150, 150, true ); // default Post Thumbnail dimensions (cropped)
+
+  // additional image sizes
+  // delete the next line if you do not need additional image sizes
+  add_image_size( 'front-page-thumb', 300, 300, true ); //300 pixels wide (and unlimited height)
+}
+
+/**
+ * Add class around p's that contain an image.
+ */
+// function add_image_class($content) {
+//   return preg_replace('|<p>(<img[^<]*)</p>|i', '<p class="image-container">${1}</p>', $content);
+// }
+// add_filter('the_content', __NAMESPACE__ . '\\add_image_class');

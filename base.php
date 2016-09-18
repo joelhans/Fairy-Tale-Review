@@ -23,12 +23,12 @@ use Roots\Sage\Wrapper;
     <main role="document">
       <?php include Wrapper\template_path(); ?>
     </main>
-    
-    <?php if (Setup\display_sidebar()) : ?>
+
+    <!-- <?php if (Setup\display_sidebar()) : ?>
       <aside class="sidebar">
         <?php include Wrapper\sidebar_path(); ?>
       </aside>
-    <?php endif; ?>
+    <?php endif; ?> -->
 
     <?php
       do_action('get_footer');

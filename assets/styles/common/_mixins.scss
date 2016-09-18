@@ -20,13 +20,72 @@
 /***************************************************
 *   MIXIN / TEXT BACKGROUNDS
 ***************************************************/
-
-@mixin textback($pull: 20px, $sides: 5px, $color: #86bbfd) {
+@mixin textback($pull: 20px, $sides: 5px, $color: #86bbfd, $padding: 5px) {
   background: linear-gradient(to bottom, transparent 0px, transparent $pull, $color 0px, $color 9999px);
-  padding: 0 5px;
+  padding: 0 $sides;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  text-shadow: 1px -1px 2px $color;
+  text-shadow: 1px -1px 4px transparentize($color, .5);
+}
+
+/***************************************************
+*   MIXIN / VERTICAL ALIGN
+***************************************************/
+@mixin vertical-align($type: 'transform', $pos: relative) {
+  @if $type == 'transform' {
+    position: $pos;
+    top: 50%;
+    -webkit-transform: perspective(1px) translateY(-50%);
+    -ms-transform: perspective(1px) translateY(-50%);
+    transform: perspective(1px) translateY(-50%);
+  } @elseif $type == 'table' {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+@mixin clearfix-micro() {
+    & {
+        *zoom: 1;
+    }
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+/***************************************************
+*   MIXIN / FULL WIDTH BACKGROUND
+***************************************************/
+@mixin full-bg($color: '') {
+  position: relative;
+  background: $color;
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: -50%;
+    background: $color;
+    z-index: -1;
+  }
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    right: -50%;
+    background: $color;
+    z-index: -1;
+  }
 }
 
 /***************************************************

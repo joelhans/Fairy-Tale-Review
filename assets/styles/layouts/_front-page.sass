@@ -1,3 +1,30 @@
+//****************************
+// CHANGE ANNOUNCEMENT
+//****************************
+.front-page-changes
+  margin-bottom: 6rem
+  .changes-quote
+    margin-bottom: 5rem
+    h1
+      @include fontmake($size: 3, $family: "Aleo", $weight: 900, $margin: 0)
+      color: $purple
+      text-align: center
+      text-transform: none
+    div
+      font-style: italic
+      text-align: right
+      margin-left: 4rem
+      @include fontmake($size: 0.8, $margin: 0, $family: "Raleway", $weight: 400)
+      color: $red
+
+  .changes-subhead
+    margin-bottom: 3rem
+  .changes-explain
+    // @include fontmake($size: 1.2, $family: "Merriweather", $weight: 300, $margin: 0)
+
+//****************************
+// FEATURED
+//****************************
 .front-page-featured
   margin-bottom: 5rem
   article
@@ -31,13 +58,13 @@
     time
       color: $red
       position: absolute
-      bottom: 18px
-      @include fontmake($size: 1.2, $family: "Aleo", $weight: 700, $margin: 0)
+      bottom: 0px
+      @include fontmake($size: 0.9, $family: "Raleway", $weight: 400, $margin: 0)
     .author
       color: $purple
       position: absolute
-      bottom: 0px
-      @include fontmake($size: 0.9, $family: "Raleway", $weight: 700, $margin: 0)
+      bottom: 18px
+      @include fontmake($size: 1.2, $family: "Raleway", $weight: 700, $margin: 0)
       text-transform: capitalize
       a
         color: $purple
@@ -48,7 +75,7 @@
 
 
 .front-page-latest
-  background: $issue-ochre
+  background: $cover-ochre
   padding: 4rem 0
   article
     text-align: center
@@ -56,16 +83,19 @@
       color: $grey
       padding: 0 3rem
       @include fontmake($size: 4, $margin: 2, $family: "Aleo", $weight: 700)
+      text-transform: none
     p
       color: $base
       @include fontmake($size: 1.6, $family: "Raleway", $weight: 700, $margin: 3)
+      text-align: center
     a
       display: inline-block
-      color: $issue-ochre
+      color: $cover-ochre
       text-transform: uppercase
       background: $grey
       padding: 1.6rem 3rem
       @include fontmake($size: 1.2, $family: "Raleway", $weight: 400, $margin: 0)
+      border-radius: 40px
+      transition: 0.3s all ease
       &:hover
         background: transparentize($grey, 0.3)
-        transition: 0.5s background ease

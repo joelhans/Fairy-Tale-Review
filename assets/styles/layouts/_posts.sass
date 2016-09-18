@@ -1,36 +1,159 @@
 .single article.type-post
   position: relative
   .entry-image
-    position: absolute
-    z-index: -1
-    right: 0
-    width: 400px
-    height: 400px
-    margin: 0 auto
-    overflow: hidden
-    clip-path: circle(199px at center)
-    img
-      display: block
-      width: 400px
-      height: auto
+    display: none
   header
-    position: relative
-    height: 300px
-    margin-bottom: 2rem
+    text-align: center
+    @include span(9 of 12 no-gutters)
+    @include pre(1.5 of 12)
+    margin-bottom: 6rem
     h1
       color: $purple
-      @include fontmake($size: 2.8, $line: 3, $family: "Aleo", $weight: 700)
-      @include textback($pull: 19px, $color: $grey)
-      text-align: left
+      @include fontmake($size: 3.4, $line: 3.4, $family: "Roboto Slab", $weight: 700, $margin: 2)
     time
-      color: $red
-      position: absolute
-      bottom: 18px
-      @include fontmake($size: 1.2, $family: "Aleo", $weight: 700, $margin: 0)
+      @include fontmake($size: 0.9, $family: "Raleway", $weight: 400)
+      text-transform: uppercase
     .author
       color: $purple
-      position: absolute
-      bottom: 0px
-      @include fontmake($size: 0.9, $family: "Aleo", $weight: 400, $margin: 0)
+      @include fontmake($size: 1.4, $family: "Raleway", $weight: 400, $margin: 4)
+      text-transform: uppercase
+      letter-spacing: 1px
       a
-        color: $purple
+        color: $red
+
+  .entry-content
+    @include span(9 of 12 no-gutters)
+    @include pre(1.5 of 12)
+
+  footer
+    @include span(9 of 12 no-gutters)
+    @include pre(1.5 of 12)
+    position: relative
+    margin-bottom: 6rem
+
+    p
+      @include span(6 of 9 first)
+      @include vertical-align($pos: absolute)
+      @include fontmake($size: 1, $family: "Raleway", $weight: 900)
+      font-style: italic
+      color: transparentize($red, 0.70)
+
+      em
+        font-style: normal
+
+    div.author-avatar
+      @include span(3 of 9 last)
+      border-radius: 50%
+      position: relative
+      overflow: hidden
+      border: 20px solid $red
+      &::before
+        content: ''
+        display: block
+        margin-top: 100%
+
+      img
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        object-fit: cover
+        width: 100%
+        height: 100%
+
+.single article.category-fairy-tale-files .entry-content
+
+  p.fairy-tale-file-intro
+    @include span(6 of 9)
+    @include pre(3 of 9)
+    @include fontmake($size: 1, $family: "Raleway", $weight: 900)
+    font-style: italic
+    color: transparentize($red, 0.70)
+    margin-bottom: 3rem !important
+    em
+      font-style: normal
+      font-weight: 700
+
+  div[class*=ftf-container]
+    position: relative
+    margin-bottom: 6rem
+    @include clearfix-micro()
+
+    .image-container
+      @include span(4 of 9)
+      margin-left: -(span(1) + gutter(9) + gutter(9))
+      clip-path: circle(50% at center)
+      position: relative
+      z-index: 10
+      transition: all 0.3s ease-in-out
+      overflow: hidden
+      &::before
+        content: ''
+        display: block
+        margin-top: 100%
+      img
+        position: absolute
+        top: -25%
+        bottom: 0
+        left: -25%
+        right: 0
+        object-fit: cover
+        width: 150%
+        height: 150%
+        transition: all 0.5s ease-in-out
+
+      div.ftf-number
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 96px
+        height: 96px
+        transform: perspective(1px) translateX(-50%) translateY(-50%)
+        z-index: 20
+        background: white
+        border-radius: 50%
+        opacity: 1
+        transition: opacity 0.3s ease-in-out
+        p
+          @include fontmake($family: 'Vollkorn', $size: 4, $margin: 0, $line: 6)
+          color: $red
+          text-align: center
+
+      &:hover
+        clip-path: circle(100% at center)
+
+        img
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+
+        div.ftf-number
+          opacity: 0
+
+    div.ftf-text
+      @include span(6 of 9 last)
+
+
+/**********************************************************/
+/** PREVIOUS/NEXT LINKS
+/**********************************************************/
+
+.nav-next-prev, .nav-ftf, .nav-pins-needles
+  // @include full-bg($color: $purple)
+  padding: 4rem 0 4rem 0
+  color: $purple
+  a
+    color: $purple
+    &:hover
+      color: $red
+
+  h1
+    @include fontmake($family: "Montserrat", $size: 1.6, $weight: 400)
+    text-align: center
+
+.nav-next
+
+
+.nav-prev

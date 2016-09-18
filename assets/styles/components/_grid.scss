@@ -7,14 +7,36 @@ $susy : (
 );
 
 // Full grid //
-.banner>section { @include container(70em); }
 .container { @include container(70em); }
+.container-wide { @include container(100em); }
 
-// header
-.brand { @include span(3 of 12); }
-.nav-primary { @include span(9 of 12 last); }
+// Header //
+.banner>section {
+  @include container(100em);
+  position: relative;
+}
+.about-pulldown>section { @include container(70em); }
+
+// .nav-primary { @include span(4 of 12); }
+.nav-brand {
+  @include span(4 of 12);
+  @include push(4 of 12);
+}
+.nav-social { @include span(4 of 12); }
+
+.about-pulldown-hero {
+  @include span(6 of 12);
+  @include push(3 of 12);
+}
+
+.about-pulldown-third { @include span(4 of 12); }
 
 // front page
+.changes-quote { @include span(12 of 12); }
+.changes-subhead, .changes-explain {
+  @include span(8 of 12);
+  @include push(2 of 12);
+ }
 .front-page-featured article { @include span(6 of 12); }
 .front-page-latest article { @include span(12 of 12); }
 
@@ -27,21 +49,14 @@ $susy : (
 
 // posts
 .single article.type-post { @include span(12 of 12); }
+nav.nav-newer-older, nav.nav-ftf, nav.nav-pins-needles { @include span(12 of 12); }
+.single nav .nav-next { @include span(6 of 12); }
+.single nav .nav-prev { @include span(6 of 12); }
 
-// .main { @include span(full inside no-gutters); }
-// .main>article:nth-of-type(1) {
-//   @include span(12 of 12);
-//   img { @include span(8 of 12 no-guters); }
-//   header {
-//     @include span(4 of 12 last break no-gutters);
-//   }
-//   div.entry-summary {
-//     @include span(4 of 12 last break no-gutters);
-//   }
-// }
-// .main>article.index-submissions { @include span(12 of 12 last); }
-// .main>article:nth-of-type(n+3):nth-of-type(-n+8) { @include span(4 of 12); }
-// .main>article.index-news { @include span(4 of 12 last); }
-// .main>article:nth-of-type(n+7):nth-of-type(-n+11)  { @include span(break 8 of 12); }
-.posts-navigation { @include span(12 of 12); }
 // footer
+.issue-image { @include span(4 of 12); }
+.issue-text { @include span(8 of 12); }
+
+.tagline { @include span(4 of 12); }
+.newsletter { @include span(4 of 12); }
+.past-issues { @include span(4 of 12); }

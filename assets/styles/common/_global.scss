@@ -9,9 +9,13 @@ html {
 html, body {
   @include fontmake(
     $size: 1,
-    $family: "Merriweather",
-    $weight: 300
+    $family: "Vollkorn",
+    $weight: 300,
+    $margin: 0
   );
   text-align: justify;
   overflow-x: hidden;
+  -moz-osx-font-smoothing: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  background-color: #fbfaf6;
 }
