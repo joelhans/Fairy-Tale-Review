@@ -1,5 +1,4 @@
 // Grid system
-
 $susy : (
   columns: 12,
   gutters: .75,
@@ -17,7 +16,6 @@ $susy : (
 }
 .about-pulldown>section { @include container(70em); }
 
-// .nav-primary { @include span(4 of 12); }
 .nav-brand {
   @include span(4 of 12);
   @include push(4 of 12);
@@ -59,4 +57,4 @@ nav.nav-newer-older, nav.nav-ftf, nav.nav-pins-needles { @include span(12 of 12)
 
 .tagline { @include span(4 of 12); }
 .newsletter { @include span(4 of 12); }
-.past-issues { @include span(4 of 12); }
+.footer-main nav { @include span(4 of 12); }

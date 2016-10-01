@@ -31,17 +31,12 @@
 /***************************************************
 *   MIXIN / VERTICAL ALIGN
 ***************************************************/
-@mixin vertical-align($type: 'transform', $pos: relative) {
-  @if $type == 'transform' {
-    position: $pos;
-    top: 50%;
-    -webkit-transform: perspective(1px) translateY(-50%);
-    -ms-transform: perspective(1px) translateY(-50%);
-    transform: perspective(1px) translateY(-50%);
-  } @elseif $type == 'table' {
-    display: table-cell;
-    vertical-align: middle;
-  }
+@mixin vertical-align($pos: relative) {
+  position: $pos;
+  top: 50%;
+  -webkit-transform: perspective(1px) translateY(-50%);
+  -ms-transform: perspective(1px) translateY(-50%);
+  transform: perspective(1px) translateY(-50%);
 }
 
 @mixin clearfix-micro() {

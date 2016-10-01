@@ -1,26 +1,23 @@
 //****************************
 // CHANGE ANNOUNCEMENT
 //****************************
-.front-page-changes
+.front-page-announcement
   margin-bottom: 6rem
-  .changes-quote
-    margin-bottom: 5rem
-    h1
-      @include fontmake($size: 3, $family: "Aleo", $weight: 900, $margin: 0)
-      color: $purple
-      text-align: center
-      text-transform: none
-    div
-      font-style: italic
-      text-align: right
-      margin-left: 4rem
-      @include fontmake($size: 0.8, $margin: 0, $family: "Raleway", $weight: 400)
-      color: $red
-
-  .changes-subhead
-    margin-bottom: 3rem
-  .changes-explain
-    // @include fontmake($size: 1.2, $family: "Merriweather", $weight: 300, $margin: 0)
+  article
+    @include span(12 of 12)
+    .entry-content
+      @include span(9 of 12 no-gutters)
+      @include pre(1.5 of 12)
+      h1
+        @include fontmake($size: 3, $family: "Aleo", $weight: 900, $margin: 0)
+        color: $purple
+        text-align: center
+        text-transform: none
+      h1 + p
+        font-style: italic
+        text-align: right
+        @include fontmake($size: 0.8, $margin: 2, $family: "Raleway", $weight: 400)
+        color: $red
 
 //****************************
 // FEATURED
@@ -73,10 +70,13 @@
       @include fontmake($size: 1.2, $family: "Merriweather", $weight: 300, $margin: 0)
       font-style: italic
 
-
+//****************************
+// LATEST ISSUE
+//****************************
 .front-page-latest
   background: $cover-ochre
   padding: 4rem 0
+  margin-bottom: 5rem
   article
     text-align: center
     h1
@@ -99,3 +99,48 @@
       transition: 0.3s all ease
       &:hover
         background: transparentize($grey, 0.3)
+
+//****************************
+// FRONT PAGE QUEUE
+//****************************
+
+.front-page-queue
+  article
+    @include span(3 of 12)
+    height: 650px
+    position: relative
+    margin-bottom: 2rem
+    .entry-image
+      img
+        max-width: 100%
+        min-width: 100%
+        height: auto
+        border-radius: 50%
+        transition: 0.3s all ease-in-out
+        box-sizing: border-box
+        -webkit-transform: translateZ(0)
+        transform: translateZ(0)
+        box-shadow: 0 0 0 2px $green, 0 0 0 10px $beige
+        &:hover
+          box-shadow: 0 0 0 12px $green
+    header
+      // position: absolute
+      // top: 100px
+      text-align: center
+      .entry-title
+        @include fontmake($size: 1.4rem, $family: "Aleo", $margin: 0.4)
+        a
+          @include textback($pull: 10px, $color: $grey)
+      p.author
+        @include fontmake($size: 0.8, $family: "Raleway", $weight: 400, $margin: 0.4)
+        text-align: center
+      time
+        display: block
+        width: 50px
+        height: 50px
+        margin: 0 auto
+        padding-top: 16px
+        background-color: $base
+        color: $green
+        border-radius: 50%
+        @include fontmake($size: 0.7, $family: "Raleway", $weight: 700, $margin: 0)

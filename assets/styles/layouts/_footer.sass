@@ -1,14 +1,14 @@
 .issue-past
   width: 100%
-
+  .container
+    height: 500px
   .issue-image
-    // position: absolute
+    max-height: 500px
+    @include vertical-align()
     img
       max-width: 100%
-      // height: 500px
-
   .issue-text
-    padding-top: 3.5rem
+    @include vertical-align()
     h3
       @include fontmake($family: "Raleway", $size: 1.2, $margin: 1, $line: 1.2, $weight: 700)
     p
@@ -63,13 +63,17 @@
     &:hover
       color: $green
 
-
 // footer
-footer.footer-main
-  padding: 8rem 0 8rem
+.footer-main
+  padding: 6rem 0 6rem
+  .container-wide
+    height: 200px
 
 // tagline
 .tagline
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
   h1
     @include fontmake($family: "Aleo", $size: 2, $margin: 0, $line: 2.4, $weight: 700)
     color: $base
@@ -78,6 +82,7 @@ footer.footer-main
 
 // newsletter
 .newsletter
+  @include vertical-align()
 
   #mc_embed_signup_scroll
     text-align: center
@@ -130,10 +135,20 @@ footer.footer-main
       background-color: transparent
       color: $red
 
-// past issues
-.past-issues
-  img
-    max-width: 100%
+
+.footer-main nav
+  text-align: right
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+  a
+    @include fontmake($size: 1, $margin: 0, $family: "Raleway", $weight: 400)
+    margin-left: 1rem
+    &:last-of-type
+      margin-right: 0
+    &:hover
+      text-decoration: none
+      @include textback($pull: 6px, $sides: 0px, $color: #ECDBBC)
 
 
 .footer-image

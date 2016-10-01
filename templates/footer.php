@@ -8,50 +8,15 @@
     array('aquamarine',"Aquamarine","2009","fifth","dark"),
     array('red',"Red","2010","sixth","dark"),
     array('brown',"Brown","2011","seventh","light"),
-    array('grey',"Grey","2012","eighth","dark"),
-    array('yellow'
-    ,"Yellow"
-    ,"2013"
-    ,"ninth",
-    "dark",
-    "Emily Carr, Betsy Cornwell, Espido Freire trans. Toshiya Kamei, Carmen Giménez Smith, Joshua Helms, Ben Loory, Peter Markus, Zachary Mason, Lincoln Michel, Shawn Andrew Mitchell, Theresa O'Donnell, Nick Francis Potter, Brandi Wells, ",
-    "Sandra Doller, Anna Maria Hong, Kim Hyesoon trans. Don Mee Choi, Dawn Manning, Janet McNally, Ben Pelhan, Shelley Puhak, Marthe Reed, Li Sung, Changming Yuan",
-    "",
-    ""
+    array('grey',"Grey","2012","eighth","dark","Matt Bell, Wyatt Bonikowski, Maile Chapman, Mimi Chubb, Tara Goedjen, Sara Gong, Aireanne Hjelle, Shane Jones, Krystal Languell, Stacey Levine, Oksana Marafioti, Adam McOmber, Christopher Merkner, David James Poissant, Gretchen Steele Pratt, Matthew Salesses, Kevin Sampsell, J.A. Tyler, Lee Upton, Laura Van Den Berg, Rob Walsh, Jillian Weise, and Kellie Wells","Seth Abramson, Molly Bendall, Brittany Cavallaro, Ashley Elizabeth Hudson, Benjamin Nadler, Andi Olsen/Lance Olsen/Davis Schneiderman, Elizabeth Clark Wessel, and Deborah Woodard","","Desiree Holman, Jessica Joslin, and John Dermot Woods","Guest edited by Alissa Nutting"
     ),
-    array(
-      'emerald',
-      "Emerald",
-      "2014",
-      "tenth",
-      "dark",
-      "Christopher Barzak, Carrie Bennett, Jaydn DeWald, Cate Fricke, Molly Giles, Su-Yee Lin, Kat Meads, Carrie Messenger, Stephanie Nash, Daniel A. Olivas, Brendan Park, Lindsay Stern, Anca L. Szilágyi, Gabriel Thibodeau, Carolyn Turgeon, Katie Wudel",
-      "Grace Bauer, Anat Benzvi, Michael Hurley, Kim Kyung Ju trans. Jake Levine and Jung Hi-Yeon, Cybele Knowles, Sarah Kortemeier, Lindsay Lusby, Katie Manning, Sarah Sarai, Emma Sovich, Lee Upton, Candice Wuehle, Abigail Zimmer",
-      "Matthew Mercier, Beth Steidle",
-      "Andrea Baker"
+    array('yellow',"Yellow","2013","ninth","dark","Emily Carr, Betsy Cornwell, Espido Freire trans. Toshiya Kamei, Carmen Giménez Smith, Joshua Helms, Ben Loory, Peter Markus, Zachary Mason, Lincoln Michel, Shawn Andrew Mitchell, Theresa O'Donnell, Nick Francis Potter, and Brandi Wells","Sandra Doller, Anna Maria Hong, Kim Hyesoon trans. Don Mee Choi, Dawn Manning, Janet McNally, Ben Pelhan, Shelley Puhak, Marthe Reed, Li Sung, and Changming Yuan","","","Guest edited by Lily Hoang"
     ),
-    array(
-      'mauve',
-      "Mauve",
-      "2015",
-      "eleventh",
-      "dark",
-      "Matt Bell, Wyatt Bonikowski, Molly Faerber, Mary Lavallee, Sequoia Nagamatsu, Helen Phillips, Tim Raymond, Elizabeth Frankie Rollins, Emily Temple, Kellie Wells, Rebecca Wolff",
-      "Emma Bolden, Traci Brimhall, Lucas Church, Claire Cronin, Lenny DellaRocca, Majda Gama, Elizabeth Gross, Kirsten Holt, Christina Kloess, Alicia Rebecca Myers, Christian Rees, Richard Siken, Mai Der Vong, Caleb Washburn, Elise Winn, Rachel Zavecz ",
-      "Monica Drake",
-      ""
+    array('emerald',"Emerald","2014","tenth","dark","Christopher Barzak, Carrie Bennett, Jaydn DeWald, Cate Fricke, Molly Giles, Su-Yee Lin, Kat Meads, Carrie Messenger, Stephanie Nash, Daniel A. Olivas, Brendan Park, Lindsay Stern, Anca L. Szilágyi, Gabriel Thibodeau, Carolyn Turgeon, and Katie Wudel","Grace Bauer, Anat Benzvi, Michael Hurley, Kim Kyung Ju trans. Jake Levine and Jung Hi-Yeon, Cybele Knowles, Sarah Kortemeier, Lindsay Lusby, Katie Manning, Sarah Sarai, Emma Sovich, Lee Upton, Candice Wuehle, and Abigail Zimmer","Matthew Mercier and Beth Steidle","Andrea Baker"
     ),
-    array(
-      'ochre',
-      "Ochre",
-      "2016",
-      "twelfth",
-      "light",
-      "Courtney Bird, Jaydn DeWald, Zachary Doss, Kristen Gleason, Kelsie Hahn, Carlea Holl-Jensen, Muriel Leung, Carmen Maria Machado, Aimee Pokwatka, Rachel Richardson, Jasmine Sawers, Ira Sukrungruang",
-      "Caroline Cabrera, Christopher Citro, Rachel Edelman, Rachel Flynn, Rodney Gomez, Laura Grothaus, Coop Lee, Lindsay Lusby, Rebecca Macijeski,  Christopher Nelson, Rebecca Perea-Kane, Broc Rossell, Cecily Schuler, Kim Welliver, Gabrielle Williams, Allyson Young",
-      "Jaclyn Dwyer",
-      "Karen Green and Marta Pelrine-Bacon",
-      ""
+    array('mauve',"Mauve","2015","eleventh","dark","Matt Bell, Wyatt Bonikowski, Molly Faerber, Mary Lavallee, Sequoia Nagamatsu, Helen Phillips, Tim Raymond, Elizabeth Frankie Rollins, Emily Temple, Kellie Wells, and Rebecca Wolff","Emma Bolden, Traci Brimhall, Lucas Church, Claire Cronin, Lenny DellaRocca, Majda Gama, Elizabeth Gross, Kirsten Holt, Christina Kloess, Alicia Rebecca Myers, Christian Rees, Richard Siken, Mai Der Vong, Caleb Washburn, Elise Winn, and Rachel Zavecz ","Monica Drake",""
+    ),
+    array('ochre',"Ochre","2016","twelfth","light","Courtney Bird, Jaydn DeWald, Zachary Doss, Kristen Gleason, Kelsie Hahn, Carlea Holl-Jensen, Muriel Leung, Carmen Maria Machado, Aimee Pokwatka, Rachel Richardson, Jasmine Sawers, Ira Sukrungruang","Caroline Cabrera, Christopher Citro, Rachel Edelman, Rachel Flynn, Rodney Gomez, Laura Grothaus, Coop Lee, Lindsay Lusby, Rebecca Macijeski,  Christopher Nelson, Rebecca Perea-Kane, Broc Rossell, Cecily Schuler, Kim Welliver, Gabrielle Williams, Allyson Young","Jaclyn Dwyer","Karen Green and Marta Pelrine-Bacon",""
     )
   );
 ?>
@@ -73,6 +38,9 @@
     <?php endif; ?>
     <?php if (isset($issues[$issueNo][8]) && $issues[$issueNo][8] !== '') : ?>
     <p>Plus artwork from <?php echo $issues[$issueNo][8] ?></p>
+    <?php endif; ?>
+    <?php if (isset($issues[$issueNo][9]) && $issues[$issueNo][9] !== '') : ?>
+    <p><?php echo $issues[$issueNo][9] ?></p>
     <?php endif; ?>
   </section>
 </section>
@@ -106,6 +74,13 @@
       <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
       <!--End mc_embed_signup-->
     </section>
+
+    <nav>
+      <a class="nav-about">About</a>
+      <a href="<?= esc_url(home_url('/')); ?>submit/">Submit</a>
+      <a href="<?= esc_url(home_url('/')); ?>fairyland/">Fairyland</a>
+      <a href="<?= esc_url(home_url('/')); ?>annual-journal/">Journal</a>
+    </nav>
 
   </div>
 </footer>
