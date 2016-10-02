@@ -22,7 +22,7 @@
   <nav class="nav-social">
     <a href="//twitter.com/fairytalereview"><i class="fa fa-twitter"></i></a>
     <a href="//www.facebook.com/fairytalereview/"><i class="fa fa-facebook"></i></a>
-    <a href="//www.facebook.com/fairytalereview/"><i class="fa fa-instagram"></i></a>
+    <a href="//www.instagram.com/fairytalereview/"><i class="fa fa-instagram"></i></a>
   </nav>
 
   </section>
