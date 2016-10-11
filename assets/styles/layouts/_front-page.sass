@@ -22,53 +22,121 @@
 //****************************
 // FEATURED
 //****************************
+
 .front-page-featured
   margin-bottom: 5rem
-  article
+
+  article:first-of-type
     position: relative
-  .entry-image
-    position: absolute
-    z-index: -1
-    right: 0
-    width: 300px
-    height: 300px
-    margin: 0 auto
-    overflow: hidden
-    clip-path: circle(149px at center)
-    img
-      display: block
-      max-width: 100%
-      height: auto
-  header
+    @include span(6 of 12)
+    height: 400px
+    &:hover h2 a
+      color: $beige
+    .entry-image
+      position: absolute
+      z-index: 0
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      overflow: hidden
+      .overlay
+        position: absolute
+        z-index: 0
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        overflow: hidden
+        background-color: rgba(0,0,0,0.6)
+    header
+      position: relative
+      top: 50%
+      text-align: center
+      h2
+        @include fontmake($size: 2, $line: 2, $family: "Aleo", $weight: 700, $margin: 1)
+        padding: 0 2rem
+        a
+          color: white
+          @include textback($pull: 13px, $color: $purple)
+          &:hover
+            color: $beige
+      .author
+        display: inline-block
+        a
+          color: white
+          @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
+          text-transform: capitalize
+          &:hover
+            color: $beige
+      time
+        color: white
+        @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
+        &::before
+          content: ' / '
+    .entry-summary
+      display: none
+
+
+  article:nth-of-type(2), article:nth-of-type(3)
+    display: none
     position: relative
-    height: 300px
-    margin-bottom: 2rem
-    h2
-      @include fontmake($size: 2.8, $line: 3, $family: "Aleo", $weight: 700)
-      padding-top: 80px
-      text-align: left
-      a
-        color: $purple
-        @include textback($pull: 19px, $color: $grey)
-        &:hover
-          color: $base
-    time
-      color: $red
-      position: absolute
-      bottom: 0px
-      @include fontmake($size: 0.9, $family: "Raleway", $weight: 400, $margin: 0)
-    .author
-      color: $purple
-      position: absolute
-      bottom: 18px
-      @include fontmake($size: 1.2, $family: "Raleway", $weight: 700, $margin: 0)
-      text-transform: capitalize
-      a
-        color: $purple
-  .entry-summary
-    p
-      @include fontmake($size: 1.2, $family: "Merriweather", $weight: 300, $margin: 0)
-      font-style: italic
+    @include span(3 of 12)
+
+    .entry-image
+      display: none
+
+    .entry-summary
+      display: none
+
+
+// .front-page-featured
+//   margin-bottom: 5rem
+//   article
+//     position: relative
+//   .entry-image
+//     position: absolute
+//     z-index: -1
+//     right: 0
+//     width: 300px
+//     height: 300px
+//     margin: 0 auto
+//     overflow: hidden
+//     clip-path: circle(149px at center)
+//     img
+//       display: block
+//       max-width: 100%
+//       height: auto
+//   header
+//     position: relative
+//     height: 300px
+//     margin-bottom: 2rem
+//     h2
+//       @include fontmake($size: 2.8, $line: 3, $family: "Aleo", $weight: 700)
+//       padding-top: 80px
+//       text-align: left
+//       a
+//         color: $purple
+//         @include textback($pull: 19px, $color: $grey)
+//         &:hover
+//           color: $base
+//     time
+//       color: $red
+//       position: absolute
+//       bottom: 0px
+//       @include fontmake($size: 0.9, $family: "Raleway", $weight: 400, $margin: 0)
+//     .author
+//       color: $purple
+//       position: absolute
+//       bottom: 18px
+//       @include fontmake($size: 1.2, $family: "Raleway", $weight: 700, $margin: 0)
+//       text-transform: capitalize
+//       a
+//         color: $purple
+//   .entry-summary
+//     p
+//       @include fontmake($size: 1.2, $family: "Merriweather", $weight: 300, $margin: 0)
+//       font-style: italic
 
 //****************************
 // LATEST ISSUE

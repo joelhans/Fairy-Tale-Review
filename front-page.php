@@ -19,7 +19,7 @@
     $sticky = get_option( 'sticky_posts' );
     query_posts( array(
       'post_type' => 'post',
-      'showposts' => 2,
+      'showposts' => 3,
       'ignore_sticky_posts' => 1,
       'post__not_in' => $sticky
     ));
@@ -43,6 +43,7 @@
 </section>
 <!-- END LATEST ISSUE BANNER -->
 
+<!-- FRONT PAGE QUEUE -->
 <section class="container-wide front-page-queue">
 <?php
   query_posts( array(
@@ -58,3 +59,4 @@
   wp_reset_query();
 ?>
 </section>
+<!-- END FRONT PAGE QUEUE -->
