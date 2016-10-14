@@ -26,12 +26,19 @@
 .front-page-featured
   margin-bottom: 5rem
 
-  article:first-of-type
+  article
     position: relative
-    @include span(6 of 12)
-    height: 400px
-    &:hover h2 a
-      color: $beige
+    height: 300px
+    .entry-link
+      position: absolute
+      z-index: 100
+      top: 0
+      right: 0
+      bottom: 0
+      left: 0
+      overflow: hidden
+      &:hover + .entry-title h2
+        color: $beige
     .entry-image
       position: absolute
       z-index: 0
@@ -49,46 +56,109 @@
         left: 0
         overflow: hidden
         background-color: rgba(0,0,0,0.6)
-    header
+    .entry-title
       position: relative
-      top: 50%
-      text-align: center
-      h2
-        @include fontmake($size: 2, $line: 2, $family: "Aleo", $weight: 700, $margin: 1)
-        padding: 0 2rem
-        a
-          color: white
-          @include textback($pull: 13px, $color: $purple)
-          &:hover
-            color: $beige
+    .entry-meta
+      position: relative
       .author
         display: inline-block
+        @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
+        text-transform: capitalize
+      time
+        display: inline-block
+        @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
+        &::before
+          content: ' / '
+
+  article:first-of-type
+    @include span(6 of 12)
+    text-align: center
+    .entry-link
+      bottom: 25px
+    .entry-title
+      margin-top: 7rem
+      padding: 0 2rem
+      h2
+        display: inline
+        @include fontmake($size: 2, $line: 2, $family: "Aleo", $weight: 700, $margin: 1)
+        color: white
+        @include textback($pull: 13px, $color: $purple)
+        transition: 0.3s all ease-in-out
+    .entry-meta
+      display: inline-block
+      position: relative
+      bottom: 0px
+      text-align: center
+      z-index: 1000
+      .author
+        z-index: 1000
         a
           color: white
-          @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
-          text-transform: capitalize
           &:hover
             color: $beige
       time
         color: white
-        @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
-        &::before
-          content: ' / '
     .entry-summary
       display: none
 
 
   article:nth-of-type(2), article:nth-of-type(3)
-    display: none
     position: relative
     @include span(3 of 12)
-
+    height: 300px
     .entry-image
       display: none
-
+    .entry-link
+      // bottom: 20px
+      &:hover ~ .entry-summary p:before
+        color: $base
+        background-color: $green
+        box-shadow: 0 0 0 9px $green
+    .entry-title
+      position: relative
+      top: 220px
+      text-align: left
+      h2
+        @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
+        color: $base
+        transition: 0.3s all ease-in-out
+    .entry-meta
+      position: absolute
+      bottom: 0px
+      z-index: 1000
+      .author
+        @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
+        z-index: 1000
+      time
+        @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
+        color: $purple
     .entry-summary
-      display: none
-
+      position: relative
+      top: -57px
+      p
+        position: relative
+        text-align: left
+        @include fontmake($size: 1.6, $family: "Aleo", $weight: 700)
+        color: $purple
+        quotes: '\201c' '\201d'
+        z-index: 10
+        transition: 0.3s all ease-in-out
+        &::before
+          content: open-quote
+          display: block
+          position: absolute
+          top: 3px
+          left: -16px
+          width: 12px
+          height: 12px
+          color: $base
+          text-align: center
+          line-height: 27px
+          background-color: $beige
+          border-radius: 50%
+          z-index: -1
+          transition: 0.3s all ease-in-out
+          box-shadow: 0 0 0 1px $beige, 0 0 0 8px $beige
 
 // .front-page-featured
 //   margin-bottom: 5rem
