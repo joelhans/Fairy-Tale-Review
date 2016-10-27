@@ -46,7 +46,7 @@
 <!-- END LATEST ISSUE BANNER -->
 
 <!-- FRONT PAGE QUEUE -->
-<section class="container-wide front-page-queue">
+<!-- <section class="container-wide front-page-queue">
 <?php
   query_posts( array(
     'post_type' => 'post',
@@ -61,5 +61,5 @@
   $do_not_duplicate[] = $post->ID;
   wp_reset_query();
 ?>
-</section>
+</section> -->
 <!-- END FRONT PAGE QUEUE -->

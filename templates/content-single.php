@@ -20,10 +20,10 @@
     </div>
 
     <footer>
-      <p class="byline author vcard"><?= __('', 'sage'); ?><?= get_the_author_meta('description'); ?></p>
-      <div class="author-avatar">
-        <?php echo get_avatar( get_the_author_meta('email') , 250 ); ?>
-      </div>
+      <?php if (trim(get_post_meta($post->ID, 'post_author_bio', true)) == true) : ?>
+      <p class="byline author vcard"><?= __('', 'sage'); ?><?php echo get_post_meta($post->ID, 'post_author_bio', true); ?></p>
+      <div class="author-avatar" style="background-image: url(<?php echo get_site_url(); echo get_post_meta($post->ID, 'post_author_pic', true); ?>);"></div>
+      <?php endif; ?>
     </footer>
 
   </article>

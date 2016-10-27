@@ -9,17 +9,16 @@
     margin-bottom: 6rem
     h1
       color: $purple
-      @include fontmake($size: 3.4, $line: 3.4, $family: "Roboto Slab", $weight: 700, $margin: 2)
+      @include fontmake($size: 3.4, $line: 3.4, $family: "Aleo", $weight: 700, $margin: 4)
     time
       @include fontmake($size: 0.9, $family: "Raleway", $weight: 400)
+      color: $purple
       text-transform: uppercase
     .author
-      color: $purple
-      @include fontmake($size: 1.4, $family: "Raleway", $weight: 400, $margin: 4)
-      text-transform: uppercase
-      letter-spacing: 1px
-      a
-        color: $red
+      text-align: center
+      color: $green
+      @include fontmake($size: 1.2, $family: "Raleway", $weight: 700, $margin: 2)
+      text-transform: capitalize
 
   .entry-content
     @include span(9 of 12 no-gutters)
@@ -29,15 +28,15 @@
     @include span(9 of 12 no-gutters)
     @include pre(1.5 of 12)
     position: relative
-    margin-bottom: 6rem
+    margin-top: 6rem
+    margin-bottom: 8rem
 
     p
-      @include span(6 of 9 first)
+      @include span(6 of 9 first no-gutters)
       @include vertical-align($pos: absolute)
       @include fontmake($size: 1, $family: "Raleway", $weight: 900)
       font-style: italic
-      color: transparentize($red, 0.70)
-
+      color: $purple
       em
         font-style: normal
 
@@ -45,8 +44,14 @@
       @include span(3 of 9 last)
       border-radius: 50%
       position: relative
+      background-size: cover
       overflow: hidden
-      border: 20px solid $red
+      -webkit-transform: translateZ(0)
+      transform: translateZ(0)
+      transition: 0.3s all ease-in-out
+      box-shadow: 0 0 0 2px $green, 0 0 0 10px $beige
+      &:hover
+        box-shadow: 0 0 0 12px $green
       &::before
         content: ''
         display: block
@@ -94,13 +99,13 @@
         margin-top: 100%
       img
         position: absolute
-        top: -25%
+        top: -5%
         bottom: 0
-        left: -25%
+        left: -5%
         right: 0
         object-fit: cover
-        width: 150%
-        height: 150%
+        width: 110%
+        height: 110%
         transition: all 0.5s ease-in-out
 
       div.ftf-number
