@@ -13,3 +13,54 @@
     @include span(9 of 12 no-gutters)
     @include pre(1.5 of 12)
     margin-bottom: 8rem
+
+/**********************************************************/
+/** ISSUE PAGES
+/**********************************************************/
+// .page article.type-page .entry-content
+
+.issue-listing
+  @include span(12 of 12 no-gutters)
+  margin-bottom: 4rem
+
+.issue-listing-meta
+  @include span(4 of 12)
+  img
+    max-width: 100%
+.issue-listing-title
+  @include span(8 of 12)
+  padding-top: 8rem
+  h1
+    @include fontmake($size: 3.4, $line: 3.4, $family: "Aleo", $weight: 700, $margin: 3)
+
+.page-template-page-issue
+  article.type-page
+    .entry-content
+      @include span(12 of 12 no-gutters)
+      @include pre(0)
+      .issue-meta
+        @include span(4 of 12)
+        text-align: center
+        img
+          max-width: 100%
+          margin-bottom: 2rem
+        a
+          position: relative
+          display: inline-block
+          color: $purple
+          text-transform: uppercase
+          background: $grey
+          padding: 1.6rem 3rem
+          @include fontmake($size: 1, $family: "Raleway", $weight: 400, $margin: 1)
+          border-radius: 40px
+          transition: 0.3s all ease
+          span
+            display: block
+            @include fontmake($size: 0.6, $family: "Raleway", $weight: 400, $margin: 0)
+            color: black
+        a.detail
+          padding: 1.163rem 3rem
+          &:hover
+            background: transparentize($grey, 0.3)
+      .issue-description
+        @include span(8 of 12)

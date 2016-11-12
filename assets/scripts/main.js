@@ -60,6 +60,18 @@
           console.log('clicked');
         });
 
+        // Fairyland hover
+        $('.fairyland').hover(function() {
+          // event.stopPropagation();
+          $('.modal-fairyland').fadeIn(300);
+        }, function() {
+          $('.modal-fairyland').fadeOut(300);
+        });
+
+        $('.fairyland').click(function(event) {
+          event.preventDefault();
+        });
+
       },
       finalize: function() {
         // JavaScript to be fired on all pages, after page specific JS is fired

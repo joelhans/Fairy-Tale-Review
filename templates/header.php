@@ -7,8 +7,11 @@
       <i class="fa fa-tree"></i>
       <a class="nav-about">About</a>
       <a href="<?= esc_url(home_url('/')); ?>submit/">Submit</a>
-      <a href="<?= esc_url(home_url('/')); ?>fairyland/">Fairyland</a>
+      <a class="fairyland" href="<?= esc_url(home_url('/')); ?>fairyland/">Fairyland</a>
       <a href="<?= esc_url(home_url('/')); ?>annual-journal/">Journal</a>
+    </div>
+    <div class="modal-fairyland">
+      <p>Our blog is still undergoing some renovation!</p>
     </div>
   </nav>
 
@@ -31,7 +34,7 @@
     <section>
 
     <div class="about-pulldown-hero">
-      <h1><em>Fairy Tale Review</em> is a literary journal dedicated to publishing new fairy-tale fiction, nonfiction, and poetry.</h1>
+      <h1><em>Fairy Tale Review</em> is a literary journal dedicated to publishing new, inclusive, and innovative fairy-tale prose and poetry.</h1>
     </div>
 
     <div class="about-pulldown-third about-pulldown-mission">
@@ -50,35 +53,3 @@
   </div>
 
 </header>
-
-<!-- <header class="banner">
-  <section>
-  <div class="brand">
-    <a href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
-  </div>
-  <nav class="nav-primary">
-    <ul class="social-search">
-      <li>
-        <a href=""><i class="a fa-twitter"></i></a>
-      </li>
-      <li>
-        <a href=""><i class="a fa-facebook"></i></a>
-      </li>
-      <li>
-        <a href=""><i class="a fa-search"></i></a>
-        <section class="sub-menu">
-          <div>
-            <p>Search <em>Fairy Tale Review</em>:</p>
-          </div>
-          <?php get_search_form(); ?>
-        </section>
-      </li>
-    </ul>
-    <?php
-    if (has_nav_menu('primary_navigation')) :
-      wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']);
-    endif;
-    ?>
-  </nav>
-</section>
-</header> -->

@@ -28,6 +28,23 @@
       &:hover
         text-decoration: none
         @include textback($pull: 6px, $sides: 0px, $color: #ECDBBC)
+      &:nth-of-type(3)
+        text-decoration: line-through
+
+.modal-fairyland
+  width: 200px
+  position: absolute
+  left: 120px
+  top: 40px
+  color: white
+  background: $red
+  border-radius: 15px
+  padding: 6px 10px
+  display: none
+  // transition: 0.3s opacity ease, 0.5s margin ease
+  p
+    @include fontmake($size: 0.8, $margin: 0, $family: "Raleway", $weight: 700)
+
 
 .about-pulldown
   background-color: $beige
