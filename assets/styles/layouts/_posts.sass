@@ -16,7 +16,7 @@
       text-transform: uppercase
     .author
       text-align: center
-      color: $green
+      color: $red
       @include fontmake($size: 1.2, $family: "Raleway", $weight: 700, $margin: 2)
       text-transform: capitalize
 
@@ -34,7 +34,7 @@
     p
       @include span(6 of 9 first no-gutters)
       @include vertical-align($pos: absolute)
-      @include fontmake($size: 1, $family: "Raleway", $weight: 900)
+      @include fontmake($size: 1, $family: "Raleway", $weight: 500)
       font-style: italic
       color: $purple
       em
@@ -49,9 +49,9 @@
       -webkit-transform: translateZ(0)
       transform: translateZ(0)
       transition: 0.3s all ease-in-out
-      box-shadow: 0 0 0 2px $green, 0 0 0 10px $beige
+      box-shadow: 0 0 0 1px $red, 0 0 0 11px $yellow
       &:hover
-        box-shadow: 0 0 0 12px $green
+        box-shadow: 0 0 0 12px $red
       &::before
         content: ''
         display: block

@@ -11,7 +11,7 @@ $susy : (
 
 // Header //
 .banner>section {
-  @include container(100em);
+  @include container(70em);
   position: relative;
 }
 .about-pulldown>section { @include container(70em); }
@@ -52,9 +52,7 @@ nav.nav-newer-older, nav.nav-ftf, nav.nav-pins-needles { @include span(12 of 12)
 .single nav .nav-prev { @include span(6 of 12); }
 
 // footer
-.issue-image { @include span(4 of 12); }
-.issue-text { @include span(8 of 12); }
-
-.tagline { @include span(4 of 12); }
-.newsletter { @include span(4 of 12); }
-.footer-main nav { @include span(4 of 12); }
+.issue-rand { @include span(6 of 12 last); }
+.tagline { @include span(6 of 12); }
+.newsletter { @include span(6 of 12); }
+.footer-main nav { @include span(6 of 12); }

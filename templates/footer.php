@@ -4,30 +4,10 @@
     array('blue',"Blue","2005","first","dark","Kim Addonizio, Joshua Beckman & Matthew Rohrer, Aimee Bender, Mary Caponegro, Norman Lock, Stacey Richter, Marjorie Sandor, Donna Tartt, Marina Warner","Julie Choffel, Monica Fambrough, Sarah Hannah, Brent Hendricks, Sarah Veglahn","Kate Bernheimer & Francine Prose & Kiki Smith & Wendy Weitman & Jack Zipes","Kiki Smith",""),
     array('green',"Green","2006","second","light","Brian Baldi, Jedediah Berry, Wendy Brenner, Ayse Papatya Bucak, Rikki Ducornet, Stacey Levine, Joyelle McSweeney, Kat Meads, Lydia Millet, Stacey Richter","Jeanne Marie Beaumont, Paula Bohince, Ann JÄderlund trans. Johannes Goransson, Daniel Khalastchi, Andrew Morgan, Aimee Nezhukumatathil, Arthur Rimbaud trans. Donna Tartt, Carmen Giminez Smith","Cate Marvin","Rikki Ducornet",""),
     array('violet',"Violet","2007","third","light","Lucy Corin, Tracy Daugherty, Espido Freire, Lily Hoang, Natania Rosenfeld, Aurelie Sheehan, Kieran Suckling","Kim Addonizio, Don Mee Choi, Sarah Hannah, Anna Maria Hong, Kim Hyesoon, Jeffrey Levine, Lisa Olstein, David Petruzelli, Richard Siken, Lee Upton, Julie Marie Wade","Kieran Suckling","",""),
-    array('white',"White","2008","fourth","dark",
-    "Greg Bills, Sarah Blackman, Nick Bredie & Nora Lange, Jennifer Calkins, Eve Gil, Maria Tatar",
-    "Lindsay Coleman, Nik De Dominic, Molly Dowd, ",
-    "",
-    "",
-    ""),
-    array('aquamarine',"Aquamarine","2009","fifth","dark",
-    "",
-    "",
-    "",
-    "",
-    ""),
-    array('red',"Red","2010","sixth","dark",
-    "",
-    "",
-    "",
-    "",
-    ""),
-    array('brown',"Brown","2011","seventh","light",
-    "",
-    "",
-    "",
-    "",
-    ""),
+    array('white',"White","2008","fourth"),
+    array('aquamarine',"Aquamarine","2009","fifth"),
+    array('red',"Red","2010","sixth","dark"),
+    array('brown',"Brown","2011","seventh"),
     array('grey',"Grey","2012","eighth","dark","Matt Bell, Wyatt Bonikowski, Maile Chapman, Mimi Chubb, Tara Goedjen, Sara Gong, Aireanne Hjelle, Shane Jones, Krystal Languell, Stacey Levine, Oksana Marafioti, Adam McOmber, Christopher Merkner, David James Poissant, Gretchen Steele Pratt, Matthew Salesses, Kevin Sampsell, J.A. Tyler, Lee Upton, Laura Van Den Berg, Rob Walsh, Jillian Weise, and Kellie Wells","Seth Abramson, Molly Bendall, Brittany Cavallaro, Ashley Elizabeth Hudson, Benjamin Nadler, Andi Olsen/Lance Olsen/Davis Schneiderman, Elizabeth Clark Wessel, and Deborah Woodard","","Desiree Holman, Jessica Joslin, and John Dermot Woods","Guest edited by Alissa Nutting"
     ),
     array('yellow',"Yellow","2013","ninth","dark","Emily Carr, Betsy Cornwell, Espido Freire trans. Toshiya Kamei, Carmen Giménez Smith, Joshua Helms, Ben Loory, Peter Markus, Zachary Mason, Lincoln Michel, Shawn Andrew Mitchell, Theresa O'Donnell, Nick Francis Potter, and Brandi Wells","Sandra Doller, Anna Maria Hong, Kim Hyesoon trans. Don Mee Choi, Dawn Manning, Janet McNally, Ben Pelhan, Shelley Puhak, Marthe Reed, Li Sung, and Changming Yuan","","","Guest edited by Lily Hoang"
@@ -63,22 +43,38 @@
 </section> -->
 
 <footer class="footer-main">
-  <div class="container-wide">
+  <div class="container">
+
+    <section class="issue-rand">
+      <div class="issue-image">
+        <img src="<?= get_template_directory_uri(); ?>/dist/images/covers/FTR_cover_<?php echo $issues[$issueNo][0] ?>.png" />
+      </div>
+      <a class="issue-link" href="<?= esc_url(home_url('/')); echo $issues[$issueNo][0]; ?>"></a>
+      <div class="overlay"></div>
+      <div class="issue-meta">
+        <p>The <?php echo $issues[$issueNo][1] ?> Issue, our <?php echo $issues[$issueNo][3] ?>, was published in <?php echo $issues[$issueNo][2] ?>.</p>
+      </div>
+    </section>
 
     <section class="tagline">
       <h1>Innovation and art through fairy tales since 2005</h1>
     </section>
+
+    <nav>
+      <a class="nav-about">About</a>
+      <a href="<?= esc_url(home_url('/')); ?>submit/">Submit</a>
+      <a href="<?= esc_url(home_url('/')); ?>fairyland/">Fairyland</a>
+      <a href="<?= esc_url(home_url('/')); ?>annual-journal/">Journal</a>
+    </nav>
 
     <section class="newsletter">
       <!-- Begin MailChimp Signup Form -->
       <div id="mc_embed_signup">
         <form action="//fairytalereview.us9.list-manage.com/subscribe/post?u=e9d58a233ee6e7b1e2d17daac&amp;id=4e9a84060c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <div id="mc_embed_signup_scroll">
-    	      <h2>Subscribe to our mailing list</h2>
             <div class="mc-field-group">
-            	<!-- <label for="mce-EMAIL">Email Address </label> -->
-            	<input type="email" value="email address" name="EMAIL" class="required email" id="mce-EMAIL">
-              <input type="submit" value="sign up" name="subscribe" id="mc-embedded-subscribe" class="button">
+            	<input type="email" placeholder="Subscribe to our newsletter" name="EMAIL" class="required email" id="mce-EMAIL">
+              <input type="submit" value="enter" name="subscribe" id="mc-embedded-subscribe" class="button">
             </div>
           	<div id="mce-responses" class="clear">
           		<div class="response" id="mce-error-response" style="display:none"></div>
@@ -91,16 +87,9 @@
       <!--End mc_embed_signup-->
     </section>
 
-    <nav>
-      <a class="nav-about">About</a>
-      <a href="<?= esc_url(home_url('/')); ?>submit/">Submit</a>
-      <a href="<?= esc_url(home_url('/')); ?>fairyland/">Fairyland</a>
-      <a href="<?= esc_url(home_url('/')); ?>annual-journal/">Journal</a>
-    </nav>
-
   </div>
 </footer>
 
-<section class="footer-image">
+<!-- <section class="footer-image">
   <span>Illustration by <a href="http://www.erikarier.com/">Erika Rier</a></span>
-</section>
+</section> -->

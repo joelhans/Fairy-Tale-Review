@@ -1,5 +1,5 @@
 <!-- FRONT PAGE ANNOUNCEMENT -->
-<section class="container front-page-announcement">
+<!-- <section class="container front-page-announcement">
   <?php
     $do_not_duplicate = array();
     query_posts( array(
@@ -12,7 +12,7 @@
     wp_reset_query();
     $do_not_duplicate[] = $post->ID;
   ?>
-</section>
+</section> -->
 <!-- END FRONT PAGE ANNOUNCEMENT -->
 
 <!-- FEATURED ARTICLE -->

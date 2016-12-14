@@ -38,7 +38,7 @@
       left: 0
       overflow: hidden
       &:hover + .entry-title h2
-        color: $beige
+        color: $purple
     .entry-image
       position: absolute
       z-index: 0
@@ -63,7 +63,7 @@
       .author
         display: inline-block
         @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
-        color: $beige
+        color: $red
         text-transform: capitalize
       time
         display: inline-block
@@ -75,7 +75,6 @@
     @include span(6 of 12)
     text-align: center
     .entry-link
-      bottom: 25px
     .entry-title
       margin-top: 7rem
       padding: 0 2rem
@@ -96,7 +95,7 @@
         a
           color: white
           &:hover
-            color: $beige
+            color: $yellow
       time
         color: white
     .entry-summary
@@ -110,11 +109,10 @@
     .entry-image
       display: none
     .entry-link
-      // bottom: 20px
       &:hover ~ .entry-summary p:before
-        color: $base
-        background-color: $green
-        box-shadow: 0 0 0 9px $green
+        color: $purple
+        background-color: $orange
+        box-shadow: 0 0 0 9px $orange
     .entry-title
       position: relative
       top: 220px
@@ -126,10 +124,10 @@
     .entry-meta
       position: absolute
       bottom: 0px
-      z-index: 1000
+      z-index: 10
       .author
         @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
-        z-index: 1000
+        z-index: 10
       time
         @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
         color: $purple
@@ -155,11 +153,11 @@
           color: $base
           text-align: center
           line-height: 27px
-          background-color: $beige
+          background-color: $yellow
           border-radius: 50%
           z-index: -1
           transition: 0.3s all ease-in-out
-          box-shadow: 0 0 0 1px $beige, 0 0 0 8px $beige
+          box-shadow: 0 0 0 1px $yellow, 0 0 0 8px $yellow
 
 // .front-page-featured
 //   margin-bottom: 5rem
@@ -258,9 +256,9 @@
         box-sizing: border-box
         -webkit-transform: translateZ(0)
         transform: translateZ(0)
-        box-shadow: 0 0 0 2px $green, 0 0 0 10px $beige
+        box-shadow: 0 0 0 2px $orange, 0 0 0 10px $yellow
         &:hover
-          box-shadow: 0 0 0 12px $green
+          box-shadow: 0 0 0 12px $yellow
     header
       // position: absolute
       // top: 100px
@@ -279,6 +277,6 @@
         margin: 0 auto
         padding-top: 16px
         background-color: $base
-        color: $green
+        color: $red
         border-radius: 50%
         @include fontmake($size: 0.7, $family: "Raleway", $weight: 700, $margin: 0)

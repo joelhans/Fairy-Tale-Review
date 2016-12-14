@@ -4,7 +4,7 @@
 
   <nav class="nav-primary">
     <div class="nav-bunch">
-      <i class="fa fa-tree"></i>
+      <i class="ftr-mark"></i>
       <a class="nav-about">About</a>
       <a href="<?= esc_url(home_url('/')); ?>submit/">Submit</a>
       <a class="fairyland" href="<?= esc_url(home_url('/')); ?>fairyland/">Fairyland</a>
@@ -38,15 +38,15 @@
     </div>
 
     <div class="about-pulldown-third about-pulldown-mission">
-      <a href="<?= esc_url(home_url('/')); ?>mission/">Our Mission</a>
+      <a href="<?= esc_url(home_url('/')); ?>mission/">Our mission</a>
     </div>
 
     <div class="about-pulldown-third about-pulldown-masthead">
-      <a href="<?= esc_url(home_url('/')); ?>masthead/">Our Masthead</a>
+      <a href="<?= esc_url(home_url('/')); ?>masthead/">Our masthead</a>
     </div>
 
     <div class="about-pulldown-third about-pulldown-contact">
-      <a href="<?= esc_url(home_url('/')); ?>contact/">Contact Us</a>
+      <a href="<?= esc_url(home_url('/')); ?>contact/">Contact us</a>
     </div>
 
     </section>

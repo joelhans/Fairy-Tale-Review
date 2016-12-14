@@ -54,13 +54,14 @@
           @include fontmake($size: 1, $family: "Raleway", $weight: 400, $margin: 1)
           border-radius: 40px
           transition: 0.3s all ease
+          &:hover
+            background: transparentize($grey, 0.5)
           span
             display: block
             @include fontmake($size: 0.6, $family: "Raleway", $weight: 400, $margin: 0)
-            color: black
+            color: $base
         a.detail
           padding: 1.163rem 3rem
-          &:hover
-            background: transparentize($grey, 0.3)
+
       .issue-description
         @include span(8 of 12)
