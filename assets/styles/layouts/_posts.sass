@@ -72,13 +72,11 @@
   p.fairy-tale-file-intro
     @include span(6 of 9)
     @include pre(3 of 9)
-    @include fontmake($size: 1, $family: "Raleway", $weight: 900)
+    @include fontmake($size: 1, $family: "Raleway", $weight: 500, $margin: 3)
     font-style: italic
-    color: transparentize($red, 0.70)
-    margin-bottom: 3rem !important
+    color: $purple
     em
       font-style: normal
-      font-weight: 700
 
   div[class*=ftf-container]
     position: relative

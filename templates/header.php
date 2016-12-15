@@ -4,7 +4,6 @@
 
   <nav class="nav-primary">
     <div class="nav-bunch">
-      <i class="ftr-mark"></i>
       <a class="nav-about">About</a>
       <a href="<?= esc_url(home_url('/')); ?>submit/">Submit</a>
       <a class="fairyland" href="<?= esc_url(home_url('/')); ?>fairyland/">Fairyland</a>

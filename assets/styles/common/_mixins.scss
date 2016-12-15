@@ -1,7 +1,6 @@
 /***************************************************
-*   MIXIN / FONTSIZE
+*   MIXIN / FONTS
 ***************************************************/
-
 @mixin fontmake($size: 1, $line: $size * 1.5, $margin: $size * 1.5, $weight: 400, $family: "Arial", $serif: "sans-serif") {
   font-family   : "#{$family}" , #{$serif};
   font-size     : $size + rem;
@@ -10,22 +9,58 @@
   margin-bottom : $margin + rem;
 }
 
-@mixin font-size($size: 1, $line: $size * 1.5){
-  font-size     : ($size * 16) + px;
-  line-height   : ($line * 16) + px;
-  font-size     : $size + rem;
-  line-height   : $line + rem;
+/***************************************************
+*   MIXIN / POSITIONING
+***************************************************/
+@mixin pos($pos: absolute, $top: 'auto', $right: 'auto', $bottom: 'auto', $left: 'auto') {
+  position: $pos;
+  @if $top != 'auto' {
+    top: $top;
+  }
+  @if $right != 'auto' {
+    right: $right;
+  }
+  @if $bottom != 'auto' {
+    bottom: $bottom;
+  }
+  @if $left != 'auto' {
+    left: $left;
+  }
+}
+
+/***************************************************
+*   MIXIN / HOVER BACKGROUNDS
+***************************************************/
+@mixin hoverback($color: $yellow, $pull: 16px) {
+  position: relative;
+  z-index: 1;
+  transition: 0.3s all ease-in-out;
+  &::after {
+    content: '';
+    display: block;
+    @include pos($bottom: 0px, $left: 0, $top: $pull);
+    width: 100%;
+    background-color: $color;
+    transition: 0.3s all ease-in-out;
+    z-index: -100;
+  }
+  &:hover:after {
+    top: 0px;
+  }
 }
 
 /***************************************************
 *   MIXIN / TEXT BACKGROUNDS
 ***************************************************/
-@mixin textback($pull: 20px, $sides: 5px, $color: #86bbfd, $padding: 5px) {
+@mixin textback($pull: 20px, $sides: 5px, $color: #86bbfd) {
   background: linear-gradient(to bottom, transparent 0px, transparent $pull, $color 0px, $color 9999px);
   padding: 0 $sides;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  text-shadow: 1px -1px 4px transparentize($color, .5);
+  // text-shadow: 1px -1px 4px transparentize($color, .5);
+  &:hover {
+    background: linear-gradient(to bottom, $color 0px, $color 9999px);
+  }
 }
 
 /***************************************************
