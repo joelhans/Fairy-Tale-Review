@@ -31,23 +31,23 @@
 /***************************************************
 *   MIXIN / HOVER BACKGROUNDS
 ***************************************************/
-@mixin hoverback($color: $yellow, $pull: 16px) {
-  position: relative;
-  z-index: 1;
-  transition: 0.3s all ease-in-out;
-  &::after {
-    content: '';
-    display: block;
-    @include pos($bottom: 0px, $left: 0, $top: $pull);
-    width: 100%;
-    background-color: $color;
-    transition: 0.3s all ease-in-out;
-    z-index: -100;
-  }
-  &:hover:after {
-    top: 0px;
-  }
-}
+// @mixin hoverback($color: $yellow, $pull: 16px) {
+//   position: relative;
+//   z-index: 1;
+//   transition: 0.3s all ease-in-out;
+//   &::after {
+//     content: '';
+//     display: block;
+//     @include pos($bottom: 0px, $left: 0, $top: $pull);
+//     width: 100%;
+//     background-color: $color;
+//     transition: 0.3s all ease-in-out;
+//     z-index: -100;
+//   }
+//   &:hover:after {
+//     top: 0px;
+//   }
+// }
 
 /***************************************************
 *   MIXIN / TEXT BACKGROUNDS
@@ -57,7 +57,6 @@
   padding: 0 $sides;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
-  // text-shadow: 1px -1px 4px transparentize($color, .5);
   &:hover {
     background: linear-gradient(to bottom, $color 0px, $color 9999px);
   }

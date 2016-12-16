@@ -27,11 +27,14 @@
   @include span(4 of 12)
   img
     max-width: 100%
+
 .issue-listing-title
   @include span(8 of 12)
   padding-top: 8rem
   h1
     @include fontmake($size: 3.4, $line: 3.4, $family: "Aleo", $weight: 700, $margin: 3)
+    a:hover
+      color: $red
 
 .page-template-page-issue
   article.type-page

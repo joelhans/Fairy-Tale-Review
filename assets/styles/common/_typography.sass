@@ -31,6 +31,7 @@ strong a
 a
   color: $purple
   text-decoration: none
+  @extend .transition
   &:hover
     color: $purple
     text-decoration: none
@@ -83,4 +84,6 @@ hr
     border-radius: 50%
 
 .entry-content a
-  @include textback($color: $orange, $pull: 17px, $sides: 0px)
+  @include textback($color: $orange, $pull: 18px, $sides: 0px)
+.issue-listing p a
+  @include textback($color: $orange, $pull: 18px, $sides: 0px)

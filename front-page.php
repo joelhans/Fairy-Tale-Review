@@ -25,8 +25,12 @@
       'ignore_sticky_posts' => 1,
       'post__not_in' => $do_not_duplicate
     ));
+    $count = 0;
     while (have_posts()) : the_post();
-    get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());
+    $count++;
+    if ( $count == 1 || $count == 6 ) { $article_style = 'one-half'; } else { $article_style = 'one-quarter'; }
+    include( locate_template( 'templates/content.php', false, false ) );
+    // get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());
     endwhile;
     $do_not_duplicate[] = $post->ID;
   ?>
@@ -46,20 +50,24 @@
 <!-- END LATEST ISSUE BANNER -->
 
 <!-- FRONT PAGE QUEUE -->
-<!-- <section class="container-wide front-page-queue">
+<section class="container front-page-queue">
 <?php
   query_posts( array(
     'post_type' => 'post',
-    'showposts' => 12,
+    'showposts' => 6,
     'offset' => 2,
     'ignore_sticky_posts' => 1,
     'post__not_in' => $do_not_duplicate
   ));
+  $count = 0;
   while (have_posts()) : the_post();
-  get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());
+  $count++;
+  if ( $count == 1 || $count == 6 ) { $article_style = 'one-half'; } else { $article_style = 'one-quarter'; }
+  include( locate_template( 'templates/content.php', false, false ) );
+  // get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());
   endwhile;
   $do_not_duplicate[] = $post->ID;
   wp_reset_query();
 ?>
-</section> -->
+</section>
 <!-- END FRONT PAGE QUEUE -->

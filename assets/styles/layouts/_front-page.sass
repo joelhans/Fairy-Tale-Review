@@ -23,15 +23,16 @@
 // FEATURED
 //****************************
 
-.front-page-featured
-  margin-bottom: 5rem
+.front-page-featured,
+.front-page-queue
+  margin-bottom: 6rem
 
   article
     position: relative
     height: 300px
     .entry-link
       position: absolute
-      z-index: 100
+      z-index: 20
       top: 0
       right: 0
       bottom: 0
@@ -71,10 +72,11 @@
         &::before
           content: ' / '
 
-  article:first-of-type
+  article.one-half
     @include span(6 of 12)
     text-align: center
-    .entry-link
+    .entry-link:hover + .entry-title h2
+      color: $orange
     .entry-title
       margin-top: 7rem
       padding: 0 2rem
@@ -82,7 +84,6 @@
         display: inline
         @include fontmake($size: 2, $line: 2, $family: "Aleo", $weight: 700, $margin: 1)
         color: white
-        @include textback($pull: 13px, $color: $purple)
         transition: 0.3s all ease-in-out
     .entry-meta
       display: inline-block
@@ -101,11 +102,11 @@
     .entry-summary
       display: none
 
-
-  article:nth-of-type(2), article:nth-of-type(3)
+  article.one-quarter
     position: relative
     @include span(3 of 12)
     height: 300px
+    margin-bottom: 3rem
     .entry-image
       display: none
     .entry-link
@@ -132,12 +133,12 @@
         @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
         color: $purple
     .entry-summary
-      position: relative
-      top: -57px
+      position: absolute
+      top: 0
       p
         position: relative
         text-align: left
-        @include fontmake($size: 1.6, $family: "Aleo", $weight: 700)
+        @include fontmake($size: 1.6, $line: 2.2, $family: "Aleo", $weight: 700)
         color: $purple
         quotes: '\201c' '\201d'
         z-index: 10
@@ -213,6 +214,7 @@
 .front-page-latest
   background: $cover-ochre
   padding: 4rem 0
+  margin-bottom: 6rem
   article
     text-align: center
     h1
@@ -239,44 +241,44 @@
 //****************************
 // FRONT PAGE QUEUE
 //****************************
-
-.front-page-queue
-  article
-    @include span(3 of 12)
-    height: 650px
-    position: relative
-    margin-bottom: 2rem
-    .entry-image
-      img
-        max-width: 100%
-        min-width: 100%
-        height: auto
-        border-radius: 50%
-        transition: 0.3s all ease-in-out
-        box-sizing: border-box
-        -webkit-transform: translateZ(0)
-        transform: translateZ(0)
-        box-shadow: 0 0 0 2px $orange, 0 0 0 10px $yellow
-        &:hover
-          box-shadow: 0 0 0 12px $yellow
-    header
-      // position: absolute
-      // top: 100px
-      text-align: center
-      .entry-title
-        @include fontmake($size: 1.4rem, $family: "Aleo", $margin: 0.4)
-        a
-          @include textback($pull: 10px, $color: $grey)
-      p.author
-        @include fontmake($size: 0.8, $family: "Raleway", $weight: 400, $margin: 0.4)
-        text-align: center
-      time
-        display: block
-        width: 50px
-        height: 50px
-        margin: 0 auto
-        padding-top: 16px
-        background-color: $base
-        color: $red
-        border-radius: 50%
-        @include fontmake($size: 0.7, $family: "Raleway", $weight: 700, $margin: 0)
+//
+// .front-page-queue
+//   article
+//     @include span(3 of 12)
+//     height: 650px
+//     position: relative
+//     margin-bottom: 2rem
+//     .entry-image
+//       img
+//         max-width: 100%
+//         min-width: 100%
+//         height: auto
+//         border-radius: 50%
+//         transition: 0.3s all ease-in-out
+//         box-sizing: border-box
+//         -webkit-transform: translateZ(0)
+//         transform: translateZ(0)
+//         box-shadow: 0 0 0 2px $orange, 0 0 0 10px $yellow
+//         &:hover
+//           box-shadow: 0 0 0 12px $yellow
+//     header
+//       // position: absolute
+//       // top: 100px
+//       text-align: center
+//       .entry-title
+//         @include fontmake($size: 1.4rem, $family: "Aleo", $margin: 0.4)
+//         a
+//           @include textback($pull: 10px, $color: $grey)
+//       p.author
+//         @include fontmake($size: 0.8, $family: "Raleway", $weight: 400, $margin: 0.4)
+//         text-align: center
+//       time
+//         display: block
+//         width: 50px
+//         height: 50px
+//         margin: 0 auto
+//         padding-top: 16px
+//         background-color: $base
+//         color: $red
+//         border-radius: 50%
+//         @include fontmake($size: 0.7, $family: "Raleway", $weight: 700, $margin: 0)

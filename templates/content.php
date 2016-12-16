@@ -1,4 +1,4 @@
-<article <?php post_class(); ?>>
+<article <?php post_class($article_style); ?>>
 
   <div class="entry-image">
     <div class="overlay"></div>

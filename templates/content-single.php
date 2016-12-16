@@ -27,43 +27,4 @@
     </footer>
 
   </article>
-
-  <!-- <?php if ( in_category('fairy-tale-files') ) : ?>
-
-  <nav class="nav-ftf">
-    <h1>More Fairy-Tale Files</h1>
-    <div class="nav-next">
-      <?php $n = get_adjacent_post(true, '', false);
-            if ( !empty ($n) ) : ?>
-      <a href="<?php echo get_permalink($n->ID); ?>"><?php echo $n->post_title; ?></a>
-      <?php endif; ?>
-    </div>
-    <div class="nav-prev">
-      <?php $p = get_adjacent_post(true, '', true);
-            if ( !empty ($p) ) : ?>
-        <a href="<?php echo get_permalink($p->ID); ?>"><?php echo $p->post_title; ?></a>
-      <?php endif; ?>
-    </div>
-  </nav>
-
-<?php elseif ( in_category('pins-needles') ) : ?>
-
-  <nav class="nav-pins-needles">
-    <h1>More Pins &amp; Needles</h1>
-    <div class="nav-next">
-      <?php $n = get_adjacent_post(true, '', false);
-            if ( !empty ($n) ) : ?>
-      <a href="<?php echo get_permalink($n->ID); ?>"><?php echo $n->post_title; ?></a>
-      <?php endif; ?>
-    </div>
-    <div class="nav-prev">
-      <?php $p = get_adjacent_post(true, '', true);
-            if ( !empty ($p) ) : ?>
-        <a href="<?php echo get_permalink($p->ID); ?>"><?php echo $p->post_title; ?></a>
-      <?php endif; ?>
-    </div>
-  </nav>
-
-  <?php endif; ?> -->
-
 <?php endwhile; ?>
