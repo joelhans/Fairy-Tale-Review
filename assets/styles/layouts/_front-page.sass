@@ -107,17 +107,34 @@
     @include span(3 of 12)
     height: 300px
     margin-bottom: 3rem
+    &::before
+      content: '\201C'
+      display: block
+      position: absolute
+      top: 3px
+      left: -13px
+      width: 12px
+      height: 12px
+      @include fontmake($size: 1.6, $line: 2.2, $family: "Aleo", $weight: 700)
+      color: $base
+      text-align: center
+      line-height: 27px
+      background-color: $yellow
+      border-radius: 50%
+      z-index: 0
+      transition: 0.3s all ease-in-out
+      box-shadow: 0 0 0 1px $yellow, 0 0 0 8px $yellow
+    &:hover:before
+      color: $purple
+      background-color: $orange
+      box-shadow: 0 0 0 9px $orange
     .entry-image
       display: none
-    .entry-link
-      &:hover ~ .entry-summary p:before
-        color: $purple
-        background-color: $orange
-        box-shadow: 0 0 0 9px $orange
     .entry-title
       position: relative
       top: 220px
       text-align: left
+      z-index: 10
       h2
         @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
         color: $base
@@ -135,6 +152,9 @@
     .entry-summary
       position: absolute
       top: 0
+      height: 210px
+      overflow: hidden
+      z-index: 10
       p
         position: relative
         text-align: left
@@ -143,22 +163,6 @@
         quotes: '\201c' '\201d'
         z-index: 10
         transition: 0.3s all ease-in-out
-        &::before
-          content: open-quote
-          display: block
-          position: absolute
-          top: 3px
-          left: -16px
-          width: 12px
-          height: 12px
-          color: $base
-          text-align: center
-          line-height: 27px
-          background-color: $yellow
-          border-radius: 50%
-          z-index: -1
-          transition: 0.3s all ease-in-out
-          box-shadow: 0 0 0 1px $yellow, 0 0 0 8px $yellow
 
 // .front-page-featured
 //   margin-bottom: 5rem

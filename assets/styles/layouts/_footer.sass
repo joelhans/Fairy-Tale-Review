@@ -1,6 +1,22 @@
 // footer
 .footer-main
-  
+  position: relative
+  padding-bottom: 14rem
+  &::after
+    content: ''
+    display: block
+    width: 30px
+    height: 31px
+    @include pos($left: 50%, $bottom: 6rem)
+    margin-left: -10px
+    background-color: $bg
+    background-image: url('../images/ftr_mark.png')
+    background-repeat: no-repeat
+    background-position: center
+    background-size: 20px 21px
+    padding: 5px
+    border-radius: 50%
+
 // issue-image
 .issue-rand
   position: relative
