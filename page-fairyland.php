@@ -1,4 +1,10 @@
-<section class="container loop-archive">
+<?php
+/**
+ * Template Name: Fairyland page
+ */
+?>
+
+<section class="container loop-fairyland">
 
 <?php get_template_part('templates/page', 'header'); ?>
 

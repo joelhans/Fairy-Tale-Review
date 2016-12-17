@@ -49,13 +49,19 @@ if ( function_exists( 'add_theme_support' ) ) {
 
   // additional image sizes
   // delete the next line if you do not need additional image sizes
-  add_image_size( 'front-page-thumb', 300, 300, true ); //300 pixels wide (and unlimited height)
+  add_image_size( 'front-page-thumb', 400, 300, true ); //300 pixels wide (and unlimited height)
 }
 
-/**
- * Add class around p's that contain an image.
- */
-// function add_image_class($content) {
-//   return preg_replace('|<p>(<img[^<]*)</p>|i', '<p class="image-container">${1}</p>', $content);
-// }
-// add_filter('the_content', __NAMESPACE__ . '\\add_image_class');
+function pre_get_posts_front_page( $query ) {
+    // Test for front page index
+    // and ensure that the query is the main query
+    // and not a secondary query (such as a nav menu
+    // or recent posts widget output, etc.
+    if ( is_front_page() && $query->is_main_query() ) {
+        // Modify posts per page
+        $query->set( 'posts_per_page', 9 );
+    }
+}
+add_action( 'pre_get_posts', __NAMESPACE__ . '\\pre_get_posts_front_page' );
+
+?>

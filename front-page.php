@@ -1,73 +1,28 @@
-<!-- FRONT PAGE ANNOUNCEMENT -->
-<!-- <section class="container front-page-announcement">
-  <?php
-    $do_not_duplicate = array();
-    query_posts( array(
-      'post_type' => 'post',
-      'showposts' => 1
-    ));
-    while (have_posts()) : the_post();
-    get_template_part('templates/content-announcement', get_post_type() != 'post' ? get_post_type() : get_post_format());
-    endwhile;
-    wp_reset_query();
-    $do_not_duplicate[] = $post->ID;
-  ?>
-</section> -->
-<!-- END FRONT PAGE ANNOUNCEMENT -->
+<section class="container loop-front-page">
 
-<!-- FEATURED ARTICLE -->
-<section class="container front-page-featured">
-  <?php
-    $sticky = get_option( 'sticky_posts' );
-    query_posts( array(
-      'post_type' => 'post',
-      'showposts' => 3,
-      'ignore_sticky_posts' => 1,
-      'post__not_in' => $do_not_duplicate
-    ));
-    $count = 0;
-    while (have_posts()) : the_post();
-    $count++;
-    if ( $count == 1 || $count == 6 ) { $article_style = 'one-half'; } else { $article_style = 'one-quarter'; }
-    include( locate_template( 'templates/content.php', false, false ) );
-    // get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());
-    endwhile;
-    $do_not_duplicate[] = $post->ID;
-  ?>
-</section>
-<!-- END FEATURED ARTICLE -->
+<!-- THE LOOP -->
+<?php while ( have_posts() ) : the_post(); ?>
+  <?php $article_style = NULL; ?>
 
-<!-- LATEST ISSUE BANNER -->
-<section class="full-width front-page-latest">
-  <section class="container">
-    <article>
-      <h1>'But then to call ochre a color, and not a catalog, is a disservice'</h1>
-      <p>The Ochre Issue has arrived.</p>
-      <a href="/ochre/">Order now</a>
-    </article>
+  <!-- ONE-HALF // 1,4,9 -->
+  <?php if( $wp_query->current_post == 0 || $wp_query->current_post == 3 || $wp_query->current_post == 8 ) { $article_style = 'one-half'; } ?>
+  <!-- END ONE-HALF -->
+  <!-- ONE-QUARTER // 2,3,5,6,7,8 -->
+  <?php if( $wp_query->current_post >= 1 && $wp_query->current_post <= 2 || $wp_query->current_post >= 4 && $wp_query->current_post <= 7 ) { $article_style = 'one-quarter'; } ?>
+  <!-- END ONE-QUARTER -->
+  <!-- BREAK FOR LATEST ISSUE BANNER -->
+  <?php if( $wp_query->current_post == 3 ) : ?>
   </section>
-</section>
-<!-- END LATEST ISSUE BANNER -->
+  <?php get_template_part('templates/content-issue-banner', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
+  <section class="container loop-front-page">
+  <?php endif; ?>
+  <!-- END BREAK FOR LATEST ISSUE BANNER -->
 
-<!-- FRONT PAGE QUEUE -->
-<section class="container front-page-queue">
-<?php
-  query_posts( array(
-    'post_type' => 'post',
-    'showposts' => 6,
-    'offset' => 2,
-    'ignore_sticky_posts' => 1,
-    'post__not_in' => $do_not_duplicate
-  ));
-  $count = 0;
-  while (have_posts()) : the_post();
-  $count++;
-  if ( $count == 1 || $count == 6 ) { $article_style = 'one-half'; } else { $article_style = 'one-quarter'; }
-  include( locate_template( 'templates/content.php', false, false ) );
-  // get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format());
-  endwhile;
-  $do_not_duplicate[] = $post->ID;
-  wp_reset_query();
-?>
+  <!-- LOCATING THE TEMPLATE PART -->
+  <?php include( locate_template( 'templates/content.php', false, false ) ); ?>
+  <!-- DONE LOCATING THE TEMPLATE PART -->
+
+<?php endwhile; ?>
+<!-- END LOOP -->
+
 </section>
-<!-- END FRONT PAGE QUEUE -->

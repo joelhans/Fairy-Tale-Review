@@ -23,13 +23,15 @@
 // FEATURED
 //****************************
 
-.front-page-featured,
-.front-page-queue
+.loop-front-page,
+.loop-archive,
+.loop-fairyland
   margin-bottom: 6rem
 
   article
     position: relative
     height: 300px
+    margin-bottom: 3rem
     .entry-link
       position: absolute
       z-index: 20
@@ -72,97 +74,97 @@
         &::before
           content: ' / '
 
-  article.one-half
-    @include span(6 of 12)
-    text-align: center
-    .entry-link:hover + .entry-title h2
-      color: $orange
-    .entry-title
-      margin-top: 7rem
-      padding: 0 2rem
-      h2
-        display: inline
-        @include fontmake($size: 2, $line: 2, $family: "Aleo", $weight: 700, $margin: 1)
-        color: white
-        transition: 0.3s all ease-in-out
-    .entry-meta
-      display: inline-block
-      position: relative
-      bottom: 0px
-      text-align: center
-      z-index: 10
-      .author
-        z-index: 10
-        a
-          color: white
-          &:hover
-            color: $yellow
-      time
-        color: white
-    .entry-summary
-      display: none
-
-  article.one-quarter
-    position: relative
-    @include span(3 of 12)
-    height: 300px
-    margin-bottom: 3rem
-    &::before
-      content: '\201C'
-      display: block
-      position: absolute
-      top: 3px
-      left: -13px
-      width: 12px
-      height: 12px
-      @include fontmake($size: 1.6, $line: 2.2, $family: "Aleo", $weight: 700)
-      color: $base
-      text-align: center
-      line-height: 27px
-      background-color: $yellow
-      border-radius: 50%
-      z-index: 0
+article.one-half,
+.loop-archive article
+  @include span(6 of 12)
+  text-align: center
+  .entry-link:hover + .entry-title h2
+    color: $orange
+  .entry-title
+    margin-top: 7rem
+    padding: 0 2rem
+    h2
+      display: inline
+      @include fontmake($size: 2, $line: 2, $family: "Aleo", $weight: 700, $margin: 1)
+      color: white
       transition: 0.3s all ease-in-out
-      box-shadow: 0 0 0 1px $yellow, 0 0 0 8px $yellow
-    &:hover:before
+  .entry-meta
+    display: inline-block
+    position: relative
+    bottom: 0px
+    text-align: center
+    z-index: 10
+    .author
+      z-index: 10
+      a
+        color: white
+        &:hover
+          color: $yellow
+    time
+      color: white
+  .entry-summary
+    display: none
+
+article.one-quarter
+  position: relative
+  @include span(3 of 12)
+  height: 300px
+  &::before
+    content: '\201C'
+    display: block
+    position: absolute
+    top: 3px
+    left: -13px
+    width: 12px
+    height: 12px
+    @include fontmake($size: 1.6, $line: 2.2, $family: "Aleo", $weight: 700)
+    color: $base
+    text-align: center
+    line-height: 27px
+    background-color: $yellow
+    border-radius: 50%
+    z-index: 0
+    transition: 0.3s all ease-in-out
+    box-shadow: 0 0 0 1px $yellow, 0 0 0 8px $yellow
+  &:hover:before
+    color: $purple
+    background-color: $orange
+    box-shadow: 0 0 0 9px $orange
+  .entry-image
+    display: none
+  .entry-title
+    position: relative
+    top: 220px
+    text-align: left
+    z-index: 10
+    h2
+      @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
+      color: $base
+      transition: 0.3s all ease-in-out
+  .entry-meta
+    position: absolute
+    bottom: 0px
+    z-index: 10
+    .author
+      @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
+      z-index: 10
+    time
+      @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
       color: $purple
-      background-color: $orange
-      box-shadow: 0 0 0 9px $orange
-    .entry-image
-      display: none
-    .entry-title
+  .entry-summary
+    position: absolute
+    top: 0
+    height: 210px
+    overflow: hidden
+    z-index: 10
+    p
       position: relative
-      top: 220px
       text-align: left
+      @include fontmake($size: 1.6, $line: 2.2, $family: "Aleo", $weight: 700)
+      color: $purple
+      quotes: '\201c' '\201d'
       z-index: 10
-      h2
-        @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
-        color: $base
-        transition: 0.3s all ease-in-out
-    .entry-meta
-      position: absolute
-      bottom: 0px
-      z-index: 10
-      .author
-        @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
-        z-index: 10
-      time
-        @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
-        color: $purple
-    .entry-summary
-      position: absolute
-      top: 0
-      height: 210px
-      overflow: hidden
-      z-index: 10
-      p
-        position: relative
-        text-align: left
-        @include fontmake($size: 1.6, $line: 2.2, $family: "Aleo", $weight: 700)
-        color: $purple
-        quotes: '\201c' '\201d'
-        z-index: 10
-        transition: 0.3s all ease-in-out
+      transition: 0.3s all ease-in-out
 
 // .front-page-featured
 //   margin-bottom: 5rem
