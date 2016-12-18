@@ -28,49 +28,45 @@
         });
 
         // About click
-        $('.nav-about').click(function(event) {
-          event.stopPropagation();
-
-          // If it isn't active -> we show it
-          if ( $('.about-pulldown').hasClass('about-pulldown-active') === false ) {
-            $('.about-pulldown').addClass('about-pulldown-active');
-            $('.nav-brand').removeClass('nav-scrolled');
-          }
-
-          // If it is active -> we hide it
-          else if ( $('.about-pulldown').hasClass('about-pulldown-active') === true ) {
-            $('.about-pulldown').removeClass('about-pulldown-active');
-            if ( $(document).scrollTop() >= 50 ) {
-              $('.nav-brand').toggleClass('nav-scrolled');
-            }
-          }
-
-        });
-
-        $(document).click(function(e){
-          if($(e.target).closest('.about-pulldown').length !== 0 && ! $(e.target).attr('href') ) return false;
-          $('.about-pulldown').removeClass('about-pulldown-active');
-          if ( $(document).scrollTop() > 0 && $('.nav-brand').hasClass('nav-scrolled') === false ) {
-            $('.nav-brand').toggleClass('nav-scrolled');
-          }
-        });
-
-        // Nav click
-        $('.nav-tree').click(function(event) {
-          console.log('clicked');
-        });
-
-        // Fairyland hover
-        $('.fairyland').hover(function() {
-          // event.stopPropagation();
-          $('.modal-fairyland').fadeIn(300);
-        }, function() {
-          $('.modal-fairyland').fadeOut(300);
-        });
-
-        $('.fairyland').click(function(event) {
-          event.preventDefault();
-        });
+        // $('.nav-about').click(function(event) {
+        //   event.stopPropagation();
+        //
+        //   // If it isn't active -> we show it
+        //   if ( $('.about-pulldown').hasClass('about-pulldown-active') === false ) {
+        //     $('.about-pulldown').addClass('about-pulldown-active');
+        //     $('.nav-brand').removeClass('nav-scrolled');
+        //   }
+        //
+        //   // If it is active -> we hide it
+        //   else if ( $('.about-pulldown').hasClass('about-pulldown-active') === true ) {
+        //     $('.about-pulldown').removeClass('about-pulldown-active');
+        //     if ( $(document).scrollTop() >= 50 ) {
+        //       $('.nav-brand').toggleClass('nav-scrolled');
+        //     }
+        //   }
+        //
+        // });
+        //
+        // $(document).click(function(e){
+        //   if($(e.target).closest('.about-pulldown').length !== 0 && ! $(e.target).attr('href') ) return false;
+        //   $('.about-pulldown').removeClass('about-pulldown-active');
+        //   if ( $(document).scrollTop() > 0 && $('.nav-brand').hasClass('nav-scrolled') === false ) {
+        //     $('.nav-brand').toggleClass('nav-scrolled');
+        //   }
+        // });
+        //
+        // // Nav click
+        // $('.nav-tree').click(function(event) {
+        //   console.log('clicked');
+        // });
+        //
+        // // Fairyland hover
+        // $('.fairyland').hover(function() {
+        //   // event.stopPropagation();
+        //   $('.modal-fairyland').fadeIn(300);
+        // }, function() {
+        //   $('.modal-fairyland').fadeOut(300);
+        // });
 
       },
       finalize: function() {

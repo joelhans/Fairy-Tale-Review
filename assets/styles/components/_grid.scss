@@ -30,17 +30,12 @@ $susy : (
 .about-pulldown-third { @include span(4 of 12); }
 
 // front page
-.changes-quote { @include span(12 of 12); }
-.changes-subhead, .changes-explain {
-  @include span(8 of 12);
-  @include push(2 of 12);
- }
 .front-page-featured article { @include span(6 of 12); }
 .front-page-latest article { @include span(12 of 12); }
 
 // archives
-.page-header { @include span(12 of 12); }
-.archive article { @include span(6 of 12); }
+// .page-header { @include span(12 of 12); }
+// .archive article { @include span(6 of 12); }
 
 // pages
 .page article.type-page { @include span(12 of 12); }

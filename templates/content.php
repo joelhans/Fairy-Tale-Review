@@ -1,8 +1,9 @@
 <article <?php post_class($article_style); ?>>
 
-  <div class="entry-image">
+  <?php $url = wp_get_attachment_url( get_post_thumbnail_id() ); ?>
+  <div class="entry-image" style="background-image: url('<?php echo $url; ?>');">
     <div class="overlay"></div>
-    <?php if ( has_post_thumbnail() ) { the_post_thumbnail('large'); } ?>
+
   </div>
 
   <a class="entry-link" href="<?php the_permalink(); ?>"></a>

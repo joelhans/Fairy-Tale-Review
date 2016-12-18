@@ -4,13 +4,10 @@
 
   <nav class="nav-primary">
     <div class="nav-bunch">
-      <a class="nav-about">About</a>
+      <a href="<?= esc_url(home_url('/')); ?>about">About</a>
       <a href="<?= esc_url(home_url('/')); ?>submit/">Submit</a>
-      <a class="fairyland" href="<?= esc_url(home_url('/')); ?>fairyland/">Fairyland</a>
+      <a href="<?= esc_url(home_url('/')); ?>fairyland/">Fairyland</a>
       <a href="<?= esc_url(home_url('/')); ?>annual-journal/">Journal</a>
-    </div>
-    <div class="modal-fairyland">
-      <p>Our blog is still undergoing some renovation!</p>
     </div>
   </nav>
 
@@ -29,7 +26,7 @@
 
   </section>
 
-  <div class="about-pulldown">
+  <!-- <div class="about-pulldown">
     <section>
 
     <div class="about-pulldown-hero">
@@ -49,6 +46,6 @@
     </div>
 
     </section>
-  </div>
+  </div> -->
 
 </header>
