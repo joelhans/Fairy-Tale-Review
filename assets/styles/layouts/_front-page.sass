@@ -1,4 +1,49 @@
 //****************************
+// SPLASH
+//****************************
+.home
+  background: $purple
+
+  header
+    display: none
+
+  main
+    margin-top: 8rem
+    .loop-front-page,
+    .front-page-latest
+      display: none
+
+  footer
+    display: none
+
+  .front-page-splash
+    background: $purple
+    padding: 4rem 0
+    margin-bottom: 0rem
+    article
+      text-align: center
+      h1
+        color: $grey
+        padding: 0 3rem
+        @include fontmake($size: 4, $margin: 2, $family: "Aleo", $weight: 700)
+        text-transform: none
+      p
+        color: $base
+        @include fontmake($size: 1.6, $family: "Raleway", $weight: 700, $margin: 3)
+        text-align: center
+      a
+        display: inline-block
+        color: $cover-ochre
+        text-transform: uppercase
+        background: $grey
+        padding: 1.6rem 3rem
+        @include fontmake($size: 1.2, $family: "Raleway", $weight: 400, $margin: 0)
+        border-radius: 40px
+        transition: 0.3s all ease
+        &:hover
+          background: transparentize($grey, 0.3)
+
+//****************************
 // CHANGE ANNOUNCEMENT
 //****************************
 .front-page-announcement
