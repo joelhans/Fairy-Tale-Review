@@ -41,11 +41,11 @@ h1, h2, h3, h4, h5
   text-rendering: optimizeLegibility
   color: #7d737c
 
-.entry-content h2
-  text-transform: uppercase
+// .entry-content h2
+//   text-transform: uppercase
 
 h1
-  @include fontmake($family: "Raleway", $weight: 700, $size: 1.5)
+  @include fontmake($family: "Raleway", $weight: 700, $size: 1.6)
 
 h2
   @include fontmake($family: "Raleway", $weight: 700, $size: 1.4)
@@ -58,6 +58,13 @@ h4
 
 h5
   @include fontmake($family: "Raleway", $weight: 700, $size: 1)
+
+ul
+  margin-bottom: 2rem
+  li
+    @include fontmake($size: 1.1, $family: "Alegreya")
+    list-style-type: circle
+    margin-bottom: 0.8rem
 
 hr
   position: relative
