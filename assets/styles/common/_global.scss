@@ -7,7 +7,6 @@ html {
 }
 
 html, body {
-  height: 100%;
   @include fontmake(
     $size: 1,
     $family: "Alegreya",
