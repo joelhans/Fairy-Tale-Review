@@ -18,12 +18,13 @@
     <div class="entry-content">
       <?php the_content(); ?>
     </div>
-    
+
 <?php endwhile; ?>
 
     <?php
       query_posts( array(
         'post_type'  => 'page',
+        'posts_per_page' => -1,
         'meta_query' => array(
           array(
             'key'   => '_wp_page_template',
