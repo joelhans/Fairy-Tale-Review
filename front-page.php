@@ -1,13 +1,5 @@
-<section class="full-width front-page-splash">
-  <section class="container">
-    <article>
-      <h1>Excuse us. Things are changing. We'll be back shortly.</h1>
-    </article>
-  </section>
-</section>
-
 <section class="container loop-front-page">
-
+  
 <!-- THE LOOP -->
 <?php while ( have_posts() ) : the_post(); ?>
   <?php $article_style = NULL; ?>

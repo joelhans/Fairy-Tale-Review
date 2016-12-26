@@ -1,69 +1,4 @@
 //****************************
-// SPLASH
-//****************************
-.home
-  background: $purple
-  height: 100%
-
-  header
-    display: none
-
-  main
-    .loop-front-page,
-    .front-page-latest
-      display: none
-
-  footer
-    display: none
-
-  .front-page-splash
-    background: $purple
-    margin-bottom: 0rem
-    article
-      text-align: center
-      h1
-        color: $grey
-        padding: 0 3rem
-        @include fontmake($size: 4, $margin: 2, $family: "Aleo", $weight: 700)
-        text-transform: none
-      p
-        color: $base
-        @include fontmake($size: 1.6, $family: "Raleway", $weight: 700, $margin: 3)
-        text-align: center
-      a
-        display: inline-block
-        color: $cover-ochre
-        text-transform: uppercase
-        background: $grey
-        padding: 1.6rem 3rem
-        @include fontmake($size: 1.2, $family: "Raleway", $weight: 400, $margin: 0)
-        border-radius: 40px
-        transition: 0.3s all ease
-        &:hover
-          background: transparentize($grey, 0.3)
-
-//****************************
-// CHANGE ANNOUNCEMENT
-//****************************
-.front-page-announcement
-  margin-bottom: 6rem
-  article
-    @include span(12 of 12)
-    .entry-content
-      @include span(9 of 12 no-gutters)
-      @include pre(1.5 of 12)
-      h1
-        @include fontmake($size: 3, $family: "Aleo", $weight: 900, $margin: 0)
-        color: $purple
-        text-align: center
-        text-transform: none
-      h1 + p
-        font-style: italic
-        text-align: right
-        @include fontmake($size: 0.8, $margin: 2, $family: "Raleway", $weight: 400)
-        color: $red
-
-//****************************
 // FEATURED
 //****************************
 
@@ -263,7 +198,7 @@ article.one-quarter
 // LATEST ISSUE
 //****************************
 .front-page-latest
-  background: $cover-ochre
+  background: $cover-translucent
   padding: 4rem 0
   margin-bottom: 6rem
   article
@@ -279,7 +214,7 @@ article.one-quarter
       text-align: center
     a
       display: inline-block
-      color: $cover-ochre
+      color: $cover-translucent
       text-transform: uppercase
       background: $grey
       padding: 1.6rem 3rem
