@@ -19,6 +19,10 @@
 <footer class="footer-main">
   <div class="container">
 
+    <section class="tagline">
+      <h1>Innovation and art through fairy tales since 2005</h1>
+    </section>
+
     <section class="issue-rand">
       <div class="issue-image">
         <img src="<?= get_template_directory_uri(); ?>/dist/images/covers/FTR_cover_<?php echo $issues[$issueNo][0] ?>.png" />
@@ -28,10 +32,6 @@
       <div class="issue-meta">
         <p>The <?php echo $issues[$issueNo][1] ?> Issue, our <?php echo $issues[$issueNo][3] ?>, was published in <?php echo $issues[$issueNo][2] ?>.</p>
       </div>
-    </section>
-
-    <section class="tagline">
-      <h1>Innovation and art through fairy tales since 2005</h1>
     </section>
 
     <nav>

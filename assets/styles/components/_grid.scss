@@ -33,22 +33,15 @@ $susy : (
 .front-page-featured article { @include span(6 of 12); }
 .front-page-latest article { @include span(12 of 12); }
 
-// archives
-// .page-header { @include span(12 of 12); }
-// .archive article { @include span(6 of 12); }
-
 // pages
 .page article.type-page { @include span(12 of 12); }
 
 // posts
 .single article.type-post { @include span(12 of 12); }
-nav.nav-newer-older, nav.nav-ftf, nav.nav-pins-needles { @include span(12 of 12); }
-.single nav .nav-next { @include span(6 of 12); }
-.single nav .nav-prev { @include span(6 of 12); }
 
 // footer
-.issue-rand { @include span(6 of 12 last); }
-.tagline { @include span(6 of 12); }
-.newsletter { @include span(6 of 12); }
-.footer-main nav { @include span(6 of 12); }
-.footer-quote { @include span(6 of 12); }
+.issue-rand { @include span(4 of 12 last); }
+.tagline { @include span(8 of 12); }
+.newsletter { @include span(8 of 12); }
+.footer-main nav { @include span(8 of 12); }
+.footer-quote { @include span(8 of 12); }
