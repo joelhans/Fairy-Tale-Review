@@ -53,7 +53,7 @@
 *   MIXIN / TEXT BACKGROUNDS
 ***************************************************/
 @mixin textback($pull: 20px, $sides: 5px, $color: #86bbfd) {
-  background: linear-gradient(to bottom, transparent 0px, transparent $pull, $color 0px, $color 9999px);
+  background: linear-gradient(to bottom, transparent 0px, transparent $pull, $color $pull, $color);
   padding: 0 $sides;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
