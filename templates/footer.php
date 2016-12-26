@@ -61,5 +61,10 @@
       <!--End mc_embed_signup-->
     </section>
 
+    <section class="footer-quote">
+      <blockquote>An encounter with the otherworldly is cause for neither surprise nor fear.</blockquote>
+      <cite>Max Lüthi</cite>
+    </section>
+
   </div>
 </footer>

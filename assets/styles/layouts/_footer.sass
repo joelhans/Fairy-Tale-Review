@@ -104,3 +104,11 @@
     &:hover
       text-decoration: none
       @include textback($pull: 6px, $sides: 0px, $color: #ECDBBC)
+
+.footer-quote
+  blockquote
+    @include fontmake($size: 3, $margin: 0, $family: "Aleo", $weight: 700)
+    color: $red
+  cite
+    @include fontmake($size: 1, $margin: 0, $family: "Raleway", $weight: 400)
+    color: $d-grey
