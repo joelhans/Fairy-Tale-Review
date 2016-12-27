@@ -20,8 +20,6 @@
       <!-- Get pre-order variable -->
       <?php $meta = get_post_meta($post->ID, 'issue_preorder', true); $meta = $meta[0]; ?>
 
-      <?php echo $meta; ?>
-
       <!-- If a preorder -->
       <?php if ( $meta == 'preorder' ): ?>
       <section class="issue-meta">
