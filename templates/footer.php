@@ -62,8 +62,8 @@
     </section>
 
     <section class="footer-quote">
-      <blockquote>An encounter with the otherworldly is cause for neither surprise nor fear.</blockquote>
-      <cite>Max Lüthi</cite>
+      <blockquote>&ldquo;An encounter with the otherworldly is cause for neither surprise nor fear.&rdquo;</blockquote>
+      <cite>&mdash;Max Lüthi</cite>
     </section>
 
   </div>

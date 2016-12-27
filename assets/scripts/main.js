@@ -22,51 +22,46 @@
 
         // Header scroll feature
         $(document).scroll(function() {
-          if ( $('.about-pulldown').hasClass('about-pulldown-active') === false ) {
-            $('.nav-brand, .nav-primary').toggleClass('nav-scrolled', $(document).scrollTop() >= 50);
+          if ( $(document).scrollTop() == 0 ) {
+            $('.nav-brand').removeClass('nav-scrolled');
+          }
+          else {
+            $('.nav-brand').addClass('nav-scrolled');
           }
         });
 
-        // About click
-        // $('.nav-about').click(function(event) {
-        //   event.stopPropagation();
-        //
-        //   // If it isn't active -> we show it
-        //   if ( $('.about-pulldown').hasClass('about-pulldown-active') === false ) {
-        //     $('.about-pulldown').addClass('about-pulldown-active');
-        //     $('.nav-brand').removeClass('nav-scrolled');
-        //   }
-        //
-        //   // If it is active -> we hide it
-        //   else if ( $('.about-pulldown').hasClass('about-pulldown-active') === true ) {
-        //     $('.about-pulldown').removeClass('about-pulldown-active');
-        //     if ( $(document).scrollTop() >= 50 ) {
-        //       $('.nav-brand').toggleClass('nav-scrolled');
-        //     }
-        //   }
-        //
-        // });
-        //
-        // $(document).click(function(e){
-        //   if($(e.target).closest('.about-pulldown').length !== 0 && ! $(e.target).attr('href') ) return false;
-        //   $('.about-pulldown').removeClass('about-pulldown-active');
-        //   if ( $(document).scrollTop() > 0 && $('.nav-brand').hasClass('nav-scrolled') === false ) {
-        //     $('.nav-brand').toggleClass('nav-scrolled');
-        //   }
-        // });
-        //
-        // // Nav click
-        // $('.nav-tree').click(function(event) {
-        //   console.log('clicked');
-        // });
-        //
-        // // Fairyland hover
-        // $('.fairyland').hover(function() {
-        //   // event.stopPropagation();
-        //   $('.modal-fairyland').fadeIn(300);
-        // }, function() {
-        //   $('.modal-fairyland').fadeOut(300);
-        // });
+
+        $('.nav-brand a').click(function(ev) {
+          ev.preventDefault();
+
+          // ACTIVATE SCROLL // IF SCROLLED TO TOP
+          if ( $(document).scrollTop() == 0 && !$('.mobile-nav').hasClass('mobile-enabled') ) {
+            console.log($(document).scrollTop());
+            console.log('activate/top');
+            $('.nav-brand').addClass('nav-scrolled');
+            $('.mobile-nav').addClass('mobile-enabled');
+          }
+
+          // ACTIVATE SCROLL // IF SCROLLED DOWN
+          else if ( $(document).scrollTop() > 0 && !$('.mobile-nav').hasClass('mobile-enabled') ) {
+            console.log('activate/scrolled');
+            $('.mobile-nav').addClass('mobile-enabled');
+          }
+
+          // DEACTIVATE SCROLL // IF SCROLLED TO TOP
+          else if ( $(document).scrollTop() == 0 && $('.mobile-nav').hasClass('mobile-enabled') ) {
+            console.log('deactivate/top');
+            $('.nav-brand').removeClass('nav-scrolled');
+            $('.mobile-nav').removeClass('mobile-enabled');
+          }
+
+          // DEACTIVATE SCROLL // IF SCROLLED DOWN
+          else if ( $(document).scrollTop() > 0 && $('.mobile-nav').hasClass('mobile-enabled') ) {
+            console.log('deactivate/scrolled');
+            $('.mobile-nav').removeClass('mobile-enabled');
+          }
+
+        });
 
       },
       finalize: function() {

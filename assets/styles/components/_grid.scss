@@ -22,13 +22,6 @@ $susy : (
 }
 .nav-social { @include span(4 of 12); }
 
-.about-pulldown-hero {
-  @include span(6 of 12);
-  @include push(3 of 12);
-}
-
-.about-pulldown-third { @include span(4 of 12); }
-
 // front page
 .front-page-featured article { @include span(6 of 12); }
 .front-page-latest article { @include span(12 of 12); }
