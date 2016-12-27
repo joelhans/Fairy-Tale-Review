@@ -1,12 +1,26 @@
-@include susy-breakpoint(50em 60em, 12)
-  .tagline,
-  .newsletter,
-  .footer-main nav,
-  .footer-quote
-    margin-bottom: 2rem
+@include susy-breakpoint(60em 67.5em, 12)
+  // .tagline,
+  // .newsletter,
+  // .footer-main nav,
+  // .footer-quote
+  //   margin-bottom: 3rem
 
   .footer-quote blockquote
     @include fontmake($size: 2, $margin: 0, $family: "Aleo", $weight: 700)
+
+@include susy-breakpoint(50em 60em, 12)
+
+  .tagline h1
+    @include fontmake($family: "Aleo", $size: 2.4, $weight: 700, $margin: 0)
+
+  // .tagline,
+  // .newsletter,
+  // .footer-main nav,
+  // .footer-quote
+  //   margin-bottom: 2rem
+
+  // .footer-quote blockquote
+  //   @include fontmake($size: 1.6, $margin: 0, $family: "Aleo", $weight: 700)
 
 @include susy-breakpoint(0 50em, 8)
 
@@ -72,12 +86,27 @@
   // FAIRYLAND
 
   // ANNUAL JOURNAL
+  .issue-listing
+    @include span(full)
+    // margin: 0
+
   .issue-listing-meta
-    @include span(8 of 8)
+    @include span(6 of 8 no-gutters)
+    @include pre(1)
+    margin-bottom: 2rem
 
   .issue-listing-title
-    @include span(8 of 8)
+    @include span(8 of 8 no-gutters)
     padding-top: 0rem
+
+  // ISSUE PAGES
+  .page-template-page-issue article.type-page .entry-content .issue-meta
+    @include span(6 of 8 no-gutters)
+    @include pre(1)
+    margin-bottom: 2rem
+
+  .page-template-page-issue article.type-page .entry-content .issue-description
+    @include span(8 of 8 no-gutters)
 
   // FOOTER
   .issue-rand
@@ -88,13 +117,16 @@
     margin-bottom: 2rem
   .tagline h1
     text-align: center
+    @include fontmake($family: "Aleo", $size: 2.4, $weight: 700, $margin: 0)
   .newsletter
     @include span(8 of 8)
+    position: relative
     margin-bottom: 2rem
   .newsletter #mc_embed_signup_scroll .mc-field-group
     margin: 0 auto
   .footer-main nav
     @include span(8 of 8)
+    position: relative
     margin-bottom: 2rem
     text-align: center
   .footer-quote

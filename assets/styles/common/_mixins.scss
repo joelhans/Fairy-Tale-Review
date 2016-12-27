@@ -29,27 +29,6 @@
 }
 
 /***************************************************
-*   MIXIN / HOVER BACKGROUNDS
-***************************************************/
-// @mixin hoverback($color: $yellow, $pull: 16px) {
-//   position: relative;
-//   z-index: 1;
-//   transition: 0.3s all ease-in-out;
-//   &::after {
-//     content: '';
-//     display: block;
-//     @include pos($bottom: 0px, $left: 0, $top: $pull);
-//     width: 100%;
-//     background-color: $color;
-//     transition: 0.3s all ease-in-out;
-//     z-index: -100;
-//   }
-//   &:hover:after {
-//     top: 0px;
-//   }
-// }
-
-/***************************************************
 *   MIXIN / TEXT BACKGROUNDS
 ***************************************************/
 @mixin textback($pull: 20px, $sides: 5px, $color: #86bbfd) {
@@ -65,12 +44,12 @@
 /***************************************************
 *   MIXIN / VERTICAL ALIGN
 ***************************************************/
-@mixin vertical-align($pos: relative) {
+@mixin vertical-align($pos: relative, $push: 50%) {
   position: $pos;
-  top: 50%;
-  -webkit-transform: perspective(1px) translateY(-50%);
-  -ms-transform: perspective(1px) translateY(-50%);
-  transform: perspective(1px) translateY(-50%);
+  top: $push;
+  -webkit-transform: perspective(1px) translateY(-$push);
+  -ms-transform: perspective(1px) translateY(-$push);
+  transform: perspective(1px) translateY(-$push);
 }
 
 @mixin clearfix-micro() {
