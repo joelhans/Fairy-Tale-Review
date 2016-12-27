@@ -30,7 +30,7 @@
         <a class="detail" href="<?php echo get_post_meta($post->ID, 'issue_wsup_institution', true); ?>">Buy a copy <span>For institutions</span></a>
       </section>
       <!-- For preorders -->
-      <?php elseif ( $meta == 'preorder' ): ?>
+      <?php elseif ( $meta = 'preorder' ): ?>
       <section class="issue-meta">
         <img src="<?= get_template_directory_uri(); ?>/dist/images/covers/FTR_cover_<?php echo $post->post_name; ?>.png" />
         <a href="<?php echo get_post_meta($post->ID, 'issue_wsup_physical', true); ?>">Pre-order a copy</a>
