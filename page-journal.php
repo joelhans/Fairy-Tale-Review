@@ -34,6 +34,9 @@
       ));
       while (have_posts()) : the_post(); ?>
 
+      <!-- Get pre-order variable -->
+      <?php $meta = get_post_meta($post->ID, 'issue_preorder', true); $meta = $meta[0]; ?>
+
       <section class="issue-listing">
         <section class="issue-listing-meta">
           <a href="<?php the_permalink(); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/covers/FTR_cover_<?php echo $post->post_name; ?>.png" /></a>
@@ -44,7 +47,8 @@
             <!-- name --> <?php echo ucwords($post->post_name); ?>
             Issue, our
             <!-- number --> <?php echo get_post_meta($post->ID, 'issue_number', true); ?>,
-             was published in
+            <!-- tense --> <?php if ( $meta == 'preorder' ): ?>will be <?php else: ?>was <?php endif; ?>
+            published in
             <!-- year --> <?php echo get_post_meta($post->ID, 'issue_year', true); ?>.
           </p>
           <p><a href="<?php the_permalink(); ?>">See more.</a></p>
