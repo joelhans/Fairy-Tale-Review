@@ -20,7 +20,7 @@ $susy : (
   @include span(4 of 12);
   @include push(4 of 12);
 }
-.nav-social { @include span(4 of 12); }
+.nav-social { @include span(4 of 12 last); }
 
 // front page
 .front-page-featured article { @include span(6 of 12); }

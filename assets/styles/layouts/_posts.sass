@@ -1,7 +1,21 @@
 .single article.type-post
   position: relative
   .entry-image
-    display: none
+    @include span(8 of 12)
+    @include pre(2)
+    text-align: center
+    margin-bottom: 6rem
+    img
+      max-width: 100%
+      height: auto
+    cite
+      @include fontmake($size: 0.7, $family: "Raleway", $weight: 700)
+      color: $orange
+      text-transform: uppercase
+      a:hover
+        color: $orange
+
+
   header
     text-align: center
     @include span(9 of 12 no-gutters)
