@@ -6,12 +6,14 @@
       <?php get_template_part('templates/entry-meta'); ?>
     </header>
 
+    <!-- Get illustration variable. -->
+    <?php $illustration = get_post_meta($post->ID, 'post_illustration_display', true); $meta = $meta[0]; ?>
+    <?php if ( has_post_thumbnail() && $illustration == true ): ?>
     <div class="entry-image">
-    <?php if ( has_post_thumbnail() ) {
-       the_post_thumbnail('full');
-      } ?>
-      <cite>Artwork by <a href="<?php echo get_post_meta($post->ID, 'post_illustrator_url', true); ?>"><?php echo get_post_meta($post->ID, 'post_illustrator', true); ?></a>.</cite>
+       <?php the_post_thumbnail('full'); ?>
+       <cite>Artwork by <a href="<?php echo get_post_meta($post->ID, 'post_illustrator_url', true); ?>"><?php echo get_post_meta($post->ID, 'post_illustrator', true); ?></a>.</cite>
     </div>
+  <?php endif; ?>
 
     <div class="entry-content">
       <?php if ( in_category('fairy-tale-files') ) : ?>
