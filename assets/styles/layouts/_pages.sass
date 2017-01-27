@@ -37,14 +37,15 @@ nav.posts-navigation
     text-align: left
 
 .masthead-member
-  @include span(6 of 6 no-gutters)
-    margin-bottom: 4rem
+  +span(full inside no-gutters)
+  margin-bottom: 4rem
 
 .masthead-meta
-  @include span(2 of 6 no-gutters)
+  @include span(3 of 9 no-gutters)
+  // +pre(-1)
 
 .masthead-img
-  @include span(full)
+  +span(full inside no-gutters)
   background-size: cover
   border-radius: 50%
   margin-bottom: 10px
@@ -59,7 +60,7 @@ nav.posts-navigation
   text-align: center
 
 .masthead-bio
-  @include span(4 of 6 last no-gutters)
+  @include span(6 of 9 last no-gutters)
 
 /**********************************************************/
 /** FAIRYLAND

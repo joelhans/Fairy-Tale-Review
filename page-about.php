@@ -21,7 +21,7 @@
   <article class="post-6 page type-page status-publish hentry">
     <div class="entry-content">
 
-      <?php for ($x = 1; $x <= 11; $x++): ?>
+      <?php for ($x = 1; $x <= 20; $x++): ?>
         <?php $y = str_pad($x, 2, "0", STR_PAD_LEFT); $title = 'masthead_'.$y.'_title'; $bio = 'masthead_'.$y; ?>
         <?php $attachment_id = get_post_meta($post->ID, 'masthead_'.$y.'_img', true); ?>
         <?php if ( $attachment_id == '' ) { return; }; ?>
