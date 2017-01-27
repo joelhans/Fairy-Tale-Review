@@ -39,6 +39,20 @@
     </div>
   </article>
 
+  <section class="about-advisory">
+    <h1>Our advisory board</h1>
+  </section>
+
+  <article class="post-6 page type-page status-publish hentry">
+    <div class="entry-content">
+      <p>Donald Haase, Wayne State University<br />
+        Maria Tatar, Harvard University<br />
+        Jack Zipes, University of Minnesota<br />
+      </p>
+      <p>Contributing Editor: Timothy Schaffert, University of Nebraska</p>
+    </div>
+  </article>
+
   <section class="about-contact">
     <h1>How to reach us</h1>
   </section>
