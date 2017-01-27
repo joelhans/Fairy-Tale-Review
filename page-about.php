@@ -24,7 +24,7 @@
       <?php for ($x = 1; $x <= 20; $x++): ?>
         <?php $y = str_pad($x, 2, "0", STR_PAD_LEFT); $title = 'masthead_'.$y.'_title'; $bio = 'masthead_'.$y; ?>
         <?php $attachment_id = get_post_meta($post->ID, 'masthead_'.$y.'_img', true); ?>
-        <?php if ( $attachment_id == '' ) { return; }; ?>
+        <?php if ( !$attachment_id == '' ): ?>
         <section class="masthead-member clearfix">
           <div class="masthead-meta">
             <div class="masthead-img" style="background-image: url(<?php echo wp_get_attachment_url( $attachment_id ); ?>);"></div>
@@ -34,6 +34,7 @@
             <p><?php echo get_post_meta($post->ID, $bio, true); ?></p>
           </div>
         </section>
+        <?php endif; ?>
       <?php endfor; ?>
 
     </div>
@@ -69,9 +70,5 @@
       </p>
     </div>
   </article>
-
-
-
-
 
 </section>
