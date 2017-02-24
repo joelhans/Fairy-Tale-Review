@@ -34,7 +34,7 @@
         <p class="ftf-text"><?php echo get_post_meta($post->ID, 'ftf-03-text', true); ?></p>
         <img class="ftf-image" src="<?php echo wp_get_attachment_url( get_post_meta($post->ID, 'ftf-03-img', true) ); ?>" />
       </div>
-    <div>
+    </div>
 
     <?php elseif ( in_category('fairy-tale-files') && $ftf_01_text == false ): ?>
     <div class="entry-content">
