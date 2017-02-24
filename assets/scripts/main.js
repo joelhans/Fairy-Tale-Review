@@ -94,32 +94,6 @@
     'single_post': {
       init: function() {
         // JavaScript to be fired on posts
-        if ( $('main .container article').is('.category-fairy-tale-files') ) {
-
-          $('p, figure').has('img').addClass('image-container');
-
-          console.log("TESTING TESTING");
-          var container1 = $('.image-container')[0];
-          var container2 = $('.image-container')[1];
-          var container3 = $('.image-container')[2];
-
-          var number_01 = '<div class="ftf-number"><p>1</p></div>';
-          var number_02 = '<div class="ftf-number"><p>2</p></div>';
-          var number_03 = '<div class="ftf-number"><p>3</p></div>';
-
-          $(container1).nextUntil(container2).wrapAll( "<div class='ftf-container-01'><div class='ftf-text'></div></div>" );
-          $(container1).appendTo('.ftf-container-01');
-          $(container1).append(number_01);
-
-          $(container2).nextUntil(container3).wrapAll( "<div class='ftf-container-02'><div class='ftf-text'></div></div>" );
-          $(container2).appendTo('.ftf-container-02');
-          $(container2).append(number_02);
-
-          $(container3).nextUntil('footer').wrapAll( "<div class='ftf-container-03'><div class='ftf-text'></div></div>" );
-          $(container3).appendTo('.ftf-container-03');
-          $(container3).append(number_03);
-
-        }
       }
     }
   };

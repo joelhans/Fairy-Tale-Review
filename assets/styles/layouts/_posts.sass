@@ -81,76 +81,90 @@
         width: 100%
         height: 100%
 
-.single article.category-fairy-tale-files .entry-content
 
-  p.fairy-tale-file-intro
-    @include span(6 of 9)
-    @include pre(3 of 9)
-    @include fontmake($size: 1, $family: "Raleway", $weight: 500, $margin: 3)
-    font-style: italic
-    color: $purple
-    em
-      font-style: normal
+/************************************/
+/* FAIRY TALE FILES                 */
+/************************************/
+.ftf-intro
+  @include fontmake($size: 1, $family: "Raleway", $weight: 500, $margin: 3)
+  font-style: italic
+  color: $purple
+  em
+    font-style: normal
 
-  div[class*=ftf-container]
-    position: relative
-    margin-bottom: 6rem
-    @include clearfix-micro()
+.ftf-container
+  position: relative
+  margin: 6rem 0
+  @include clearfix-micro()
 
-    .image-container
-      @include span(4 of 9)
-      margin-left: -(span(1) + gutter(9) + gutter(9))
-      clip-path: circle(50% at center)
-      position: relative
-      z-index: 10
-      transition: all 0.3s ease-in-out
-      overflow: hidden
-      &::before
-        content: ''
-        display: block
-        margin-top: 100%
-      img
-        position: absolute
-        top: -5%
-        bottom: 0
-        left: -5%
-        right: 0
-        object-fit: cover
-        width: 110%
-        height: 110%
-        transition: all 0.5s ease-in-out
+.ftf-text
+  +span(7 of 9 last)
+  margin-right: -(span(3) - gutter(12))
+  margin-left: 0
 
-      div.ftf-number
-        position: absolute
-        top: 50%
-        left: 50%
-        width: 96px
-        height: 96px
-        transform: perspective(1px) translateX(-50%) translateY(-50%)
-        z-index: 20
-        background: white
-        border-radius: 50%
-        opacity: 1
-        transition: opacity 0.3s ease-in-out
-        p
-          @include fontmake($family: 'Alegreya', $size: 4, $margin: 0, $line: 6)
-          color: $red
-          text-align: center
+.ftf-image
+  @include span(6 of 9)
+  margin-left: -(span(2) + gutter(9) + gutter(9) + gutter(9))
 
-      &:hover
-        clip-path: circle(100% at center)
-
-        img
-          width: 100%
-          height: 100%
-          top: 0
-          left: 0
-
-        div.ftf-number
-          opacity: 0
-
-    div.ftf-text
-      @include span(6 of 9 last)
+  // div[class*=ftf-container]
+  //   position: relative
+  //   margin-bottom: 6rem
+  //   @include clearfix-micro()
+  //
+  //   .image-container
+  //     @include span(4 of 9)
+  //     margin-left: -(span(1) + gutter(9) + gutter(9))
+  //     clip-path: circle(50% at center)
+  //     position: relative
+  //     z-index: 10
+  //     transition: all 0.3s ease-in-out
+  //     overflow: hidden
+  //     &::before
+  //       content: ''
+  //       display: block
+  //       margin-top: 100%
+  //     img
+  //       position: absolute
+  //       top: -5%
+  //       bottom: 0
+  //       left: -5%
+  //       right: 0
+  //       object-fit: cover
+  //       width: 110%
+  //       height: 110%
+  //       transition: all 0.5s ease-in-out
+  //
+  //     div.ftf-number
+  //       position: absolute
+  //       top: 50%
+  //       left: 50%
+  //       width: 96px
+  //       height: 96px
+  //       transform: perspective(1px) translateX(-50%) translateY(-50%)
+  //       z-index: 20
+  //       background: white
+  //       border-radius: 50%
+  //       opacity: 1
+  //       transition: opacity 0.3s ease-in-out
+  //       p
+  //         @include fontmake($family: 'Alegreya', $size: 4, $margin: 0, $line: 6)
+  //         color: $red
+  //         text-align: center
+  //
+  //     &:hover
+  //       clip-path: circle(100% at center)
+  //
+  //       img
+  //         width: 100%
+  //         height: 100%
+  //         top: 0
+  //         left: 0
+  //
+  //       div.ftf-number
+  //         opacity: 0
+    //
+    // div.ftf-text
+    //   @include span(6 of 9 last)
 
 
 /**********************************************************/
