@@ -23,15 +23,21 @@
     <div class="entry-content">
       <p class="ftf-intro">Fairy-Tale Files, published once weekly, feature three variations of a fairy tale chosen by one of <em>Fairy Tale Review</em>’s editors, readers, editorial assistants, or contributors.</p>
       <div class="ftf-container">
-        <p class="ftf-text"><?php echo get_post_meta($post->ID, 'ftf-01-text', true); ?></p>
+        <div class="ftf-text">
+          <?php echo wpautop( get_post_meta( $post->ID, 'ftf-01-text', true ) ); ?>
+        </div>
         <img class="ftf-image" src="<?php echo wp_get_attachment_url( get_post_meta($post->ID, 'ftf-01-img', true) ); ?>" />
       </div>
       <div class="ftf-container">
-        <p class="ftf-text"><?php echo get_post_meta($post->ID, 'ftf-02-text', true); ?></p>
+        <div class="ftf-text">
+          <?php echo wpautop( get_post_meta( $post->ID, 'ftf-02-text', true ) ); ?>
+        </div>
         <img class="ftf-image" src="<?php echo wp_get_attachment_url( get_post_meta($post->ID, 'ftf-02-img', true) ); ?>" />
       </div>
       <div class="ftf-container">
-        <p class="ftf-text"><?php echo get_post_meta($post->ID, 'ftf-03-text', true); ?></p>
+        <div class="ftf-text">
+          <?php echo wpautop( get_post_meta( $post->ID, 'ftf-03-text', true ) ); ?>
+        </div>
         <img class="ftf-image" src="<?php echo wp_get_attachment_url( get_post_meta($post->ID, 'ftf-03-img', true) ); ?>" />
       </div>
     </div>
