@@ -22,6 +22,6 @@
     }
   },
   "config": {
-    "devUrl": "http://localhost/wp-ftr"
+    "devUrl": "http://127.0.0.1"
   }
 }

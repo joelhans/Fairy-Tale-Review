@@ -1,0 +1,83 @@
+$susy : ( container: 85rem, columns: 12, gutters: .75, box-sizing: border-box, gutter-position: split )
+
+.wrap
+  +container()
+
+.row
+  width: span(12)
+  display: flex
+
+.col__12
+  width: span(12)
+  @media (min-width: 0em) and (max-width: 40em)
+    width: span(12)
+
+.col__8
+  width: span(8)
+  @media (min-width: 0em) and (max-width: 40em)
+    width: span(12)
+
+.col__6
+  width: span(6)
+  @media (min-width: 0em) and (max-width: 45em)
+    width: span(12)
+
+.col__4
+  width: span(4)
+  margin-right: gutter() + gutter
+  @media (min-width: 0em) and (max-width: 45em)
+    width: span(12)
+  &:nth-of-type(3)
+   margin-right: 0
+
+.col__2
+  width: span(2)
+  @media (min-width: 0em) and (max-width: 45em)
+    width: span(12)
+
+// Full grid //
+.container
+  @include container(70em)
+.container-wide
+  @include container(100em)
+
+// Header //
+.banner>section
+  @include container(70em)
+  position: relative
+
+.about-pulldown>section
+  @include container(70em)
+
+.nav-brand
+  @include span(4 of 12)
+  @include push(4 of 12)
+
+.nav-social
+  @include span(4 of 12 last)
+
+// front page
+.front-page-featured article
+  @include span(6 of 12)
+.front-page-latest article
+  @include span(12 of 12)
+
+// pages
+.page article.type-page
+  @include span(12 of 12)
+
+// posts
+.single article.type-post
+  @include span(12 of 12)
+
+// footer
+.issue-rand
+  @include span(4 of 12 last)
+.tagline
+  @include span(8 of 12)
+.newsletter
+  @include span(8 of 12)
+.footer-main nav
+  @include span(8 of 12)
+.footer-quote
+  @include span(8 of 12)
