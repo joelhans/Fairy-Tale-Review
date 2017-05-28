@@ -1,28 +1,22 @@
-<section class="container loop-front-page">
-  
-<!-- THE LOOP -->
-<?php while ( have_posts() ) : the_post(); ?>
-  <?php $article_style = NULL; ?>
+<header class="marquee">
 
-  <!-- ONE-HALF // 1,4,9 -->
-  <?php if( $wp_query->current_post == 0 || $wp_query->current_post == 3 || $wp_query->current_post == 8 ) { $article_style = 'one-half'; } ?>
-  <!-- END ONE-HALF -->
-  <!-- ONE-QUARTER // 2,3,5,6,7,8 -->
-  <?php if( $wp_query->current_post >= 1 && $wp_query->current_post <= 2 || $wp_query->current_post >= 4 && $wp_query->current_post <= 7 ) { $article_style = 'one-quarter'; } ?>
-  <!-- END ONE-QUARTER -->
-  <!-- BREAK FOR LATEST ISSUE BANNER -->
-  <?php if( $wp_query->current_post == 3 ) : ?>
-  </section>
-  <?php get_template_part('templates/content-issue-banner', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
-  <section class="container loop-front-page">
-  <?php endif; ?>
-  <!-- END BREAK FOR LATEST ISSUE BANNER -->
+  <?php $query_marquee = new WP_Query('&posts_per_page=3');
+    while ($query_marquee->have_posts()) : $query_marquee->the_post();
+    $do_not_duplicate[] = $post->ID;
+    $article_style = 'col__4'; ?>
 
-  <!-- LOCATING THE TEMPLATE PART -->
-  <?php include( locate_template( 'templates/content.php', false, false ) ); ?>
-  <!-- DONE LOCATING THE TEMPLATE PART -->
+    <?php include( locate_template( 'templates/content.php', false, false ) ); ?>
 
-<?php endwhile; ?>
-<!-- END LOOP -->
+  <?php endwhile; ?>
 
-</section>
+</header>
+
+<div class="core">
+
+  <?php while ( have_posts() ) : the_post();
+    if( in_array( $post->ID, $do_not_duplicate ) ) continue;
+    $article_style = 'col__4'; ?>
+    <?php include( locate_template( 'templates/content.php', false, false ) ); ?>
+  <?php endwhile; ?>
+
+</div>

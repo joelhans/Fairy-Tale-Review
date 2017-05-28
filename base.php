@@ -20,7 +20,7 @@ use Roots\Sage\Wrapper;
       get_template_part('templates/header');
     ?>
 
-    <main role="document">
+    <main class="wrap" role="document">
       <?php include Wrapper\template_path(); ?>
     </main>
 
