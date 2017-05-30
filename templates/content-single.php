@@ -57,7 +57,9 @@
 
     <footer>
       <?php if (trim(get_post_meta($post->ID, 'post_author_bio', true)) == true) : ?>
-      <p class="byline author vcard"><?= __('', 'sage'); ?><?php echo get_post_meta($post->ID, 'post_author_bio', true); ?></p>
+      <div class="post__author">
+        <?= __('', 'sage'); ?><?php echo wpautop( get_post_meta($post->ID, 'post_author_bio', true) ); ?>
+      </div>
       <?php $attachment_id = get_post_meta($post->ID, 'post_author_pic', true); ?>
       <div class="author-avatar" style="background-image: url(<?php echo wp_get_attachment_url( $attachment_id ); ?>);"></div>
       <?php endif; ?>
