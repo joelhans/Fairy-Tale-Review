@@ -1,0 +1,2 @@
+*.css merge=ours
+*.css.map merge=ours
