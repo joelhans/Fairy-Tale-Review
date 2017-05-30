@@ -9,30 +9,42 @@
       max-width: 100%
       height: auto
     cite
-      @include fontmake($size: 0.7, $family: "Raleway", $weight: 700)
       color: $orange
+      display: block
+      +fontmake($size: 0.7, $family: "Raleway", $weight: 700)
+      margin-top: 0.4rem
       text-transform: uppercase
       a:hover
         color: $orange
-
 
   header
     text-align: center
     @include span(9 of 12 no-gutters)
     @include pre(1.5 of 12)
     margin-bottom: 6rem
+
     h1
       color: $purple
       @include fontmake($size: 3.4, $line: 3.4, $family: "Aleo", $weight: 700, $margin: 4)
-    time
-      @include fontmake($size: 0.9, $family: "Raleway", $weight: 400)
-      color: $purple
-      text-transform: uppercase
+
     .author
       text-align: center
       color: $red
       @include fontmake($size: 1.2, $family: "Raleway", $weight: 700, $margin: 2)
       text-transform: capitalize
+
+    time
+      color: $purple
+      +fontmake($size: 0.9, $family: "Raleway", $weight: 400)
+      margin-bottom: 2rem
+      text-transform: uppercase
+
+    .meta__issue
+      font-size: 0.9rem
+      font-style: italic
+      line-height: 1.5
+      margin-top: 2rem
+      text-align: center
 
   .entry-content
     @include span(9 of 12 no-gutters)
@@ -45,13 +57,17 @@
     margin-top: 6rem
     margin-bottom: 8rem
 
-    p
-      @include span(6 of 9 first no-gutters)
-      @include vertical-align($pos: absolute)
-      @include fontmake($size: 1, $family: "Raleway", $weight: 500)
-      font-style: italic
+    .post__author
+      +span(6 of 9 first no-gutters)
       color: $purple
-      em
+      margin-bottom: 0
+
+      p
+        font-size: 0.9rem
+        line-height: 1.5
+        font-style: italic
+
+      em, i
         font-style: normal
 
     div.author-avatar
@@ -60,12 +76,7 @@
       position: relative
       background-size: cover
       overflow: hidden
-      -webkit-transform: translateZ(0)
-      transform: translateZ(0)
-      transition: 0.3s all ease-in-out
-      box-shadow: 0 0 0 1px $red, 0 0 0 11px $yellow
-      &:hover
-        box-shadow: 0 0 0 12px $red
+
       &::before
         content: ''
         display: block
