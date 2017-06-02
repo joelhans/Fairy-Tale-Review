@@ -31,7 +31,6 @@ strong a
 a
   color: $purple
   text-decoration: none
-  @extend .transition
   &:hover
     color: $purple
     text-decoration: none
@@ -40,9 +39,6 @@ a
 h1, h2, h3, h4, h5
   text-rendering: optimizeLegibility
   color: #7d737c
-
-// .entry-content h2
-//   text-transform: uppercase
 
 h1
   font: 700 1.6rem/1.5 "Raleway", sans-serif
@@ -90,5 +86,11 @@ hr
     padding: 5px
     border-radius: 50%
 
-.entry-content img
-  max-width: 100%
+.content__area
+
+  a
+    +textback($color: $orange, $pull: 18px, $sides: 0px)
+    transition: background 0.3s ease-in-out
+
+  img
+    max-width: 100%

@@ -1,3 +1,7 @@
+//*********************************************************
+// GRID SETTINGS AND CONFIGURATIONS
+//*********************************************************
+
 $susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gutter-position: after )
 
 .wrap
@@ -7,25 +11,9 @@ $susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gut
   display: flex
   flex-wrap: wrap
 
-@mixin col__8($ctx: 12)
-  flex: 1 1 span(8 of $ctx)
-  margin-right: gutter($ctx)
-  margin-bottom: gutter($ctx)
-
-@mixin col__6($ctx: 12)
-  flex: 1 1 span(6 of $ctx)
-  margin-right: gutter($ctx)
-  margin-bottom: gutter($ctx)
-
-@mixin col__4($ctx: 12)
-  flex: 1 1 span(4 of $ctx)
-  margin-right: gutter($ctx)
-  margin-bottom: gutter($ctx)
-
-@mixin col__2($ctx: 12)
-  flex: 1 1 span(2 of $ctx)
-  margin-right: gutter($ctx)
-  margin-bottom: gutter($ctx)
+//*********************************************************
+// GRID LOOP
+//*********************************************************
 
 @mixin col($span:6,$ctx:12)
   flex: 1 1 span($span of $ctx)
@@ -38,6 +26,20 @@ $susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gut
 
   .col__#{$i}--8
     +col($span:$i,$ctx:8)
+
+//*********************************************************
+// OFFSETS
+//*********************************************************
+// 
+// @mixin off($push:2,$ctx:12)
+//   +push($push of $ctx)
+//
+// @for $i from 1 through 11
+//   .off__#{$i}
+//     +col($span:$i,$ctx:12)
+//
+//   .off__#{$i}--8
+//     +col($span:$i,$ctx:8)
 
 
 @mixin off__4($ctx:12)

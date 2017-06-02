@@ -6,6 +6,30 @@
 
 <?php use Roots\Sage\Titles; ?>
 
+<div class="page__wrap">
+
+  <article class="page page--journal">
+
+    <header class="page__header col__12">
+      <h1><?= Titles\title(); ?></h1>
+    </header>
+
+    <div class="journal__content content__area col__6">
+      <?php
+        while (have_posts()) : the_post();
+          the_content();
+        endwhile;
+      ?>
+    </div>
+
+    <div class="journal__issues col__6">
+      <h1>hi!</h1>
+    </div>
+
+  </article>
+
+</div>
+
 <section class="container">
 <?php while (have_posts()) : the_post(); ?>
 

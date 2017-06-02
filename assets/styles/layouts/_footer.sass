@@ -11,7 +11,7 @@
     display: block
     width: 30px
     height: 31px
-    @include pos($left: 50%, $top: -1rem)
+    // @include pos($left: 50%, $top: -1rem)
     margin-left: -10px
     background-color: $bg
     background-image: url('../images/ftr_mark.png')
@@ -45,12 +45,12 @@
     left: 0
     overflow: hidden
     background-color: rgba(0,0,0,0)
-    @extend .transition
+    // @extend .transition
   .issue-meta
-    @include vertical-align($pos: absolute)
+    // @include vertical-align($pos: absolute)
     width: 100%
     opacity: 0
-    @extend .transition
+    // @extend .transition
     p
       @include fontmake($family: 'Alegreya', $size: 2, $margin: 0)
       color: white
@@ -87,12 +87,12 @@
       @include fontmake($family: "Raleway", $size: 1.8, $weight: 400)
 
     input#mce-EMAIL
-      @extend .button
+      // @extend .button
       max-width: 500px
       width: 100%
 
     #mc-embedded-subscribe
-      @extend .button-submit
+      // @extend .button-submit
 
     .mce_inline_error
       background-color: transparent
@@ -100,7 +100,7 @@
 
 
 .footer-main nav
-  @include vertical-align($pos: absolute, $push: 53%)
+  // @include vertical-align($pos: absolute, $push: 53%)
   a
     @include fontmake($size: 1, $margin: 0, $family: "Raleway", $weight: 400)
     margin-right: 1rem

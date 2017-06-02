@@ -17,17 +17,19 @@
 
   // POST--MARQUEE FIGURE
   .post__image
-    +col__8
+    @extend .col__8
     order: 2
     margin-right: 0
     height: 300px
     z-index: 0
 
+    img
+      filter: brightness(20%) grayscale(100%)
+
   // POST--MARQUEE TITLE
   .post__title
     +span(8 of 12 last)
     margin-top: -20px
-    opacity: 0
     right: 0
     position: absolute
 
@@ -40,7 +42,6 @@
   .post__meta
     +span(8 of 12 last)
     margin-top: 20px
-    opacity: 0
     position: absolute
     right: 0
     text-align: center
@@ -51,7 +52,7 @@
 
   // POST--MARQUEE EXCERPT
   .post__excerpt
-    +col__4
+    @extend .col__4
 
   .post__excerpt p
     font: 700 1.6rem/1.5 "Alegreya", serif
@@ -59,8 +60,8 @@
   // POST/MARQUEE HOVER STATES
   .post__link:hover
 
-    .post__image
-      filter: brightness(20%) grayscale(100%)
+    figure img
+      filter: brightness(40%) grayscale(20%)
 
     .post__title,
     .post__meta
@@ -83,7 +84,7 @@
 
 // POST--CORE
 .post--core
-  +col__4($ctx:8)
+  @extend .col__4--8
 
   &:nth-of-type(2),
   &:nth-of-type(5),
@@ -116,12 +117,11 @@
     margin-bottom: 0.4rem
 
   // POST--CORE HOVER STATES
-  .post__link:hover .post__image
-      filter: grayscale(100%)
+  .post__link:hover .post__image img
+    filter: grayscale(100%)
 
 // POST--CORE--QUOTE
 .post__core--quote
-  +col__8($ctx:8)
   margin-right: 0
 
   // POST--CORE--QUOTE LINK
@@ -157,7 +157,7 @@
 
   // POST--CORE--QUOTE EXCERPT
   .post__excerpt
-    +col__8($ctx:8)
+    @extend .col__8--8
     margin-bottom: 0.2rem
     order: 1
 
@@ -177,6 +177,7 @@
 
 .rail__issue
   background-color: transparentize($cover-translucent, 0.8)
+  transition: filter 0.3s ease-in-out
 
   img
     max-width: 100%
@@ -190,11 +191,13 @@
   .rail__issue__button
     color: $cover-translucent
     display: block
-    +fontmake($family: 'Raleway', $size: 1.2, $weight: 300)
+    font: 300 1.2rem/1.5 "Raleway", sans-serif
     padding: 2rem 2rem
     text-align: center
     text-transform: uppercase
 
+  &:hover
+    filter: brightness(90%) grayscale(30%)
 
 //*********************************************************
 // BRIDGES
@@ -247,8 +250,8 @@
 
   // POST--FTF TITLE
   .post__title
-    +span(12 of 12)
     position: absolute
+    width: 100%
 
     h2
       color: $orange
@@ -268,227 +271,3 @@
 
     figure img
       filter: brightness(30%) grayscale(40%)
-
-//****************************
-// FEATURED
-//****************************
-
-.loop-front-page,
-.loop-archive,
-.loop-fairyland
-  margin-bottom: 6rem
-
-  article
-    position: relative
-    height: 300px
-    margin-bottom: 3rem
-    .entry-link
-      position: absolute
-      z-index: 20
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      overflow: hidden
-      &:hover + .entry-title h2
-        color: $purple
-    .entry-image
-      position: absolute
-      z-index: 0
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      overflow: hidden
-      background-size: cover
-      background-position: 50%
-      .overlay
-        position: absolute
-        z-index: 0
-        top: 0
-        right: 0
-        bottom: 0
-        left: 0
-        overflow: hidden
-        background-color: rgba(0,0,0,0.6)
-    .entry-title
-      position: relative
-    .entry-meta
-      position: relative
-      .author
-        display: inline-block
-        @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
-        color: $red
-        text-transform: capitalize
-      time
-        display: inline-block
-        @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
-        &::before
-          content: ' / '
-
-article.one-half,
-.loop-archive article
-  @include span(6 of 12)
-  text-align: center
-  .entry-link:hover + .entry-title h2
-    color: $orange
-  .entry-title
-    margin-top: 7rem
-    padding: 0 2rem
-    h2
-      display: inline
-      @include fontmake($size: 2, $line: 2, $family: "Aleo", $weight: 700, $margin: 1)
-      color: white
-      transition: 0.3s all ease-in-out
-  .entry-meta
-    display: inline-block
-    position: relative
-    bottom: 0px
-    text-align: center
-    z-index: 10
-    .author
-      z-index: 10
-      a
-        color: white
-        &:hover
-          color: $yellow
-    time
-      color: white
-  .entry-summary
-    display: none
-
-article.one-quarter
-  position: relative
-  @include span(3 of 12)
-  height: 300px
-  &::before
-    content: '\201C'
-    display: block
-    position: absolute
-    top: 3px
-    left: -13px
-    width: 12px
-    height: 12px
-    @include fontmake($size: 1.6, $line: 2.2, $family: "Aleo", $weight: 700)
-    color: $base
-    text-align: center
-    line-height: 27px
-    background-color: $yellow
-    border-radius: 50%
-    z-index: 0
-    transition: 0.3s all ease-in-out
-    box-shadow: 0 0 0 1px $yellow, 0 0 0 8px $yellow
-  &:hover:before
-    color: $purple
-    background-color: $orange
-    box-shadow: 0 0 0 9px $orange
-  .entry-image
-    display: none
-  .entry-title
-    position: relative
-    top: 220px
-    text-align: left
-    z-index: 10
-    h2
-      @include fontmake($size: 1, $family: "Raleway", $weight: 700, $margin: 0)
-      color: $base
-      transition: 0.3s all ease-in-out
-  .entry-meta
-    position: absolute
-    bottom: 0px
-    z-index: 10
-    .author
-      @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
-      z-index: 10
-    time
-      @include fontmake($size: 0.8, $family: "Raleway", $weight: 700, $margin: 0)
-      color: $purple
-  .entry-summary
-    position: absolute
-    top: 0
-    height: 210px
-    overflow: hidden
-    z-index: 10
-    p
-      position: relative
-      text-align: left
-      @include fontmake($size: 1.6, $line: 2.2, $family: "Aleo", $weight: 700)
-      color: $purple
-      quotes: '\201c' '\201d'
-      z-index: 10
-      transition: 0.3s all ease-in-out
-
-//****************************
-// LATEST ISSUE
-//****************************
-.front-page-latest
-  background: $cover-translucent
-  padding: 4rem 0
-  margin-bottom: 6rem
-  article
-    text-align: center
-    h1
-      color: $grey
-      padding: 0 3rem
-      @include fontmake($size: 4, $margin: 2, $family: "Aleo", $weight: 700)
-      text-transform: none
-    p
-      color: $base
-      @include fontmake($size: 1.6, $family: "Raleway", $weight: 700, $margin: 3)
-      text-align: center
-    a
-      display: inline-block
-      color: $cover-translucent
-      text-transform: uppercase
-      background: $grey
-      padding: 1.6rem 3rem
-      @include fontmake($size: 1.2, $family: "Raleway", $weight: 400, $margin: 0)
-      border-radius: 40px
-      transition: 0.3s all ease
-      &:hover
-        background: transparentize($grey, 0.3)
-
-//****************************
-// FRONT PAGE QUEUE
-//****************************
-//
-// .front-page-queue
-//   article
-//     @include span(3 of 12)
-//     height: 650px
-//     position: relative
-//     margin-bottom: 2rem
-//     .entry-image
-//       img
-//         max-width: 100%
-//         min-width: 100%
-//         height: auto
-//         border-radius: 50%
-//         transition: 0.3s all ease-in-out
-//         box-sizing: border-box
-//         -webkit-transform: translateZ(0)
-//         transform: translateZ(0)
-//         box-shadow: 0 0 0 2px $orange, 0 0 0 10px $yellow
-//         &:hover
-//           box-shadow: 0 0 0 12px $yellow
-//     header
-//       // position: absolute
-//       // top: 100px
-//       text-align: center
-//       .entry-title
-//         @include fontmake($size: 1.4rem, $family: "Aleo", $margin: 0.4)
-//         a
-//           @include textback($pull: 10px, $color: $grey)
-//       p.author
-//         @include fontmake($size: 0.8, $family: "Raleway", $weight: 400, $margin: 0.4)
-//         text-align: center
-//       time
-//         display: block
-//         width: 50px
-//         height: 50px
-//         margin: 0 auto
-//         padding-top: 16px
-//         background-color: $base
-//         color: $red
-//         border-radius: 50%
-//         @include fontmake($size: 0.7, $family: "Raleway", $weight: 700, $margin: 0)

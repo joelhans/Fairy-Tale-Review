@@ -12,7 +12,7 @@
       <h1><em>Fairy Tale Review</em> is a literary journal dedicated to publishing new, inclusive, and innovative fairy-tale prose and poetry.</h1>
     </header>
 
-    <div class="about__content col__8 off__2">
+    <div class="about__content content__area col__8 off__2">
       <?php
         while (have_posts()) : the_post();
           the_content();

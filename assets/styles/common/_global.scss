@@ -9,12 +9,7 @@ html {
 html { height: 100%; }
 
 html, body {
-  @include fontmake(
-    $size: 1,
-    $family: "Alegreya",
-    $weight: 300,
-    $margin: 0
-  );
+  font: 300 1rem/1.5 "Alegreya", serif;
   text-align: justify;
   overflow-x: hidden;
   -moz-osx-font-smoothing: auto;

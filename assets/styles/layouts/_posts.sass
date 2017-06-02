@@ -16,11 +16,14 @@
     overflow: hidden
     position: relative
 
+    img
+      transition: filter 0.3s ease-in-out
+
   // CORE AUTHOR
   .post__author
     color: $red
     display: inline-block
-    +fontmake($size: 0.9, $family: "Quicksand", $weight: 700, $margin: 0)
+    font: 700 0.9rem/1.5 "Quicksand", sans-serif
     margin-bottom: 1.4rem
     text-transform: capitalize
 
@@ -28,15 +31,16 @@
   .post__time
     color: $purple
     display: inline-block
-    +fontmake($size: 0.9, $family: "Quicksand", $weight: 700, $margin: 0)
+    font: 700 0.9rem/1.5 "Quicksand", sans-serif
     &::before
       content: ' / '
 
   // CORE EXCERPT
   .post__excerpt p
-    +fontmake($family: "Alegreya", $size: 1.2, $weight: 400, $margin: 0)
+    font: 400 1.2rem/1.5 "Alegreya", serif
     margin-bottom: 0
     text-align: left
+    transition: color 0.3s ease-in-out
     quotes: '\201c' '\201d'
 
     &::before
@@ -157,7 +161,7 @@
 .ftf-container
   position: relative
   margin: 6rem 0
-  @include clearfix-micro()
+  // @include clearfix-micro()
 
 .ftf-text
   +span(7 of 9 last)
