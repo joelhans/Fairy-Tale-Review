@@ -5,42 +5,6 @@ namespace Roots\Sage\Extras;
 use Roots\Sage\Setup;
 
 /**
- * Add <body> classes
- */
-function body_class($classes) {
-  // Add page slug if it doesn't exist
-  if (is_single() || is_page() && !is_front_page()) {
-    if (!in_array(basename(get_permalink()), $classes)) {
-      $classes[] = basename(get_permalink());
-    }
-  }
-
-  // Add class if sidebar is active
-  if (Setup\display_sidebar()) {
-    $classes[] = 'sidebar-primary';
-  }
-
-  return $classes;
-}
-add_filter('body_class', __NAMESPACE__ . '\\body_class');
-
-/**
- * Clean up the_excerpt()
- */
-function excerpt_more() {
-  return ' &hellip; <a href="' . get_permalink() . '">' . __('Continued', 'sage') . '</a>';
-}
-add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
-
-/**
- * Remove "Category: " from category listing
- */
-function filter_category_title($title) {
-   return str_replace('Category: ', '', $title);
-}
-add_filter('get_the_archive_title', __NAMESPACE__ . '\\filter_category_title');
-
-/**
  * Create new thumbnail size for the front page.
  */
 if ( function_exists( 'add_theme_support' ) ) {
@@ -52,15 +16,24 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'front-page-thumb', 400, 300, true ); //300 pixels wide (and unlimited height)
 }
 
+/**
+ * Remove "Category: " from category listing
+ */
+function filter_category_title($title) {
+   return str_replace('Category: ', '', $title);
+}
+add_filter('get_the_archive_title', __NAMESPACE__ . '\\filter_category_title');
+
+/**
+ * Set the number of posts for the main loop, and restrict the category.
+ */
 function pre_get_posts_front_page( $query ) {
-    // Test for front page index
-    // and ensure that the query is the main query
-    // and not a secondary query (such as a nav menu
-    // or recent posts widget output, etc.
-    if ( is_front_page() && $query->is_main_query() ) {
-        // Modify posts per page
-        $query->set( 'posts_per_page', 9 );
-    }
+  $cat = get_category_by_slug('pins-needles');
+  $cat_id = '-'.$cat->term_id;
+  if ( is_front_page() && $query->is_main_query() ) {
+    $query->set( 'posts_per_page', 8 );
+    $query->set( 'cat', $cat_id );
+  }
 }
 add_action( 'pre_get_posts', __NAMESPACE__ . '\\pre_get_posts_front_page' );
 

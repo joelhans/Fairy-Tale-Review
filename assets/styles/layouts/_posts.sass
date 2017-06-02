@@ -1,3 +1,51 @@
+//*********************************************************
+// POST
+//*********************************************************
+
+.post
+  position: relative
+
+  // CORE LINK
+  .post__link
+    display: block
+    position: relative
+
+  // CORE FIGURE
+  figure
+    height: 200px
+    overflow: hidden
+    position: relative
+
+  // CORE AUTHOR
+  .post__author
+    color: $red
+    display: inline-block
+    +fontmake($size: 0.9, $family: "Quicksand", $weight: 700, $margin: 0)
+    margin-bottom: 1.4rem
+    text-transform: capitalize
+
+  // CORE TIME
+  .post__time
+    color: $purple
+    display: inline-block
+    +fontmake($size: 0.9, $family: "Quicksand", $weight: 700, $margin: 0)
+    &::before
+      content: ' / '
+
+  // CORE EXCERPT
+  .post__excerpt p
+    +fontmake($family: "Alegreya", $size: 1.2, $weight: 400, $margin: 0)
+    margin-bottom: 0
+    text-align: left
+    quotes: '\201c' '\201d'
+
+    &::before
+      content: open-quote
+
+    &::after
+      content: close-quote
+
+
 .single article.type-post
   position: relative
   .entry-image
@@ -39,7 +87,7 @@
       margin-bottom: 2rem
       text-transform: uppercase
 
-    .meta__issue
+    .post__issue
       font-size: 0.9rem
       font-style: italic
       line-height: 1.5

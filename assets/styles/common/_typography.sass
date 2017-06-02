@@ -11,7 +11,7 @@
   src: local('Aleo'), local('Aleo-Regular'), url('../fonts/aleo-bold-webfont.woff2') format('woff2')
 
 p
-  @include fontmake($size: 1.1, $family: "Alegreya")
+  font: 400 1.1rem/1.5 "Alegreya", serif
   text-align: justify
   margin-bottom: 2rem
   &:last-of-type
@@ -45,24 +45,18 @@ h1, h2, h3, h4, h5
 //   text-transform: uppercase
 
 h1
-  @include fontmake($family: "Raleway", $weight: 700, $size: 1.6)
+  font: 700 1.6rem/1.5 "Raleway", sans-serif
 
 h2
-  @include fontmake($family: "Raleway", $weight: 700, $size: 1.4)
+  font: 700 1.4rem/1.5 "Raleway", sans-serif
 
 h3
-  @include fontmake($family: "Raleway", $weight: 700, $size: 1.3)
-
-h4
-  @include fontmake($family: "Raleway", $weight: 700, $size: 1.2)
-
-h5
-  @include fontmake($family: "Raleway", $weight: 700, $size: 1)
+  font: 700 1.3rem/1.5 "Raleway", sans-serif
 
 ul
   margin-bottom: 2rem
   li
-    @include fontmake($size: 1.1, $family: "Alegreya")
+    font: 400 1.1rem/1.5 "Alegreya", sans-serif
     list-style-type: circle
     margin-bottom: 0.8rem
 
@@ -98,8 +92,3 @@ hr
 
 .entry-content img
   max-width: 100%
-
-.entry-content a
-  @include textback($color: $orange, $pull: 18px, $sides: 0px)
-.issue-listing p a
-  @include textback($color: $orange, $pull: 18px, $sides: 0px)

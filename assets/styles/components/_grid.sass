@@ -1,45 +1,62 @@
-$susy : ( container: 85rem, columns: 12, gutters: .75, box-sizing: border-box )
+$susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gutter-position: after )
 
 .wrap
   +container()
 
-.row
-  width: span(12)
+@mixin flex
   display: flex
+  flex-wrap: wrap
 
-.col__12
-  width: span(12)
-  @media (min-width: 0em) and (max-width: 40em)
-    width: span(12)
+@mixin col__8($ctx: 12)
+  flex: 1 1 span(8 of $ctx)
+  margin-right: gutter($ctx)
+  margin-bottom: gutter($ctx)
 
-.col__8
-  width: span(8)
-  @media (min-width: 0em) and (max-width: 40em)
-    width: span(12)
+@mixin col__6($ctx: 12)
+  flex: 1 1 span(6 of $ctx)
+  margin-right: gutter($ctx)
+  margin-bottom: gutter($ctx)
 
-.col__6
-  width: span(6)
-  @media (min-width: 0em) and (max-width: 45em)
-    width: span(12)
+@mixin col__4($ctx: 12)
+  flex: 1 1 span(4 of $ctx)
+  margin-right: gutter($ctx)
+  margin-bottom: gutter($ctx)
 
-.col__4
-  width: span(4)
-  margin-right: gutter()
-  @media (min-width: 0em) and (max-width: 45em)
-    width: span(12)
-  &:nth-of-type(3n)
-   margin-right: 0
+@mixin col__2($ctx: 12)
+  flex: 1 1 span(2 of $ctx)
+  margin-right: gutter($ctx)
+  margin-bottom: gutter($ctx)
 
-.col__2
-  width: span(2)
-  @media (min-width: 0em) and (max-width: 45em)
-    width: span(12)
+@mixin col($span:6,$ctx:12)
+  flex: 1 1 span($span of $ctx)
+  margin-right: gutter($ctx)
+  margin-bottom: gutter($ctx)
 
-// Full grid //
-.container
-  @include container(70em)
-.container-wide
-  @include container(100em)
+@for $i from 1 through 12
+  .col__#{$i}
+    +col($span:$i,$ctx:12)
+
+  .col__#{$i}--8
+    +col($span:$i,$ctx:8)
+
+
+@mixin off__4($ctx:12)
+  +push(4 of $ctx)
+
+@mixin off__2($ctx:12)
+  +push(2 of $ctx)
+
+@mixin off__1($ctx:12)
+  +push(1 of $ctx)
+
+.off__4
+  +off__4
+
+.off__2
+  +off__2
+
+.off__1
+  +off__1
 
 // Header //
 .banner>section
