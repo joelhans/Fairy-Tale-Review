@@ -37,4 +37,6 @@ function pre_get_posts_front_page( $query ) {
 }
 add_action( 'pre_get_posts', __NAMESPACE__ . '\\pre_get_posts_front_page' );
 
+add_post_type_support( 'page', 'excerpt' );
+
 ?>

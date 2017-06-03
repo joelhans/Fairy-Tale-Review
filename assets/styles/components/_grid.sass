@@ -27,53 +27,38 @@ $susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gut
   .col__#{$i}--8
     +col($span:$i,$ctx:8)
 
+  .col__#{$i}--6
+    +col($span:$i,$ctx:6)
+
 //*********************************************************
 // OFFSETS
 //*********************************************************
-// 
-// @mixin off($push:2,$ctx:12)
-//   +push($push of $ctx)
-//
-// @for $i from 1 through 11
-//   .off__#{$i}
-//     +col($span:$i,$ctx:12)
-//
-//   .off__#{$i}--8
-//     +col($span:$i,$ctx:8)
 
+@mixin off($push:2,$ctx:12)
+  +push($push of $ctx)
 
-@mixin off__4($ctx:12)
-  +push(4 of $ctx)
+@for $i from 1 through 11
+  .off__#{$i}
+    +off($push:$i,$ctx:12)
 
-@mixin off__2($ctx:12)
-  +push(2 of $ctx)
+  .off__#{$i}--8
+    +off($push:$i,$ctx:8)
 
-@mixin off__1($ctx:12)
-  +push(1 of $ctx)
-
-.off__4
-  +off__4
-
-.off__2
-  +off__2
-
-.off__1
-  +off__1
 
 // Header //
-.banner>section
-  @include container(70em)
-  position: relative
-
-.about-pulldown>section
-  @include container(70em)
-
-.nav-brand
-  @include span(4 of 12)
-  @include push(4 of 12)
-
-.nav-social
-  @include span(4 of 12 last)
+// .banner>section
+//   @include container(70em)
+//   position: relative
+//
+// .about-pulldown>section
+//   @include container(70em)
+//
+// .nav-brand
+//   @include span(4 of 12)
+//   @include push(4 of 12)
+//
+// .nav-social
+//   @include span(4 of 12 last)
 
 // front page
 .front-page-featured article
