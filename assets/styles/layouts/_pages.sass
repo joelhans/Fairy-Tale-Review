@@ -97,7 +97,7 @@
 //*********************************************************
 
 .journal__recent
-  background-color: transparentize($cover-translucent, 0.8)
+  // background-color: transparentize($cover-translucent, 0.8)
   background-origin: content-box
   transition: filter 0.3s ease-in-out
   margin-right: 0
@@ -156,6 +156,39 @@
 
     figcaption
       opacity: 1
+
+
+//*********************************************************
+// ISSUE PAGE
+//*********************************************************
+
+.issue__meta
+  // background-color: transparentize($cover-translucent, 0.8)
+
+.issue__meta img
+  max-width: 100%
+
+.issue__meta a
+  display: block
+  font: 300 1rem/1.5 "Raleway", sans-serif
+  padding: 1rem 1rem
+  text-align: center
+  text-transform: uppercase
+
+  span
+    color: $base
+    display: block
+    font: 300 0.7rem/1.5 "Raleway", sans-serif
+
+.issue__content
+  margin-right: 0
+
+
+// .cover__translucent
+//   background-color: transparentize($cover-translucent, 0.9)
+//   a
+//     color: $cover-translucent
+//
 
 
 
