@@ -1,131 +1,231 @@
-@include susy-breakpoint(60em 67.5em, 12)
-  .footer-quote blockquote
-    font: 700 2rem/1.5 "Aleo", sans-serif
+@include susy-breakpoint(40em 60em, 8)
 
-@include susy-breakpoint(50em 60em, 12)
+  .core__stack
+    +col($span:4,$ctx:8)
 
-  .tagline h1
-    font: 700 2.4rem/1.5 "Aleo", sans-serif
+  .post--core.col__4--8
+    +col($span:8,$ctx:8)
+    margin-right: 0
 
-@include susy-breakpoint(0 50em, 8)
 
-  // NAVIGATION
-  .banner
-    position: absolute
+@include susy-breakpoint(0em 40em, 6)
 
-  .nav-primary
+  .col__12
+    +col($span:6,$ctx:6)
+
+  .col__8
+    +col($span:6,$ctx:6)
+    margin-right: 0
+
+  //*********************************************************
+  // HEADER
+  //*********************************************************
+
+  .header__nav
     position: relative
-    top: 185px
-    left: auto
-    text-align: center
 
-  .nav-primary .nav-bunch
-    padding: 0
-    &::after
-      top: 40px
-      left: 50%
-      margin-left: -15px
+  .header__wrap
+    padding: 0 1.5rem
 
-  .nav-primary .nav-bunch .nav-home
-    display: inline-block
-
-  .nav-brand
-    @include span(8 of 8)
-    position: fixed
-    top: 0
-    z-index: 2000
-
-  .nav-social
+  .header__menu
     display: none
 
-  // FRONT PAGE
-  article.one-half
-    @include span(8 of 8)
+  .header__menu ul
+    flex-wrap: wrap
 
-  article.one-quarter
-    @include span(4 of 8)
+  .header__menu ul li
+    flex: 1 1 100%
 
-  .front-page-latest article h1
-    font: 700 3rem/1.5 "Aleo", sans-serif
+  .mobile__toggle
+    bottom: 0
+    display: block
+    font: normal 1.4rem/1.5 "FontAwesome"
+    position: absolute
+    right: 1.5rem
 
-  .front-page-latest article p
-    font: 700 1.2rem/1.5 "Raleway", sans-serif
+    &:hover
+      cursor: pointer
 
-  // POSTS
-  .single article.type-post .entry-content
-    @include span(8 of 8 no-gutters)
-    @include pre(0)
+  //*********************************************************
+  // MARQUEE
+  //*********************************************************
 
-  .single article.type-post footer
-    @include span(8 of 8 no-gutters)
-    @include pre(0)
+  .marquee
+    padding: 0 1.5rem
 
-  // PAGES
-  .page article.type-page .entry-content,
-  .loop-archive .entry-content,
-  .loop-fairyland .entry-content,
-  .page-about .entry-content
-    @include span(8 of 8 no-gutters)
-    @include pre(0)
+  .post--marquee
+    .post__link
+      position: relative
+    .post__title
+      bottom: 150px
+      +span(6 of 6)
+    .post__meta
+      bottom: 20px
+      +span(6 of 6)
 
-  // FAIRYLAND
 
-  // ANNUAL JOURNAL
-  .issue-listing
-    @include span(full)
-    // margin: 0
+  .core,
+  .page__wrap,
+  .post__wrap
+    padding: 0 1.5rem
 
-  .issue-listing-meta
-    @include span(6 of 8 no-gutters)
-    @include pre(1)
-    margin-bottom: 2rem
+  .core__stack
+    +col($span:6,$ctx:6)
+    margin-right: 0
 
-  .issue-listing-title
-    @include span(8 of 8 no-gutters)
-    padding-top: 0rem
+  .post--core.col__4--8
+    +col($span:6,$ctx:6)
+    margin-right: 0
 
-  // ISSUE PAGES
-  .page-template-page-issue article.type-page .entry-content .issue-meta
-    @include span(6 of 8 no-gutters)
-    @include pre(1)
-    margin-bottom: 2rem
 
-  .page-template-page-issue article.type-page .entry-content .issue-description
-    @include span(8 of 8 no-gutters)
-
+  //*********************************************************
   // FOOTER
-  .issue-rand
-    @include span(8 of 8)
-    margin-bottom: 2rem
-  .tagline
-    @include span(8 of 8)
-    margin-bottom: 2rem
-  .tagline h1
-    text-align: center
-    font: 700 2.4rem/1.5 "Aleo", sans-serif
-  .newsletter
-    @include span(8 of 8)
-    position: relative
-    margin-bottom: 2rem
-  .newsletter #mc_embed_signup_scroll .mc-field-group
-    margin: 0 auto
-  .footer-main nav
-    @include span(8 of 8)
-    position: relative
-    margin-bottom: 2rem
-    text-align: center
-  .footer-quote
-    @include span(8 of 8)
-    text-align: center
+  //*********************************************************
 
-@include susy-breakpoint(0 30em, 8)
-  // FRONT PAGE
-  article.one-quarter
-    @include span(8 of 8)
-    height: 200px
-  article.one-quarter .entry-title
-    top: 150px
-    height: 24px
-    overflow: hidden
-  article.one-quarter .entry-summary
-    height: 150px
+  .footer__wrap
+    padding: 3rem 1.5rem
+
+  .footer__nav
+    margin-bottom: 0
+
+  .footer__nav .col__2--8
+    +col($span:3,$ctx:6)
+
+    &:nth-of-type(2)
+      margin-right: 0
+
+  .footer__wrap hr
+    border: 0
+    width: 100%
+
+// // @include susy-breakpoint(60em 67.5em, 12)
+//   .footer-quote blockquote
+//     font: 700 2rem/1.5 "Aleo", sans-serif
+//
+// @include susy-breakpoint(50em 60em, 12)
+//
+//   .tagline h1
+//     font: 700 2.4rem/1.5 "Aleo", sans-serif
+//
+// @include susy-breakpoint(0 50em, 8)
+//
+//   // NAVIGATION
+//   .banner
+//     position: absolute
+//
+//   .nav-primary
+//     position: relative
+//     top: 185px
+//     left: auto
+//     text-align: center
+//
+//   .nav-primary .nav-bunch
+//     padding: 0
+//     &::after
+//       top: 40px
+//       left: 50%
+//       margin-left: -15px
+//
+//   .nav-primary .nav-bunch .nav-home
+//     display: inline-block
+//
+//   .nav-brand
+//     @include span(8 of 8)
+//     position: fixed
+//     top: 0
+//     z-index: 2000
+//
+//   .nav-social
+//     display: none
+//
+//   // FRONT PAGE
+//   article.one-half
+//     @include span(8 of 8)
+//
+//   article.one-quarter
+//     @include span(4 of 8)
+//
+//   .front-page-latest article h1
+//     font: 700 3rem/1.5 "Aleo", sans-serif
+//
+//   .front-page-latest article p
+//     font: 700 1.2rem/1.5 "Raleway", sans-serif
+//
+//   // POSTS
+//   .single article.type-post .entry-content
+//     @include span(8 of 8 no-gutters)
+//     @include pre(0)
+//
+//   .single article.type-post footer
+//     @include span(8 of 8 no-gutters)
+//     @include pre(0)
+//
+//   // PAGES
+//   .page article.type-page .entry-content,
+//   .loop-archive .entry-content,
+//   .loop-fairyland .entry-content,
+//   .page-about .entry-content
+//     @include span(8 of 8 no-gutters)
+//     @include pre(0)
+//
+//   // FAIRYLAND
+//
+//   // ANNUAL JOURNAL
+//   .issue-listing
+//     @include span(full)
+//     // margin: 0
+//
+//   .issue-listing-meta
+//     @include span(6 of 8 no-gutters)
+//     @include pre(1)
+//     margin-bottom: 2rem
+//
+//   .issue-listing-title
+//     @include span(8 of 8 no-gutters)
+//     padding-top: 0rem
+//
+//   // ISSUE PAGES
+//   .page-template-page-issue article.type-page .entry-content .issue-meta
+//     @include span(6 of 8 no-gutters)
+//     @include pre(1)
+//     margin-bottom: 2rem
+//
+//   .page-template-page-issue article.type-page .entry-content .issue-description
+//     @include span(8 of 8 no-gutters)
+//
+//   // FOOTER
+//   .issue-rand
+//     @include span(8 of 8)
+//     margin-bottom: 2rem
+//   .tagline
+//     @include span(8 of 8)
+//     margin-bottom: 2rem
+//   .tagline h1
+//     text-align: center
+//     font: 700 2.4rem/1.5 "Aleo", sans-serif
+//   .newsletter
+//     @include span(8 of 8)
+//     position: relative
+//     margin-bottom: 2rem
+//   .newsletter #mc_embed_signup_scroll .mc-field-group
+//     margin: 0 auto
+//   .footer-main nav
+//     @include span(8 of 8)
+//     position: relative
+//     margin-bottom: 2rem
+//     text-align: center
+//   .footer-quote
+//     @include span(8 of 8)
+//     text-align: center
+//
+// @include susy-breakpoint(0 30em, 8)
+//   // FRONT PAGE
+//   article.one-quarter
+//     @include span(8 of 8)
+//     height: 200px
+//   article.one-quarter .entry-title
+//     top: 150px
+//     height: 24px
+//     overflow: hidden
+//   article.one-quarter .entry-summary
+//     height: 150px

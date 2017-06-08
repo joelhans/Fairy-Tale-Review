@@ -27,14 +27,23 @@ $cover--mauve:           rgb(153,100,95)
 $cover--ochre:           #c68e2f
 $cover--translucent:     #bdc8da
 
-$covers:  blue, green, violet, ochre, translucent
-$colors: $cover--blue, $cover--green, $cover--violet, $cover--translucent
+$covers:  (blue, $cover--blue), (green, $cover--green), (violet, $cover--violet), (white, $cover--white), (aquamarine, $cover--aquamarine), (red, $cover--red), (brown, $cover--brown), (grey, $cover--grey), (yellow, $cover--yellow), (emerald, $cover--emerald), (mauve, $cover--mauve), (ochre, $cover--ochre), (translucent, $cover--translucent)
 
-@for $i from 1 through length($colors)
-  $this-color: nth($colors, $i)
-
-  .color__#{nth($covers, $i)}
-    color: red
-    background-color: transparentize(nth($covers, $i), 0.9)
+@each $cover, $color in $covers
+  .color__cover--#{$cover}
+    background-color: transparentize($color, 0.9)
     a
-      color: nth($covers, $i)
+      color: $base
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out
+
+      &:hover
+        background-color: transparentize($color, 0.9)
+
+// @for $i from 1 through length($colors)
+//   $this-color: nth($colors, $i)
+//
+//   .color__#{nth($covers, $i)}
+//     color: red
+//     background-color: transparentize(nth($covers, $i), 0.9)
+//     a
+//       color: nth($covers, $i)

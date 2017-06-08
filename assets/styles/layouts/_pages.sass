@@ -11,11 +11,18 @@
 
     h1
       color: $orange
-      font: 700 3rem/1 "Alegreya", serif
+      font: 700 4rem/1.5 "Alegreya", serif
 
   .post--core:nth-of-type(2n)
     margin-right: 0
 
+  .post--core:nth-of-type(6),
+  .post--core:nth-of-type(7)
+    margin-bottom: gutter(8)
+
+  .post--core:nth-of-type(5),
+  .post--core:nth-of-type(7)
+    margin-right: gutter(8)
 
 //*********************************************************
 // PAGES (INC SUBMIT)
@@ -37,7 +44,7 @@
 
     h1
       color: $orange
-      font: 700 3rem/1 "Alegreya", serif
+      font: 700 4rem/1.5 "Alegreya", serif
 
 
 //*********************************************************
@@ -69,9 +76,6 @@
       +flex
       margin-bottom: 2rem
 
-    .masthead__meta
-      min-height: 300px
-
     .masthead__img
       background-position: center center
       background-repeat: no-repeat
@@ -97,12 +101,9 @@
 //*********************************************************
 
 .journal__recent
-  // background-color: transparentize($cover-translucent, 0.8)
   background-origin: content-box
   transition: filter 0.3s ease-in-out
   margin-right: 0
-  // margin-bottom: 0
-  // padding-bottom: gutter()
 
   a
     align-items: center
@@ -163,7 +164,8 @@
 //*********************************************************
 
 .issue__meta
-  // background-color: transparentize($cover-translucent, 0.8)
+  align-self: flex-start
+  align-items: center
 
 .issue__meta img
   max-width: 100%
@@ -175,6 +177,9 @@
   text-align: center
   text-transform: uppercase
 
+  &:first-of-type
+    margin-top: -7px
+
   span
     color: $base
     display: block
@@ -182,66 +187,3 @@
 
 .issue__content
   margin-right: 0
-
-
-// .cover__translucent
-//   background-color: transparentize($cover-translucent, 0.9)
-//   a
-//     color: $cover-translucent
-//
-
-
-
-
-.issue-listing
-  @include span(12 of 12 no-gutters)
-  margin-bottom: 4rem
-  &:last-of-type
-    margin-bottom: 8rem
-
-.issue-listing-meta
-  @include span(4 of 12)
-  img
-    width: 100%
-    max-width: 100%
-
-.issue-listing-title
-  @include span(8 of 12)
-  padding-top: 8rem
-  h1
-    @include fontmake($size: 3.4, $line: 3.4, $family: "Aleo", $weight: 700, $margin: 3)
-    a:hover
-      color: $red
-
-.page-template-page-issue
-  article.type-page
-    .entry-content
-      @include span(12 of 12 no-gutters)
-      @include pre(0)
-      .issue-meta
-        @include span(4 of 12)
-        text-align: center
-        img
-          max-width: 100%
-          margin-bottom: 2rem
-        a
-          position: relative
-          display: inline-block
-          color: $purple
-          text-transform: uppercase
-          background: $grey
-          padding: 1.6rem 3rem
-          @include fontmake($size: 1, $family: "Raleway", $weight: 400, $margin: 1)
-          border-radius: 40px
-          transition: 0.3s all ease
-          &:hover
-            background: transparentize($grey, 0.5)
-          span
-            display: block
-            @include fontmake($size: 0.6, $family: "Raleway", $weight: 400, $margin: 0)
-            color: $base
-        a.detail
-          padding: 1.163rem 3rem
-
-      .issue-description
-        @include span(8 of 12)

@@ -22,7 +22,7 @@
       ?>
     </div>
 
-    <div class="journal__recent col__8">
+    <div class="journal__recent col__8 color__cover--translucent">
 
       <?php
         $query_catalog = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => 1, 'meta_query' => array( array( 'key' => '_wp_page_template', 'value' => 'page-issue.php' ) ) ) );

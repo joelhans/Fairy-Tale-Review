@@ -1,4 +1,4 @@
-<article class="rail__issue">
+<article class="rail__issue color__cover--translucent">
   <a href="/translucent/">
 
     <img src="<?php echo get_template_directory_uri(); ?>/dist/images/covers/FTR_cover_translucent.png" />
