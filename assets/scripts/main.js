@@ -20,55 +20,8 @@
       init: function() {
         // JavaScript to be fired on all pages
 
-        var $window = $(window);
-
-        // Header scroll feature
-        $(document).scroll(function() {
-          if ( $(document).scrollTop() === 0 ) {
-            $('.nav-brand').removeClass('nav-scrolled');
-          }
-          else {
-            $('.nav-brand').addClass('nav-scrolled');
-          }
-        });
-
-
-        $('.nav-brand a').click(function(ev) {
-
-          console.log($window.width());
-
-          if ( $window.width() > 800 ) {
-            return;
-          } else {
-            ev.preventDefault();
-          }
-
-          // ACTIVATE SCROLL // IF SCROLLED TO TOP
-          if ( $(document).scrollTop() === 0 && !$('.mobile-nav').hasClass('mobile-enabled') ) {
-            console.log('activate/top');
-            $('.nav-brand').addClass('nav-scrolled');
-            $('.mobile-nav').addClass('mobile-enabled');
-          }
-
-          // ACTIVATE SCROLL // IF SCROLLED DOWN
-          else if ( $(document).scrollTop() > 0 && !$('.mobile-nav').hasClass('mobile-enabled') ) {
-            console.log('activate/scrolled');
-            $('.mobile-nav').addClass('mobile-enabled');
-          }
-
-          // DEACTIVATE SCROLL // IF SCROLLED TO TOP
-          else if ( $(document).scrollTop() === 0 && $('.mobile-nav').hasClass('mobile-enabled') ) {
-            console.log('deactivate/top');
-            $('.nav-brand').removeClass('nav-scrolled');
-            $('.mobile-nav').removeClass('mobile-enabled');
-          }
-
-          // DEACTIVATE SCROLL // IF SCROLLED DOWN
-          else if ( $(document).scrollTop() > 0 && $('.mobile-nav').hasClass('mobile-enabled') ) {
-            console.log('deactivate/scrolled');
-            $('.mobile-nav').removeClass('mobile-enabled');
-          }
-
+        $(".mobile__toggle").click(function(ev) {
+          $(".header__menu").slideToggle(300);
         });
 
       },

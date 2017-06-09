@@ -1,6 +1,5 @@
 @import "common/variables";
 @import "common/mixins";
-@import "components/assets";
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
@@ -14,10 +13,10 @@
 @import "components/grid";
 @import "components/wp";
 @import "layouts/header";
+@import "layouts/posts";
 @import "layouts/front-page";
 @import "layouts/footer";
 @import "layouts/pages";
-@import "layouts/posts";
 @import "layouts/error";
 @import "layouts/tinymce";
 @import "common/responsive";

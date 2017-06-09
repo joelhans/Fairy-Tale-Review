@@ -4,7 +4,9 @@
   <a class="post__link" href="<?php the_permalink(); ?>">
 
     <figure class="post__image">
-      <img src="<?php echo $thumbnail_url; ?>" />
+      <img src="<?php echo wp_get_attachment_url( get_post_meta($post->ID, 'ftf-01-img', true) ); ?>" />
+      <img src="<?php echo wp_get_attachment_url( get_post_meta($post->ID, 'ftf-02-img', true) ); ?>" />
+      <img src="<?php echo wp_get_attachment_url( get_post_meta($post->ID, 'ftf-03-img', true) ); ?>" />
     </figure>
 
     <div class="post__title">

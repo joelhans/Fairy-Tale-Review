@@ -1,20 +1,29 @@
-<section class="container loop-archive">
+<?php use Roots\Sage\Titles; ?>
 
-<?php get_template_part('templates/page', 'header'); ?>
+<section class="core core--archive">
 
-<?php if (!have_posts()) : ?>
-  <div class="alert alert-warning">
-    <?php _e('Sorry, no results were found.', 'sage'); ?>
-  </div>
-  <?php get_search_form(); ?>
-<?php endif; ?>
+  <header class="archive__header col__8">
 
-<?php while (have_posts()) : the_post(); ?>
-  <?php get_template_part('templates/content', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>
-<?php endwhile; ?>
+    <h1><?= Titles\title(); ?></h1>
 
-<?php the_posts_navigation(); ?>
+  </header>
+
+  <?php if (!have_posts()) : ?>
+    <div class="alert alert-warning">
+      <?php _e('Sorry, no results were found.', 'sage'); ?>
+    </div>
+    <?php get_search_form(); ?>
+  <?php endif; ?>
+
+  <?php
+    while (have_posts()) : the_post();
+    $article_style = 'post--core';
+
+      include( locate_template( 'templates/content.php', false, false ) );
+
+    endwhile;
+  ?>
+
+  <?php the_posts_navigation(); ?>
 
 </section>
-
-<?php get_template_part('templates/content-issue-banner', get_post_type() != 'post' ? get_post_type() : get_post_format()); ?>

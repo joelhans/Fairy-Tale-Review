@@ -1,192 +1,188 @@
-.single article.type-post
+//*********************************************************
+// POST
+//*********************************************************
+
+.post
   position: relative
-  .entry-image
-    @include span(8 of 12)
-    @include pre(2)
-    text-align: center
-    margin-bottom: 6rem
+
+  // CORE LINK
+  .post__link
+    display: block
+    position: relative
+
+  // CORE FIGURE
+  figure
+    height: 200px
+    overflow: hidden
+    position: relative
+
     img
-      max-width: 100%
+      transition: filter 0.3s ease-in-out
+
+  // CORE AUTHOR
+  .post__author
+    color: $red
+    display: inline-block
+    font: 700 0.9rem/1.5 "Quicksand", sans-serif
+    margin-bottom: 1.4rem
+
+  // CORE TIME
+  .post__time
+    color: $purple
+    display: inline-block
+    font: 700 0.9rem/1.5 "Quicksand", sans-serif
+    &::before
+      content: ' / '
+
+  // CORE EXCERPT
+  .post__excerpt p
+    font: 400 1.2rem/1.5 "Alegreya", serif
+    margin-bottom: 0
+    text-align: left
+    transition: color 0.3s ease-in-out
+    quotes: '\201c' '\201d'
+
+    &::before
+      content: open-quote
+
+    &::after
+      content: close-quote
+
+//*********************************************************
+// POST--SINGLE
+//*********************************************************
+
+.post__wrap
+  +flex
+  justify-content: center
+  max-width: 85rem
+  padding: 0 3rem
+
+.post--single
+  +flex
+
+  .post__header
+    flex-grow: 0
+    margin-top: 6rem
+    text-align: center
+
+    h1
+      color: $orange
+      font: 700 4rem/1.5 "Alegreya", serif
+      margin-bottom: 2rem
+
+  // POST--SINGLE AUTHOR
+  .post__author
+    font: 700 1.4rem/1.5 "Quicksand", sans-serif
+    margin-bottom: 2rem
+
+  // POST--SINGLERE TIME
+  .post__time
+    color: $purple
+    display: block
+    font: 300 0.9rem/1.5 "Quicksand", sans-serif
+    margin-bottom: 2rem
+
+    &::before
+      content: ''
+
+  .post__issue
+    font: 400 0.9rem/1.5 "Alegreya", serif
+    font-style: italic
+    text-align: center
+
+  .post__image
+    flex-grow: 0
+    height: auto
+    margin-right: 0
+    overflow: hidden
+    position: relative
+
+    img
       height: auto
-    cite
+      max-width: 100%
+
+    figcaption
       color: $orange
       display: block
-      +fontmake($size: 0.7, $family: "Raleway", $weight: 700)
+      font: 700 0.7rem/1.5 "Raleway"
       margin-top: 0.4rem
+      text-align: center
       text-transform: uppercase
       a:hover
         color: $orange
 
-  header
-    text-align: center
-    @include span(9 of 12 no-gutters)
-    @include pre(1.5 of 12)
-    margin-bottom: 6rem
-
-    h1
-      color: $purple
-      @include fontmake($size: 3.4, $line: 3.4, $family: "Aleo", $weight: 700, $margin: 4)
-
-    .author
-      text-align: center
-      color: $red
-      @include fontmake($size: 1.2, $family: "Raleway", $weight: 700, $margin: 2)
-      text-transform: capitalize
-
-    time
-      color: $purple
-      +fontmake($size: 0.9, $family: "Raleway", $weight: 400)
-      margin-bottom: 2rem
-      text-transform: uppercase
-
-    .meta__issue
-      font-size: 0.9rem
-      font-style: italic
-      line-height: 1.5
-      margin-top: 2rem
-      text-align: center
-
-  .entry-content
-    @include span(9 of 12 no-gutters)
-    @include pre(1.5 of 12)
+  .post__content
+    flex-grow: 0
+    margin-right: 0
+    margin-top: 4rem
 
   footer
-    @include span(9 of 12 no-gutters)
-    @include pre(1.5 of 12)
-    position: relative
-    margin-top: 6rem
-    margin-bottom: 8rem
-    display: flex
-    justify-content: space-between
     align-items: center
+    +flex
+    flex-grow: 0
+    margin-right: 0
+    margin-top: 4rem
+    min-height: 300px
 
-    .post__author
-      +span(6 of 9 first no-gutters)
-      color: $purple
-      margin-bottom: 0
+  .post__bio
+    color: $purple
 
-      p
-        font-size: 0.9rem
-        line-height: 1.5
-        font-style: italic
+    p
+      font: 400 italic 0.9rem/1.5 "Alegreya", serif
 
-      em, i
-        font-style: normal
+    em, i
+      font-style: normal
 
-    div.author-avatar
-      @include span(3 of 9 last)
-      border-radius: 50%
-      position: relative
-      background-size: cover
-      overflow: hidden
+  .post__avatar
+    margin-right: 0
 
-      &::before
-        content: ''
-        display: block
-        margin-top: 100%
-
-      img
-        position: absolute
-        top: 0
-        bottom: 0
-        left: 0
-        right: 0
-        object-fit: cover
-        width: 100%
-        height: 100%
+  .post__avatar div
+    margin-right: 0
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+    border-radius: 50%
+    display: block
+    height: auto
+    max-width: 100%
+    padding-bottom: 100%
+    position: relative
+    width: 100%
 
 
-/************************************/
-/* FAIRY TALE FILES                 */
-/************************************/
-.ftf-intro
-  @include fontmake($size: 1, $family: "Raleway", $weight: 500, $margin: 3)
-  font-style: italic
+//*********************************************************
+// POST--FTF
+//*********************************************************
+
+.ftf__intro
   color: $purple
+  font: 500 italic 1rem/1.5 "Raleway", sans-serif
   em
     font-style: normal
 
-.ftf-container
-  position: relative
-  margin: 6rem 0
-  @include clearfix-micro()
+.ftf__container
+  align-items: center
+  +flex
+  // flex-wrap: nowrap
+  margin-top: 4rem
+  margin-bottom: 0
 
-.ftf-text
-  +span(7 of 9 last)
-  margin-right: -(span(3) - gutter(12))
-  margin-left: 0
+.ftf__text
+  margin-bottom: 0
+  margin-right: 0
+  order: 2
 
-.ftf-image
-  @include span(6 of 9)
-  margin-left: -(span(2) + gutter(9) + gutter(9) + gutter(9))
-
-  // div[class*=ftf-container]
-  //   position: relative
-  //   margin-bottom: 6rem
-  //   @include clearfix-micro()
-  //
-  //   .image-container
-  //     @include span(4 of 9)
-  //     margin-left: -(span(1) + gutter(9) + gutter(9))
-  //     clip-path: circle(50% at center)
-  //     position: relative
-  //     z-index: 10
-  //     transition: all 0.3s ease-in-out
-  //     overflow: hidden
-  //     &::before
-  //       content: ''
-  //       display: block
-  //       margin-top: 100%
-  //     img
-  //       position: absolute
-  //       top: -5%
-  //       bottom: 0
-  //       left: -5%
-  //       right: 0
-  //       object-fit: cover
-  //       width: 110%
-  //       height: 110%
-  //       transition: all 0.5s ease-in-out
-  //
-  //     div.ftf-number
-  //       position: absolute
-  //       top: 50%
-  //       left: 50%
-  //       width: 96px
-  //       height: 96px
-  //       transform: perspective(1px) translateX(-50%) translateY(-50%)
-  //       z-index: 20
-  //       background: white
-  //       border-radius: 50%
-  //       opacity: 1
-  //       transition: opacity 0.3s ease-in-out
-  //       p
-  //         @include fontmake($family: 'Alegreya', $size: 4, $margin: 0, $line: 6)
-  //         color: $red
-  //         text-align: center
-  //
-  //     &:hover
-  //       clip-path: circle(100% at center)
-  //
-  //       img
-  //         width: 100%
-  //         height: 100%
-  //         top: 0
-  //         left: 0
-  //
-  //       div.ftf-number
-  //         opacity: 0
-    //
-    // div.ftf-text
-    //   @include span(6 of 9 last)
+.ftf__image
+  margin-bottom: 0
+  order: 1
 
 
-/**********************************************************/
-/** PREVIOUS/NEXT LINKS
-/**********************************************************/
+//*********************************************************
+// PREVIOUS/NEXT LINKS
+//*********************************************************
 
 .nav-next-prev, .nav-ftf, .nav-pins-needles
-  // @include full-bg($color: $purple)
   padding: 4rem 0 4rem 0
   color: $purple
   a

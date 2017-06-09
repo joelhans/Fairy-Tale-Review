@@ -1,0 +1,49 @@
+// Glyphicons font path
+$icon-font-path:        "../fonts/"
+
+// Colors
+
+$grey:                  #e8edf3
+$purple:                #73626E
+$red:                   #B38184
+$orange:                #F0B49E
+$yellow:                #F7E4BE
+$d-grey:                #413E4A
+$white:                 #fbfaf6
+$base:                  #444
+$bg:                    #fbfaf6
+
+$cover--blue:            rgb(99,162,217)
+$cover--green:           rgb(142,153,58)
+$cover--violet:          rgb(216,163,215)
+$cover--white:           rgb(255,255,255)
+$cover--aquamarine:      rgb(221,239,235)
+$cover--red:             rgb(196,15,46)
+$cover--brown:           rgb(55,26,10)
+$cover--grey:            rgb(174,173,173)
+$cover--yellow:          rgb(255,213,51)
+$cover--emerald:         rgb(0,169,114)
+$cover--mauve:           rgb(153,100,95)
+$cover--ochre:           #c68e2f
+$cover--translucent:     #bdc8da
+
+$covers:  (blue, $cover--blue), (green, $cover--green), (violet, $cover--violet), (white, $cover--white), (aquamarine, $cover--aquamarine), (red, $cover--red), (brown, $cover--brown), (grey, $cover--grey), (yellow, $cover--yellow), (emerald, $cover--emerald), (mauve, $cover--mauve), (ochre, $cover--ochre), (translucent, $cover--translucent)
+
+@each $cover, $color in $covers
+  .color__cover--#{$cover}
+    background-color: transparentize($color, 0.9)
+    a
+      color: $base
+      transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out
+
+      &:hover
+        background-color: transparentize($color, 0.9)
+
+// @for $i from 1 through length($colors)
+//   $this-color: nth($colors, $i)
+//
+//   .color__#{nth($covers, $i)}
+//     color: red
+//     background-color: transparentize(nth($covers, $i), 0.9)
+//     a
+//       color: nth($covers, $i)

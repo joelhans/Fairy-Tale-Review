@@ -1,18 +1,12 @@
 <?php use Roots\Sage\Titles; ?>
 
-<article <?php post_class(); ?>>
+<article class="page col__8">
 
-  <!-- <div class="entry-image">
-  <?php if ( has_post_thumbnail() ) {
-     the_post_thumbnail('front-page-thumb');
-    } ?>
-  </div> -->
-
-  <header class="page-header">
+  <header class="page__header col__12">
     <h1><?= Titles\title(); ?></h1>
   </header>
 
-  <div class="entry-content">
+  <div class="page__content">
     <?php the_content(); ?>
   </div>
 

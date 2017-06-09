@@ -1,60 +1,64 @@
-$susy : ( container: 85rem, columns: 12, gutters: .75, box-sizing: border-box, gutter-position: split )
+//*********************************************************
+// GRID SETTINGS AND CONFIGURATIONS
+//*********************************************************
+
+$susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gutter-position: after )
 
 .wrap
   +container()
 
-.row
-  width: span(12)
+@mixin flex
   display: flex
+  flex-wrap: wrap
 
-.col__12
-  width: span(12)
-  @media (min-width: 0em) and (max-width: 40em)
-    width: span(12)
+//*********************************************************
+// GRID LOOP
+//*********************************************************
 
-.col__8
-  width: span(8)
-  @media (min-width: 0em) and (max-width: 40em)
-    width: span(12)
+@mixin col($span:6,$ctx:12)
+  flex: 1 1 span($span of $ctx)
+  margin-right: gutter($ctx)
+  margin-bottom: gutter($ctx)
 
-.col__6
-  width: span(6)
-  @media (min-width: 0em) and (max-width: 45em)
-    width: span(12)
+@for $i from 1 through 12
+  .col__#{$i}
+    +col($span:$i,$ctx:12)
 
-.col__4
-  width: span(4)
-  margin-right: gutter() + gutter
-  @media (min-width: 0em) and (max-width: 45em)
-    width: span(12)
-  &:nth-of-type(3)
-   margin-right: 0
+  .col__#{$i}--8
+    +col($span:$i,$ctx:8)
 
-.col__2
-  width: span(2)
-  @media (min-width: 0em) and (max-width: 45em)
-    width: span(12)
+  .col__#{$i}--6
+    +col($span:$i,$ctx:6)
 
-// Full grid //
-.container
-  @include container(70em)
-.container-wide
-  @include container(100em)
+//*********************************************************
+// OFFSETS
+//*********************************************************
+
+@mixin off($push:2,$ctx:12)
+  +push($push of $ctx)
+
+@for $i from 1 through 11
+  .off__#{$i}
+    +off($push:$i,$ctx:12)
+
+  .off__#{$i}--8
+    +off($push:$i,$ctx:8)
+
 
 // Header //
-.banner>section
-  @include container(70em)
-  position: relative
-
-.about-pulldown>section
-  @include container(70em)
-
-.nav-brand
-  @include span(4 of 12)
-  @include push(4 of 12)
-
-.nav-social
-  @include span(4 of 12 last)
+// .banner>section
+//   @include container(70em)
+//   position: relative
+//
+// .about-pulldown>section
+//   @include container(70em)
+//
+// .nav-brand
+//   @include span(4 of 12)
+//   @include push(4 of 12)
+//
+// .nav-social
+//   @include span(4 of 12 last)
 
 // front page
 .front-page-featured article

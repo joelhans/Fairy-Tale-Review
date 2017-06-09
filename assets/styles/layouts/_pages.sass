@@ -1,153 +1,189 @@
-.page article.type-page,
-.loop-archive,
-.loop-fairyland,
-.page-about
-  position: relative
-  header
-    text-align: center
-    @include span(12 of 12)
-    margin-bottom: 6rem
+//*********************************************************
+// ARCHIVE PAGES
+//*********************************************************
+
+.core--archive
+  +flex
+  justify-content: center
+
+  .archive__header
+    margin-top: 6rem
+
     h1
-      color: $purple
-      @include fontmake($size: 3.4, $line: 3.4, $family: "Aleo", $weight: 700, $margin: 2)
+      color: $orange
+      font: 700 4rem/1.5 "Alegreya", serif
 
-  .entry-content
-    @include span(9 of 12 no-gutters)
-    @include pre(1.5 of 12)
-    margin-bottom: 8rem
+  .post--core:nth-of-type(2n)
+    margin-right: 0
 
-nav.posts-navigation
-  @include span(12 of 12)
+  .post--core:nth-of-type(6),
+  .post--core:nth-of-type(7)
+    margin-bottom: gutter(8)
 
-/**********************************************************/
-/** ABOUT
-/**********************************************************/
-.page-about
-  header
-    display: none
+  .post--core:nth-of-type(5),
+  .post--core:nth-of-type(7)
+    margin-right: gutter(8)
 
-.about-tagline,
-.about-masthead,
-.about-advisory,
-.about-contact
-  @include span(12 of 12)
-  margin-bottom: 8rem
-  h1
-    @include fontmake($size: 3.5, $family: "Raleway", $weight: 700, $margin: 0)
-    color: $orange
-    text-align: left
+//*********************************************************
+// PAGES (INC SUBMIT)
+//*********************************************************
 
-.masthead-member
-  +span(full inside no-gutters)
-  margin-bottom: 4rem
+.page__wrap
+  +flex
+  justify-content: center
+  max-width: 85rem
+  padding: 0 3rem
 
-.masthead-meta
-  @include span(3 of 9 no-gutters)
-  // +pre(-1)
+.page
+  +flex
+  flex-grow: 0
+  margin-right: 0
 
-.masthead-img
-  +span(full inside no-gutters)
-  background-size: cover
-  border-radius: 50%
-  margin-bottom: 10px
-  &::before
-    content: ''
+  .page__header
+    margin-top: 6rem
+
+    h1
+      color: $orange
+      font: 700 4rem/1.5 "Alegreya", serif
+
+
+//*********************************************************
+// ABOUT PAGE
+//*********************************************************
+
+.page--about
+  margin-top: 6rem
+
+  .about__section
+    margin-bottom: 4rem
+
+    h1
+      color: $orange
+      font: 700 3.5rem/1.5 "Raleway", sans-serif
+      text-align: left
+
+  .about__content,
+  .about__advisory,
+  .about__contact
+    flex-grow: 0
+    margin-bottom: 6rem
+
+  .about__masthead
+    flex-grow: 0
+
+    .masthead__member
+      align-items: center
+      +flex
+      margin-bottom: 2rem
+
+    .masthead__img
+      background-position: center center
+      background-repeat: no-repeat
+      background-size: cover
+      border-radius: 50%
+      display: block
+      height: auto
+      max-width: 100%
+      padding-bottom: 100%
+      position: relative
+      width: 100%
+
+    .masthead__meta h1
+      font: 400 italic 1.2rem/1.5 "Alegreya", serif
+      margin-top: 1rem
+      text-align: center
+
+    .masthead__bio
+      margin-right: 0
+
+//*********************************************************
+// JOURNAL PAGE
+//*********************************************************
+
+.journal__recent
+  background-origin: content-box
+  transition: filter 0.3s ease-in-out
+  margin-right: 0
+
+  a
+    align-items: center
     display: block
-    margin-top: 100%
+    +flex
 
-.masthead-meta h1
-  @include fontmake($family: 'Alegreya', $size: 1.2)
-  font-style: italic
-  text-align: center
+  .issue__cover
+    align-items: center
+    +flex
+    margin-bottom: 0
 
-.masthead-bio
-  @include span(6 of 9 last no-gutters)
-
-/**********************************************************/
-/** FAIRYLAND
-/**********************************************************/
-
-.fairyland-prose,
-.fairyland-poetry
-  @include span(6 of 12)
-  margin-bottom: 6rem
-  text-align: center
-  h1 a
-    @include textback($color: $orange, $pull: 23px, $sides: 0px)
-  article
-    @include span(full inside no-gutters)
-    margin-left: 0
-    margin-right: 0
-
-.fairyland-ftf
-  @include span(12 of 12)
-  margin-bottom: 6rem
-  h1 a
-    @include textback($color: $orange, $pull: 23px, $sides: 0px)
-  article
-    @include span(full inside no-gutters)
-    margin-left: 0
-    margin-right: 0
-
-.fairyland-pins-needles
-  @include span(12 of 12)
-  h1 a
-    @include textback($color: $orange, $pull: 23px, $sides: 0px)
-
-/**********************************************************/
-/** ISSUE PAGES
-/**********************************************************/
-// .page article.type-page .entry-content
-
-.issue-listing
-  @include span(12 of 12 no-gutters)
-  margin-bottom: 4rem
-  &:last-of-type
-    margin-bottom: 8rem
-
-.issue-listing-meta
-  @include span(4 of 12)
-  img
-    width: 100%
+  .issue__cover img
     max-width: 100%
 
-.issue-listing-title
-  @include span(8 of 12)
-  padding-top: 8rem
-  h1
-    @include fontmake($size: 3.4, $line: 3.4, $family: "Aleo", $weight: 700, $margin: 3)
-    a:hover
-      color: $red
+  .issue__teaser
+    margin-bottom: 0
+    margin-right: 0
+    padding: gutter() gutter() gutter() 0
 
-.page-template-page-issue
-  article.type-page
-    .entry-content
-      @include span(12 of 12 no-gutters)
-      @include pre(0)
-      .issue-meta
-        @include span(4 of 12)
-        text-align: center
-        img
-          max-width: 100%
-          margin-bottom: 2rem
-        a
-          position: relative
-          display: inline-block
-          color: $purple
-          text-transform: uppercase
-          background: $grey
-          padding: 1.6rem 3rem
-          @include fontmake($size: 1, $family: "Raleway", $weight: 400, $margin: 1)
-          border-radius: 40px
-          transition: 0.3s all ease
-          &:hover
-            background: transparentize($grey, 0.5)
-          span
-            display: block
-            @include fontmake($size: 0.6, $family: "Raleway", $weight: 400, $margin: 0)
-            color: $base
-        a.detail
-          padding: 1.163rem 3rem
+    p
+      text-align: left
 
-      .issue-description
-        @include span(8 of 12)
+  &:hover
+    filter: brightness(90%) grayscale(30%)
+
+
+.journal__catalog
+  +flex
+
+.catalog__issue
+  flex-grow: 0
+  transition: filter 0.3s ease-in-out
+
+  figure img
+    max-width: 100%
+
+  figcaption
+    opacity: 0
+    transition: opacity 0.3s ease-in-out
+
+    p
+      color: $orange
+      font: 700 0.9rem/1.5 "Quicksand", sans-serif
+      text-align: center
+
+  &:nth-of-type(3n)
+    margin-right: 0
+
+  &:hover
+    filter: brightness(90%) grayscale(30%)
+
+    figcaption
+      opacity: 1
+
+
+//*********************************************************
+// ISSUE PAGE
+//*********************************************************
+
+.issue__meta
+  align-self: flex-start
+  align-items: center
+
+.issue__meta img
+  max-width: 100%
+
+.issue__meta a
+  display: block
+  font: 300 1rem/1.5 "Raleway", sans-serif
+  padding: 1rem 1rem
+  text-align: center
+  text-transform: uppercase
+
+  &:first-of-type
+    margin-top: -7px
+
+  span
+    color: $base
+    display: block
+    font: 300 0.7rem/1.5 "Raleway", sans-serif
+
+.issue__content
+  margin-right: 0
