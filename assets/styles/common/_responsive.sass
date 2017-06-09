@@ -1,4 +1,20 @@
+//*********************************************************
+// RESPONSIVE 40/60 640/960
+//*********************************************************
+
 @include susy-breakpoint(40em 60em, 8)
+
+  //*********************************************************
+  // HEADER
+  //*********************************************************
+
+  .header__menu ul
+    flex-wrap: wrap
+
+
+  //*********************************************************
+  // CORE--STACK
+  //*********************************************************
 
   .core__stack
     +col($span:4,$ctx:8)
@@ -8,7 +24,34 @@
     margin-right: 0
 
 
+  //*********************************************************
+  // PAGE--JOURNAL
+  //*********************************************************
+
+  .journal__content
+    +col($span:8,$ctx:8)
+    margin-right: 0
+
+  .journal__recent
+    +col($span:8,$ctx:8)
+    margin-right: 0
+
+  .catalog__issue.col__4
+    +col($span:4,$ctx:8)
+
+  .catalog__issue.col__4:nth-of-type(3n)
+    margin-right: gutter()
+
+  .catalog__issue.col__4:nth-of-type(2n)
+    margin-right: 0
+
+//*********************************************************
+// RESPONSIVE 0/40 0/640
+//*********************************************************
 @include susy-breakpoint(0em 40em, 6)
+
+  body, html
+    font: 300 0.8rem/1.5 Alegreya,serif
 
   .col__12
     +col($span:6,$ctx:6)
@@ -16,6 +59,7 @@
   .col__8
     +col($span:6,$ctx:6)
     margin-right: 0
+
 
   //*********************************************************
   // HEADER
@@ -46,6 +90,7 @@
     &:hover
       cursor: pointer
 
+
   //*********************************************************
   // MARQUEE
   //*********************************************************
@@ -64,6 +109,10 @@
       +span(6 of 6)
 
 
+  //*********************************************************
+  // CORE--STACK
+  //*********************************************************
+
   .core,
   .page__wrap,
   .post__wrap
@@ -77,6 +126,86 @@
     +col($span:6,$ctx:6)
     margin-right: 0
 
+
+  //*********************************************************
+  // PAGE--JOURNAL
+  //*********************************************************
+
+  .journal__content
+    +col($span:6,$ctx:6)
+    margin-right: 0
+
+  .journal__recent
+    +col($span:6,$ctx:6)
+    margin-right: 0
+
+  .journal__recent .issue__cover
+    +col($span:6,$ctx:6)
+    margin-right: 0
+
+  .journal__recent .issue__teaser
+    padding: gutter()
+
+  .catalog__issue.col__4
+    +col($span:6,$ctx:6)
+
+  .catalog__issue.col__4
+    margin-right: 0
+
+
+  //*********************************************************
+  // PAGE--ABOUT
+  //*********************************************************
+
+  .page--about .about__section h1
+    font: 700 2rem/1.5 Raleway,sans-serif
+
+  .about__content
+    margin-left: 0
+
+  .about__masthead
+    margin-left: 0
+
+  .masthead__meta.col__3--8
+
+
+  //*********************************************************
+  // POSTS
+  //*********************************************************
+
+  .post__header.col__8
+    margin-left: 0
+
+  .post--single .post__header h1
+    font: 700 3rem/1 Alegreya,serif
+
+  .post--single .post__author
+    font: 700 1.2rem/1.5 Quicksand,sans-serif
+
+  .post__image
+    margin-left: 0
+
+  .post__content
+    margin-left: 0
+
+  .post footer
+    margin-left: 0
+
+  .post__bio.col__5--8
+    +col($span:6,$ctx:6)
+    margin-right: 0
+
+  .post__avatar.col__3--8
+    +col($span:4,$ctx:6)
+    +push(1 of 12)
+
+  .ftf__text.col__4--8
+    +col($span:6,$ctx:6)
+    margin-right: 0
+
+  .ftf__image.col__4--8
+    +col($span:6,$ctx:6)
+    margin-right: 0
 
   //*********************************************************
   // FOOTER
