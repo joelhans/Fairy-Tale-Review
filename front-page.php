@@ -50,6 +50,8 @@
       endwhile;
     ?>
 
+    <?php include( locate_template( 'templates/rail_newsletter.php', false, false ) ); ?>
+
   </aside>
 
   <aside class="core__bridge col__12 core__bridge--ftf">

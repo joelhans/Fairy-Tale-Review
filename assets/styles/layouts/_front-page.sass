@@ -111,14 +111,22 @@
 
   // POST--CORE TITLE
   .post__title h2
+    color: $red
+    font: 700 1.8rem/1.5 "Alegreya"
     margin-bottom: 0.4rem
+    transition: color 0.3s ease-in-out
+
+    &:hover
+      color: $orange
 
   .post__author
     margin-bottom: 0.4rem
 
   // POST--CORE HOVER STATES
-  .post__link:hover .post__image img
-    filter: grayscale(100%)
+  &:hover
+
+    .post__image img
+      filter: grayscale(100%)
 
 // POST--CORE--QUOTE
 .post__core--quote
@@ -176,8 +184,8 @@
   margin-right: 0
 
 .rail__issue
-  // background-color: transparentize($cover-translucent, 0.8)
   transition: filter 0.3s ease-in-out
+  margin-bottom: gutter(4)
 
   img
     max-width: 100%
@@ -189,7 +197,6 @@
     text-align: left
 
   .rail__issue__button
-    // color: $cover-translucent
     display: block
     font: 300 1.2rem/1.5 "Raleway", sans-serif
     padding: 2rem 2rem
@@ -198,6 +205,90 @@
 
   &:hover
     filter: brightness(90%) grayscale(30%)
+
+.post__rail
+  margin-bottom: gutter(4)
+
+  .post__link
+    +flex
+
+  .post__image
+    display: none
+
+  .post__title
+    order: 2
+
+  .post__meta
+    order: 3
+
+  .post__time
+    display: none
+
+  .post__excerpt
+    margin-bottom: 0.6rem
+    order: 1
+
+    p
+      color: $orange
+      font: 700 1.6rem "Alegreya", sans-serif
+
+  &:hover .post__excerpt p
+    color: $red
+
+.rail__newsletter
+  background: transparentize($red, 0.9)
+  padding-bottom: 1rem
+
+  #mc_embed_signup_scroll
+    +flex
+
+  h2
+    background: $purple
+    color: white
+    font: 700 0.9rem/1.5 Quicksand,sans-serif
+    padding: 1rem
+    text-align: center
+    width: 100%
+
+  h4
+    color: $base
+    font: 700 1.1rem/1.5 Alegreya,sans-serif
+    padding: 2rem 1rem
+    text-align: center
+
+  .mc-field-group
+    flex: 1 1 70%
+    padding-left: 1rem
+    margin-bottom: 0
+
+    #mce-EMAIL
+      border: 0
+      font: 300 0.9rem/1.5 Raleway,sans-serif
+      height: 40px
+      padding: 0 1rem
+      width: 100%
+
+      &:focus
+        border: 0
+        outline: 0
+        font: 700 0.9rem/1.5 Raleway,sans-serif
+
+  .mc-subscribe-group
+    flex: 1 1 30%
+    padding-right: 1rem
+    margin-bottom: 0
+    margin-right: 0
+
+    #mc-embedded-subscribe
+      border: 0
+      font: 300 0.9rem/1.5 Raleway,sans-serif
+      height: 40px
+      width: 100%
+
+      &:focus
+        border: 0
+        outline: 0
+        font: 700 0.9rem/1.5 Raleway,sans-serif
 
 //*********************************************************
 // BRIDGES
