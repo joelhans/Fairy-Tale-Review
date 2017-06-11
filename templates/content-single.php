@@ -14,7 +14,7 @@
     ?>
     <figure class="post__image col__8 off__2">
        <?php the_post_thumbnail('full'); ?>
-       <figcaption>Artwork by <a href="<?php echo get_post_meta($post->ID, 'post_illustrator_url', true); ?>"><?php echo get_post_meta($post->ID, 'post_illustrator', true); ?></a>.</figcaption>
+       <figcaption><?php echo get_post_meta($post->ID, 'post_illustrator', true); ?></figcaption>
     </figure>
     <?php endif; ?>
 
