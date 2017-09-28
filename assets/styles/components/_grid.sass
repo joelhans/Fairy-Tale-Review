@@ -16,9 +16,11 @@ $susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gut
 //*********************************************************
 
 @mixin col($span:6,$ctx:12)
+  // display: flex;
   flex: 1 1 span($span of $ctx)
   margin-right: gutter($ctx)
-  margin-bottom: gutter($ctx)
+  margin-bottom: 2.4rem
+  // padding-bottom: gutter($ctx)
 
 @for $i from 1 through 12
   .col__#{$i}
