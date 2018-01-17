@@ -21,16 +21,19 @@
 
   // CORE AUTHOR
   .post__author
-    color: $orange
+    color: $purple
     display: inline-block
-    font: 700 0.9rem/1.5 "Quicksand", sans-serif
+    font-family: 'Raleway'
+    font-size: 1.8rem
+    font-weight: 700
     margin-bottom: 1.4rem
 
   // CORE TIME
   .post__time
     color: $purple
     display: inline-block
-    font: 700 0.9rem/1.5 "Quicksand", sans-serif
+    font-family: 'Raleway'
+    font-size: 1.8rem
     &::before
       content: ' / '
 
@@ -55,11 +58,14 @@
 .post__wrap
   +flex
   justify-content: center
-  max-width: 85rem
+  max-width: 120rem
   padding: 0 3rem
 
 .post--single
   +flex
+
+  .post__link .post__title
+    text-align: left;
 
   .post__header
     flex-grow: 0
@@ -68,26 +74,27 @@
 
     h1
       color: $orange
-      font: 700 4rem/1.5 "Alegreya", serif
-      margin-bottom: 2rem
+      font-family: 'Playfair Display', "Raleway", sans-serif
+      font-size: 7rem
+      font-weight: 900
 
   // POST--SINGLE AUTHOR
   .post__author
-    font: 700 1.4rem/1.5 "Quicksand", sans-serif
+    font: 700 1.8rem/1.5 "Raleway", sans-serif
     margin-bottom: 2rem
 
   // POST--SINGLE TIME
   .post__time
     color: $purple
     display: block
-    font: 300 0.9rem/1.5 "Quicksand", sans-serif
+    font: 400 1.4rem/1.5 "Raleway", sans-serif
     margin-bottom: 2rem
 
     &::before
       content: ''
 
   .post__issue
-    font: 400 0.9rem/1.5 "Alegreya", serif
+    font: 400 1.4rem/1.5 "Playfair Display", serif
     font-style: italic
     text-align: center
 
@@ -130,7 +137,8 @@
     color: $purple
 
     p
-      font: 400 italic 0.9rem/1.5 "Alegreya", serif
+      font-size: 1.6rem;
+      font-style: italic;
 
     em, i
       font-style: normal

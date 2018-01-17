@@ -2,7 +2,7 @@
 // GRID SETTINGS AND CONFIGURATIONS
 //*********************************************************
 
-$susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gutter-position: after )
+$susy : ( container: 120rem, columns: 12, gutters: 1, box-sizing: border-box, gutter-position: after )
 
 .wrap
   +container()
@@ -16,11 +16,9 @@ $susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gut
 //*********************************************************
 
 @mixin col($span:6,$ctx:12)
-  // display: flex;
   flex: 1 1 span($span of $ctx)
   margin-right: gutter($ctx)
   margin-bottom: 2.4rem
-  // padding-bottom: gutter($ctx)
 
 @for $i from 1 through 12
   .col__#{$i}
@@ -48,22 +46,6 @@ $susy : ( container: 85rem, columns: 12, gutters: 1, box-sizing: border-box, gut
 
   .off__#{$i}--8
     +off($push:$i,$ctx:8)
-
-
-// Header //
-// .banner>section
-//   @include container(70em)
-//   position: relative
-//
-// .about-pulldown>section
-//   @include container(70em)
-//
-// .nav-brand
-//   @include span(4 of 12)
-//   @include push(4 of 12)
-//
-// .nav-social
-//   @include span(4 of 12 last)
 
 // front page
 .front-page-featured article

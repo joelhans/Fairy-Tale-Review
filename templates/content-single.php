@@ -9,14 +9,14 @@
     </header>
 
     <?php
-      $illustration = get_post_meta($post->ID, 'post_illustration_display', true); $meta = $meta[0];
-      if ( has_post_thumbnail() && $illustration == true ):
+      //$illustration = get_post_meta($post->ID, 'post_illustration_display', true); $meta = $meta[0];
+      //if ( has_post_thumbnail() && $illustration == true ):
     ?>
-    <figure class="post__image col__8 off__2">
+<!--     <figure class="post__image col__8 off__2">
        <?php the_post_thumbnail('full'); ?>
        <figcaption><?php echo get_post_meta($post->ID, 'post_illustrator', true); ?></figcaption>
-    </figure>
-    <?php endif; ?>
+    </figure> -->
+    <?php //endif; ?>
 
     <div class="post__content content__area col__8 off__2">
 
