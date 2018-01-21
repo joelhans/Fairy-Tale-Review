@@ -112,10 +112,14 @@
 .page--journal
   align-items: flex-start
 
+.page--journal .col__8 
+  flex-grow: 0
+
 .journal__recent
   background-origin: content-box
   transition: filter 0.3s ease-in-out
   margin-right: 0
+  margin-top: 10rem
 
   a
     align-items: center
@@ -130,12 +134,18 @@
   .issue__cover img
     max-width: 100%
 
+  h1
+    color: $red
+    font-family: "Playfair Display"
+    font-size: 4rem
+
   .issue__teaser
     margin-bottom: 0
     margin-right: 0
     padding: gutter() gutter() gutter() 0
 
     p
+      font-size: 2.8rem
       text-align: left
 
   &:hover
@@ -144,6 +154,7 @@
 
 .journal__catalog
   +flex
+  margin-top: 6rem
 
 .catalog__issue
   flex-grow: 0

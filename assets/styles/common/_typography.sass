@@ -31,13 +31,14 @@ h1, h2, h3, h4, h5, h6
   transition: color 0.3s ease-in-out
 
 h1
-  font-size: 4.4rem
+  font-size: 4rem
 
 h2
   font-size: 3.2rem
 
 h3
-  font-size: 2rem
+  color: $violet
+  font-size: 2.6rem
 
 ul
   margin-bottom: 2rem
@@ -78,8 +79,10 @@ hr
 .content__area
 
   a
-    +textback($color: $orange, $pull: 20px, $sides: 2px)
+    +textback($color: $red, $pull: 20px, $sides: 2px)
     transition: background 0.3s ease-in-out
+    &:hover
+      color: $purple
 
   img
     max-width: 100%

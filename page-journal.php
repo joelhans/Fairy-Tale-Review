@@ -14,7 +14,7 @@
       <h1><?= Titles\title(); ?></h1>
     </header>
 
-    <div class="journal__content content__area col__4">
+    <div class="journal__content content__area col__8 off__2">
       <?php
         while (have_posts()) : the_post();
           the_content();
@@ -22,7 +22,7 @@
       ?>
     </div>
 
-    <div class="journal__recent col__8 color__cover--translucent">
+    <div class="journal__recent col__12 color__cover--translucent">
 
       <?php
         $query_catalog = new WP_Query( array( 'post_type' => 'page', 'posts_per_page' => 1, 'meta_query' => array( array( 'key' => '_wp_page_template', 'value' => 'page-issue.php' ) ) ) );
@@ -31,11 +31,13 @@
 
       <a href="<?php the_permalink(); ?>">
 
-        <figure class="issue__cover col__4--8">
+        <figure class="issue__cover col__4">
           <img src="<?= get_template_directory_uri(); ?>/dist/images/covers/FTR_cover_<?php echo $post->post_name; ?>.png" />
         </figure>
 
-        <article class="issue__teaser col__4--8">
+        <article class="issue__teaser col__8">
+
+          <h1><?php the_title(); ?></h1>
 
           <?php the_excerpt(); ?>
 
