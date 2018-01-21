@@ -1,4 +1,33 @@
 //*********************************************************
+// PAGES (INC SUBMIT)
+//*********************************************************
+
+.page__wrap
+  +flex
+  justify-content: center
+  max-width: 120rem
+  padding: 0 3rem
+
+.page,
+.core--archive
+  +flex
+  flex-grow: 0
+  margin-right: 0
+
+  header
+    margin-top: 6rem
+
+    h1
+      color: $red;
+      font-family: 'Playfair Display', sans-serif
+      font-size: 7rem
+      font-weight: 900
+
+  .page__content
+    flex-grow: 0;
+
+
+//*********************************************************
 // ARCHIVE PAGES
 //*********************************************************
 
@@ -9,46 +38,16 @@
   .archive__header
     margin-top: 6rem
 
-    h1
-      color: $orange
-      font-family: 'Playfair Display', "Raleway", sans-serif
-      font-size: 7rem
-      font-weight: 900
-
-  .post--core:nth-of-type(2n)
-    margin-right: 0
-
-  .post--core:nth-of-type(6),
-  .post--core:nth-of-type(7)
-    margin-bottom: gutter(8)
-
-  .post--core:nth-of-type(5),
-  .post--core:nth-of-type(7)
+  .post--core:nth-of-type(2n+1)
     margin-right: gutter(8)
 
-//*********************************************************
-// PAGES (INC SUBMIT)
-//*********************************************************
+  // .post--core:nth-of-type(6),
+  // .post--core:nth-of-type(7)
+  //   margin-bottom: gutter(8)
 
-.page__wrap
-  +flex
-  justify-content: center
-  max-width: 120rem
-  padding: 0 3rem
-
-.page
-  +flex
-  flex-grow: 0
-  margin-right: 0
-
-  .page__header
-    margin-top: 6rem
-
-    h1
-      color: $orange
-      font-family: 'Playfair Display', "Raleway", sans-serif
-      font-size: 7rem
-      font-weight: 900
+  // .post--core:nth-of-type(5),
+  // .post--core:nth-of-type(7)
+  //   margin-bottom: gutter(8)
 
 
 //*********************************************************
@@ -56,17 +55,17 @@
 //*********************************************************
 
 .page--about
-  margin-top: 6rem
+  // margin-top: 6rem
 
   .about__section
     margin-bottom: 4rem
 
     h1
-      color: $orange
-      font-family: 'Playfair Display', "Raleway", sans-serif
-      font-size: 6rem
+      color: $red;
+      font-family: 'Playfair Display', sans-serif
+      font-size: 7rem
       font-weight: 900
-      text-align: left
+      text-align: left;
 
   .about__content,
   .about__advisory,
@@ -95,7 +94,11 @@
       width: 100%
 
     .masthead__meta h1
-      font: 400 italic 1.2rem/1.5 "Alegreya", serif
+      font-family: "Cardo"
+      font-size: 1.8rem
+      font-style: italic
+      font-weight: 400;
+      // font: 400 italic 1.2rem/1.5 "Alegreya", serif
       margin-top: 1rem
       text-align: center
 
@@ -105,6 +108,9 @@
 //*********************************************************
 // JOURNAL PAGE
 //*********************************************************
+
+.page--journal
+  align-items: flex-start
 
 .journal__recent
   background-origin: content-box
@@ -141,6 +147,7 @@
 
 .catalog__issue
   flex-grow: 0
+  margin-bottom: 6rem
   transition: filter 0.3s ease-in-out
 
   figure img
@@ -152,7 +159,10 @@
 
     p
       color: $orange
-      font: 700 0.9rem/1.5 "Quicksand", sans-serif
+      font: 700 2rem 'Fira Sans'
+      // font-family: 'Fira Sans'
+      // font-size: 2rem;
+      // font-weight: 700;
       text-align: center
 
   &:nth-of-type(3n)

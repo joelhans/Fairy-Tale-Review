@@ -3,20 +3,10 @@
 <?php while (have_posts()) : the_post(); ?>
   <article class="post post--single">
 
-    <header class="post__header col__8 off__2">
+    <header class="post__header col__12">
       <h1><?= Titles\title(); ?></h1>
       <?php get_template_part('templates/entry-meta'); ?>
     </header>
-
-    <?php
-      //$illustration = get_post_meta($post->ID, 'post_illustration_display', true); $meta = $meta[0];
-      //if ( has_post_thumbnail() && $illustration == true ):
-    ?>
-<!--     <figure class="post__image col__8 off__2">
-       <?php the_post_thumbnail('full'); ?>
-       <figcaption><?php echo get_post_meta($post->ID, 'post_illustrator', true); ?></figcaption>
-    </figure> -->
-    <?php //endif; ?>
 
     <div class="post__content content__area col__8 off__2">
 
@@ -28,10 +18,10 @@
       <hr />
 
       <div class="ftf__container">
-        <div class="ftf__text col__4--8">
+        <div class="ftf__text col__6">
           <?php echo wpautop( get_post_meta( $post->ID, 'ftf-01-text', true ) ); ?>
         </div>
-        <div class="ftf__image col__4--8">
+        <div class="ftf__image col__6">
           <img src="<?php echo wp_get_attachment_url( get_post_meta($post->ID, 'ftf-01-img', true) ); ?>" />
         </div>
       </div>

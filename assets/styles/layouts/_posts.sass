@@ -19,27 +19,26 @@
     img
       transition: filter 0.3s ease-in-out
 
-  // CORE AUTHOR
-  .post__author
-    color: $purple
-    display: inline-block
-    font-family: 'Raleway'
-    font-size: 1.8rem
-    font-weight: 700
-    margin-bottom: 1.4rem
-
-  // CORE TIME
+  // META
+  .post__author,
+  .post__type,
   .post__time
     color: $purple
     display: inline-block
-    font-family: 'Raleway'
-    font-size: 1.8rem
+    font-family: 'Fira Sans'
+    font-size: 1.6rem
+    font-weight: 400
+    margin-bottom: 1.4rem
+    transition: color 0.3s ease-in-out
+
+  .post__type,
+  .post__time
     &::before
       content: ' / '
 
   // CORE EXCERPT
   .post__excerpt p
-    font: 400 1.2rem/1.5 "Alegreya", serif
+    font: italic 400 2rem/1.6 Cardo;
     margin-bottom: 0
     text-align: left
     transition: color 0.3s ease-in-out
@@ -70,60 +69,38 @@
   .post__header
     flex-grow: 0
     margin-top: 6rem
-    text-align: center
 
     h1
-      color: $orange
-      font-family: 'Playfair Display', "Raleway", sans-serif
+      color: $red
+      font-family: 'Playfair Display', sans-serif
       font-size: 7rem
       font-weight: 900
+      text-align: left;
 
-  // POST--SINGLE AUTHOR
   .post__author
-    font: 700 1.8rem/1.5 "Raleway", sans-serif
+    font-size: 3rem
+    // font: 700 1.8rem/1.5 "Raleway", sans-serif
     margin-bottom: 2rem
 
-  // POST--SINGLE TIME
+  .post__type
+    display: none;
+
   .post__time
     color: $purple
     display: block
-    font: 400 1.4rem/1.5 "Raleway", sans-serif
+    font-size: 2rem
     margin-bottom: 2rem
 
     &::before
       content: ''
 
   .post__issue
-    font: 400 1.4rem/1.5 "Playfair Display", serif
-    font-style: italic
-    text-align: center
-
-  .post__image
-    flex-grow: 0
-    height: auto
-    margin-right: 0
-    overflow: hidden
-    position: relative
-    text-align: center
-
-    img
-      height: auto
-      max-width: 100%
-
-    figcaption
-      color: $orange
-      display: block
-      font: 700 0.7rem/1.5 "Raleway"
-      margin-top: 0.4rem
-      text-align: center
-      text-transform: uppercase
-      a:hover
-        color: $orange
+    font: italic 1.4rem "Playfair Display", serif
 
   .post__content
     flex-grow: 0
     margin-right: 0
-    margin-top: 4rem
+    margin-top: 8rem
 
   footer
     align-items: center
@@ -166,7 +143,7 @@
 
 .ftf__intro
   color: $purple
-  font: 500 italic 1rem/1.5 "Raleway", sans-serif
+  font-style: italic;
   em
     font-style: normal
 
@@ -176,6 +153,8 @@
   // flex-wrap: nowrap
   margin-top: 4rem
   margin-bottom: 0
+  margin-left: -25%;
+  margin-right: -25%;
 
 .ftf__text
   margin-bottom: 0
