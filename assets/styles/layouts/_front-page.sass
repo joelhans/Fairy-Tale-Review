@@ -3,84 +3,75 @@
 //*********************************************************
 
 .marquee
-  max-width: 85rem
+  max-width: 120rem
   padding: 0 3rem
-  margin: 6rem 0 2rem;
+  margin: 6rem 0 8rem;
 
 .post--marquee
 
-  // POST--MARQUEE LINK
   .post__link
     display: flex
-    flex-wrap: nowrap
-    flex-direction: row
-    align-items: center
+    flex-flow: row wrap
 
-  // POST--MARQUEE FIGURE
+    &:after
+      background: $red;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 5px;
+      position: absolute;
+      transition: all 0.3s ease-in-out
+      width: 0%;
+
   .post__image
-    @extend .col__8
-    order: 2
-    margin-right: 0
-    height: 300px
-    z-index: 0
+    display: none
 
-    img
-      filter: brightness(20%) grayscale(100%)
-      height: 100%
-      left: 0
-      object-fit: cover
-      position: absolute
-      top: 0
-      transition: filter 0.3s ease-in-out
-      width: 100%
-
-  // POST--MARQUEE TITLE
   .post__title
-    +span(8 of 12 last)
-    margin-top: -20px
-    right: 0
-    position: absolute
-    z-index: 1000
-    top: 50%;
-    transform: translateY(-50%);
+    flex: 1 0 100%;
+    order: 2;
 
-  .post__title h2
-    color: white
-    font: 700 2rem/1.3 "Aleo", sans-serif
-    text-align: center
+  .post__title h1
+    color: $purple
+    font-size: 3.6rem
+    margin-bottom: 1.6rem;
 
-  // POST--MARQUEE META
   .post__meta
-    +span(8 of 12 last)
-    position: absolute
-    right: 0
-    text-align: center
-    z-index: 1000
-    top: 50%;
+    flex: 1 0 100%
+    order: 3
 
-  // POST--MARQUEE TIME
+  .post__author,
+  .post__type,
   .post__time
-    color: white
+    font-size: 2rem;
+    margin-bottom: 3rem;
 
-  // POST--MARQUEE EXCERPT
   .post__excerpt
-    @extend .col__4
+    flex: 1 0 100%;
+    order: 1;
 
   .post__excerpt p
-    font: 700 1.6rem/1.5 "Alegreya", serif
+    color: $red
+    font-family: "Playfair Display"
+    font-size: 5rem
+    font-style: normal;
+    font-weight: 900
+    margin-bottom: 2rem
 
   // POST/MARQUEE HOVER STATES
   .post__link:hover
 
-    figure img
-      filter: brightness(40%) grayscale(20%)
+    .post__title h1,
+    .post__author,
+    .post__time
+      color: $gray;
 
-    .post__title,
-    .post__meta
-      opacity: 1
+    .post__excerpt p
+      color: $violet
 
-    .post__excerpt
-      color: $red
+    &:after
+      background: $violet
+      width: 100%;
+
 
 //*********************************************************
 // CORE
@@ -88,7 +79,7 @@
 
 .core
   +flex
-  max-width: 85rem
+  max-width: 120rem
   padding: 0 3rem
 
 .core__stack
@@ -97,96 +88,23 @@
 // POST--CORE
 .post--core
   @extend .col__4--8
+  margin-right: 0;
+  margin-bottom: 6rem;
 
-  &:nth-of-type(2),
-  &:nth-of-type(5),
-  &:nth-of-type(7)
-    margin-right: 0
-
-  &:nth-of-type(6),
-  &:nth-of-type(7)
-    margin-bottom: 0
-
-  // POST--CORE FIGURE
   .post__image
-    height: 300px
-    margin-bottom: 1.4rem
-
-  // POST--CORE IMAGES
-  .post__image img
-    position: absolute
-    top: 0
-    left: 0
-    height: 100%
-    width: 100%
-    object-fit: cover
+    display: none;
 
   // POST--CORE TITLE
-  .post__title h2
-    color: $red
-    font: 700 1.8rem/1.5 "Alegreya"
+  .post__title h1 
+    color: $purple
+    font-size: 3rem;
     margin-bottom: 0.4rem
     text-align: left
     transition: color 0.3s ease-in-out
 
-    &:hover
-      color: $orange
-
-  .post__author
-    margin-bottom: 0.4rem
-
-  // POST--CORE HOVER STATES
   &:hover
-
-    .post__image img
-      filter: grayscale(100%)
-
-// POST--CORE--QUOTE
-.post__core--quote
-  margin-right: 0
-
-  // POST--CORE--QUOTE LINK
-  .post__link
-    display: flex
-    flex-wrap: wrap
-    padding: gutters(8) 0rem
-    border-top: 1px solid transparentize($base, 0.8)
-    border-bottom: 1px solid transparentize($base, 0.8)
-
-  // POST--CORE--QUOTE FIGURE
-  .post__image
-    display: none
-
-  // POST--CORE--QUOTE TITLE
-  .post__title
-    display: none
-
-  // POST--CORE--QUOTE META
-  .post__meta
-    order: 2
-
-  // POST--CORE--QUOTE AUTHOR
-  .post__author
-    margin-bottom: 0
-
-    &::before
-      content: '\2014 \00a0'
-
-  // POST--CORE--QUOTE TIME
-  .post__time
-    display: none
-
-  // POST--CORE--QUOTE EXCERPT
-  .post__excerpt
-    @extend .col__8--8
-    margin-bottom: 0.2rem
-    order: 1
-
-    p
-      font: 700 1.6rem "Alegreya", sans-serif
-
-  .post__link:hover .post__excerpt p
-    color: $red
+    .post__title h1
+      color: $violet
 
 
 //*********************************************************
@@ -204,15 +122,19 @@
     max-width: 100%
 
   h1
-    color: $base
+    color: $gray;
+    font-family: "Cardo"
+    font-size: 3.2rem
+    font-weight: 700
     margin: -6px 0 0
     padding: 2rem 2rem 0
     text-align: left
 
   .rail__issue__button
     display: block
-    font: 300 1.2rem/1.5 "Raleway", sans-serif
-    padding: 2rem 2rem
+    font-family: 'Fira Sans'
+    font-size: 1.5rem
+    padding: 3rem 2rem
     text-align: center
     text-transform: uppercase
 
@@ -232,42 +154,55 @@
     order: 2
     text-align: left
 
+    h1
+      font-size: 1.8rem;
+      font-weight: 400;
+      margin-bottom: 0;
+
   .post__meta
     order: 3
+    display: none;
 
   .post__time
     display: none
 
   .post__excerpt
-    margin-bottom: 0.6rem
+    margin-bottom: 1rem
     order: 1
 
     p
-      color: $orange
-      font: 700 1.6rem "Alegreya", sans-serif
+      color: $violet
+      font-family: "Playfair Display"
+      font-size: 3.2rem
+      font-weight: 700
+      line-height: 1.4
+      // font: 700 1.6rem "Alegreya", sans-serif
 
   &:hover .post__excerpt p
     color: $red
 
 .rail__newsletter
-  background: transparentize($red, 0.9)
+  border: 1px solid $violet;
   padding-bottom: 1rem
 
   #mc_embed_signup_scroll
     +flex
 
   h2
-    background: $purple
+    background: $violet
     color: white
-    font: 700 0.9rem/1.5 Quicksand,sans-serif
+    font-size: 2.6rem;
+    margin-bottom: 0;
     padding: 1rem
     text-align: center
     width: 100%
 
   h4
     color: $base
-    font: 700 1.1rem/1.5 Alegreya,sans-serif
-    padding: 2rem 1rem
+    font-family: 'Cardo';
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 3rem 2rem
     text-align: center
 
   .mc-field-group
@@ -276,16 +211,14 @@
     margin-bottom: 0
 
     #mce-EMAIL
-      border: 0
-      font: 300 0.9rem/1.5 Raleway,sans-serif
+      border: 1px solid $purple;
       height: 40px
       padding: 0 1rem
       width: 100%
 
       &:focus
-        border: 0
+        border: 1px solid $red;
         outline: 0
-        font: 700 0.9rem/1.5 Raleway,sans-serif
 
   .mc-subscribe-group
     flex: 1 1 30%
@@ -294,21 +227,27 @@
     margin-right: 0
 
     #mc-embedded-subscribe
-      border: 0
-      font: 300 0.9rem/1.5 Raleway,sans-serif
+      border: 1px solid $purple;
+      border-width: 1px 1px 1px 0;
       height: 40px
       width: 100%
 
+      &:hover
+        cursor: pointer
+
       &:focus
-        border: 0
+        border: 1px solid $red;
+        border-width: 1px 1px 1px 0;
         outline: 0
-        font: 700 0.9rem/1.5 Raleway,sans-serif
 
 //*********************************************************
 // BRIDGES
 //*********************************************************
 
 // POST--BRIDGE--FTF
+.core__bridge--ftf
+  margin-right: 0;
+
 .post--bridge--ftf
 
   // POST--FTF LINK
@@ -321,7 +260,9 @@
     color: white
     content: "Fairy-Tale File"
     display: block
-    font: 700 0.8rem/1.5 "Quicksand", sans-serif
+    font-family: "Playfair Display"
+    font-style: italic;
+    // font: 700 0.8rem/1.5 "Quicksand", sans-serif
     left: 50%
     bottom: 10px
     position: absolute
@@ -360,8 +301,8 @@
     top: 50%;
 
     h2
-      color: $orange
-      font: 700 2rem/1.5 "Alegreya", serif
+      color: $red
+      // font: 700 2rem/1.5 "Alegreya", serif
       text-align: center
 
   // POST--FTF META

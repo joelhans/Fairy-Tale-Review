@@ -2,7 +2,7 @@
 
   <div class="footer__wrap wrap">
 
-    <div class="footer__nav col__8">
+    <div class="footer__nav col__12">
 
       <ul class="col__2--8">
         <li><a href="<?= esc_url(home_url('/')); ?>annual-journal/">The Journal</a></li>
@@ -29,7 +29,7 @@
 
     </div>
 
-    <div class="footer__tagline col__4">
+    <div class="footer__tagline col__12">
       <h1>Innovation and art through fairy tales since 2005</h1>
     </div>
 

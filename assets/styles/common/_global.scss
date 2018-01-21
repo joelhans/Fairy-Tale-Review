@@ -6,14 +6,18 @@ html {
   box-sizing: inherit;
 }
 
-html { height: 100%; }
+html { 
+	font-size: 62.5%;
+	height: 100%;
+}
 
-html, body {
-  font: 300 1rem/1.5 "Alegreya", serif;
+body {
+  font-size: 2rem;
+  font-family: 'Cardo', serif;
+  font-weight: 400;
+  line-height: 1.6;
   text-align: justify;
   overflow-x: hidden;
-  -moz-osx-font-smoothing: auto;
-  -webkit-font-smoothing: subpixel-antialiased;
-  background-color: #fbfaf6;
+  background-color: white;
   color: $d-grey;
 }

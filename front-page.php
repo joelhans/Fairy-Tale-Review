@@ -22,8 +22,8 @@
         if ( in_array( $post->ID, $do_not_duplicate ) ) continue;
         $do_not_duplicate[] = $post->ID;
 
-        if ( $postCount == 4 ) $article_style = 'post__core post__core--quote col__8--8';
-        else $article_style = 'post--core col__4--8';
+        // if ( $postCount == 4 ) $article_style = 'post__core post__core--quote col__8--8';
+        $article_style = 'post--core col__8--8';
 
         include( locate_template( 'templates/content.php', false, false ) );
 
