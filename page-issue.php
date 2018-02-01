@@ -19,11 +19,15 @@
 
     <div class="issue__meta color__cover--<?php echo $post->post_name; ?> col__4">
       <img src="<?= get_template_directory_uri(); ?>/dist/images/covers/FTR_cover_<?php echo $post->post_name; ?>.png" />
-      <?php if ( $order_links !== 'hide' ): ?>
-      <a href="<?php echo get_post_meta($post->ID, 'issue_wsup_physical', true); ?>">Buy a copy</a>
+      <?php if ( $order_links != 'hide' ): ?>
+      <?php if ( $meta == 'preorder' ): ?>
+      <a href="<?php echo get_post_meta($post->ID, 'issue_wsup_physical', true); ?>">Preorder a copy</a>
+      <?php else : ?>
+      <a href="<?php echo get_post_meta($post->ID, 'issue_wsup_physical', true); ?>">Buy a copy</a>  
       <a href="<?php echo get_post_meta($post->ID, 'issue_wsup_pdf', true); ?>">Buy a PDF</a>
       <a class="detail" href="<?php echo get_post_meta($post->ID, 'issue_jstor', true); ?>">Read on JSTOR <span>Free, requires library access</span></a>
       <a class="detail" href="<?php echo get_post_meta($post->ID, 'issue_wsup_institution', true); ?>">Buy a copy <span>For institutions</span></a>
+      <?php endif; ?>
       <?php endif; ?>
     </div>
 
