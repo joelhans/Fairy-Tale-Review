@@ -18,8 +18,9 @@ services:
      image: wordpress:php5.6-apache
      volumes:
        - .:/var/www/html/wp-content/themes/ftr
+       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
      ports:
-       - "8010:80"
+       - "9000:80"
      restart: always
      environment:
        WORDPRESS_DB_HOST: db:3306
