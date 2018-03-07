@@ -56,8 +56,7 @@ hr
   position: relative
   border-width: 1px
   border-style: solid
-  margin-top: 3.6rem
-  margin-bottom: 4rem
+  margin: 8rem 0
   color: #efefef
   &::after
     content: ''
@@ -80,7 +79,7 @@ hr
 .page__content
 
   a
-    +textback($color: $red, $pull: 20px, $sides: 2px)
+    +textback($color: $red, $pull: 23px, $sides: 2px)
     transition: background 0.3s ease-in-out
     &:hover
       color: $purple
@@ -95,3 +94,10 @@ hr
 
   h1, h2, h3, h4, h5, h6
     margin-top: 4rem;
+
+  .button 
+    background: $red
+    color: white
+    padding: 1rem 2rem
+    &:hover
+      background: $red
