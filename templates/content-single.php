@@ -58,19 +58,19 @@
     <?php the_content(); ?>
     </div>
 
+    <?php
+      $attachment_id = get_post_meta($post->ID, 'post_author_pic', true);
+      if (trim(get_post_meta($post->ID, 'post_author_bio', true)) == true) :
+    ?>
     <footer class="col__8 off__2">
-      <?php
-        $attachment_id = get_post_meta($post->ID, 'post_author_pic', true);
-        if (trim(get_post_meta($post->ID, 'post_author_bio', true)) == true) :
-      ?>
       <div class="post__bio col__5--8">
         <?= __('', 'sage'); ?><?php echo wpautop( get_post_meta($post->ID, 'post_author_bio', true) ); ?>
       </div>
       <div class="post__avatar col__3--8">
         <div style="background-image: url(<?php echo wp_get_attachment_url( $attachment_id ); ?>);"></div>
       </div>
-      <?php endif; ?>
     </footer>
+    <?php endif; ?>
 
   </article>
 
