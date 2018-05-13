@@ -26,7 +26,7 @@
 
     <div class="about__masthead col__8 off__2">
 
-      <?php for ($x = 1; $x <= 20; $x++): ?>
+      <?php for ($x = 1; $x <= 21; $x++): ?>
         <?php $y = str_pad($x, 2, "0", STR_PAD_LEFT); $title = 'masthead_'.$y.'_title'; $bio = 'masthead_'.$y; ?>
         <?php $attachment_id = get_post_meta($post->ID, 'masthead_'.$y.'_img', true); ?>
         <?php if ( !$attachment_id == '' ): ?>
